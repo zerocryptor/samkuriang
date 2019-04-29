@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGarbageBanksTable extends Migration
+class CreateGarbagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateGarbageBanksTable extends Migration
      */
     public function up()
     {
-        Schema::create('garbage_banks', function (Blueprint $table) {
+        Schema::create('garbages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name',50);
-            $table->string('latitude',50);
-            $table->string('longitude',50);
-            $table->string('address',85);
-            $table->string('contact',12);
-            $table->string('garbage_price',12);
-            $table->integer('garbage_officer_id');
+            $table->string('type',50);
+            $table->string('sum',25);
+            $table->string('price',25);
+            $table->string('age',25);
+
             $table->timestamps();
         });
     }
@@ -33,6 +32,6 @@ class CreateGarbageBanksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('garbage_banks');
+        Schema::dropIfExists('garbages');
     }
 }
