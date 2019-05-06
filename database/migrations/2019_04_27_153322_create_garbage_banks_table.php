@@ -22,7 +22,6 @@ class CreateGarbageBanksTable extends Migration
             $table->string('contact',12);
             $table->string('garbage_price',12);
             $table->integer('garbage_officer_id');
-            $table->timestamps();
         });
     }
 
