@@ -22,7 +22,6 @@ class CreateGarbageOfficersTable extends Migration
             $table->string('password',50);
             $table->integer('saving_id');
             $table->rememberToken();
-            $table->timestamps();
         });
     }
 

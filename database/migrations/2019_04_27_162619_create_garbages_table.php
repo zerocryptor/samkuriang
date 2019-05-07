@@ -20,8 +20,6 @@ class CreateGarbagesTable extends Migration
             $table->string('sum',25);
             $table->string('price',25);
             $table->string('age',25);
-
-            $table->timestamps();
         });
     }
 

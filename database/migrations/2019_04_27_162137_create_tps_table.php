@@ -18,7 +18,6 @@ class CreateTpsTable extends Migration
             $table->string('name',50);
             $table->string('address',80);
             $table->string('phone_number',12);
-            $table->timestamps();
         });
     }
 
