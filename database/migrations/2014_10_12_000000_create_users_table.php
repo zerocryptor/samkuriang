@@ -24,7 +24,6 @@ class CreateUsersTable extends Migration
             $table->integer('saving_id');
             $table->integer('garbage_bank_id');
             $table->rememberToken();
-            $table->timestamps();
         });
     }
 
