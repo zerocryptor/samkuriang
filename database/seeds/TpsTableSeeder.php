@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class TpsTableSeeder extends Seeder
 {
@@ -11,12 +12,13 @@ class TpsTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < ; $i++) { 
-            DB::table('TpsTableSeeder')->insert[(
+        for ($i=0; $i<5 ; $i++) {
+            $faker = Faker::create('id_ID'); 
+            DB::table('TpsTableSeeder')->insert([
                 'name'=>$faker->name,
                 'address'=>$faker->address,
                 'phonenumber'=>$faker->phonenumber
-            )]
+            ]);
         }
     }
 }

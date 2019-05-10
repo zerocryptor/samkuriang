@@ -17,9 +17,9 @@ class GarbagesTableSeeder extends Seeder
         $garbage = new Garbage();
         for ($i=0; $i<5 ; $i++) {
             $garbage->setName($faker->name);
-            // $garbage->setType($faker->ISBN);
-            // $garbage->setSum($faker->text);
-            $garbage->setPrice($faker->randomNumber(2));
+            $garbage->setType($faker->randomBetween(1,2));
+            $garbage->setSum($faker->text);
+            $garbage->setPrice($faker->randomNumber(10));
             $garbage->setAge($faker->numberBetween(25,40));
         }
     }

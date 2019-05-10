@@ -11,7 +11,8 @@ class GarbageOfficersTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < ; $i++) { 
+        for ($i=0; $i<5; $i++) {
+            $faker = Faker::create('id_ID'); 
             DB::table ('GarbageOfficersTableSeeder')->insert([
                 'email'=>$faker->email,
                 'name'=>$faker->name,
@@ -19,7 +20,7 @@ class GarbageOfficersTableSeeder extends Seeder
                 'phonenumber'=>$faker->phonenumber,
                 'password'=>hash::make('password'),
                 'savingId'=>1
-            ];
+            ]);
         }
     }
 }

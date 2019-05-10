@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class RecyclesTableSeeder extends Seeder
 {
@@ -11,11 +12,12 @@ class RecyclesTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < ; $i++) { 
-            DB::table('RecyclesTableSeeder')->insert[(
+        for ($i=0; $i<5; $i++) {
+            $faker = Faker::create('id_ID');  
+            DB::table('RecyclesTableSeeder')->insert([
                 'name'=>$faker->name,
                 'type'=>$faker->type
-            )];
+            ]);
         }
     }
 }

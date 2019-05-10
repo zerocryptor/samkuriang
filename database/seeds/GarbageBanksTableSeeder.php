@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class GarbageBanksTableSeeder extends Seeder
 {
@@ -11,11 +12,12 @@ class GarbageBanksTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < ; $i++) { 
+        for ($i=0; $i < 5 ; $i++) {
+            $faker = Faker::create('id_ID'); 
             DB::table ('GarbageBanksTableSeeder')->insert([
                 'name'=>$faker->name,
-                'latitude'=>latitude($min = -90, $max = 90)
-                'longitude'=>longitude($min = -180, $max = 180)
+                'latitude'=>latitude($min = -90, $max = 90),
+                'longitude'=>longitude($min = -180, $max = 180),
                 'address'=>$faker->address,
                 'contact'=>$faker->contact,
                 'garbage_price'=>1,
