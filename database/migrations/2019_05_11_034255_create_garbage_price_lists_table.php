@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSavingsTable extends Migration
+class CreateGarbagePriceListsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateSavingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('savings', function (Blueprint $table) {
+        Schema::create('garbage_price_lists', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('price',25);
-            $table->string('size',25);
         });
     }
 
@@ -27,6 +26,6 @@ class CreateSavingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('savings');
+        Schema::dropIfExists('garbage_price_lists');
     }
 }

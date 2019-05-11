@@ -21,8 +21,6 @@ class CreateUsersTable extends Migration
             $table->string('password',50);
             $table->string('address',80);
             $table->string('phone_number', 12);
-            $table->integer('saving_id');
-            $table->integer('garbage_bank_id');
             $table->rememberToken();
         });
     }

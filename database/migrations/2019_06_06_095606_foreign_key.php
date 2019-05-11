@@ -13,7 +13,7 @@ class ForeignKey extends Migration
      */
     public function up()
     {
-         Schema::table('garbage_price_list', function (Blueprint $table) {
+         Schema::table('garbage_price_lists', function (Blueprint $table) {
             /**
              * @foreign table garbages,garbage bank
              */
@@ -37,7 +37,7 @@ class ForeignKey extends Migration
              * @foreign table recycle
              */
             $table->unsignedInteger('recycle_id');
-            $table->foreign('recycle_id')->references('id')->on('recycle')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('recycle_id')->references('id')->on('recycles')->onUpdate('cascade')->onDelete('cascade');
 
             $table->timestampTz('created_at')->useCurrent();
             $table->timestampTz('updated_at')->nullable();
@@ -53,7 +53,7 @@ class ForeignKey extends Migration
              * @foreign table garbage officer
              */
             $table->unsignedInteger('garbage_officer_id');
-            $table->foreign('garbage_officer_id')->references('id')->on('garbage_officer')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('garbage_officer_id')->references('id')->on('garbage_officers')->onUpdate('cascade')->onDelete('cascade');
 
             $table->timestampTz('created_at')->useCurrent();
             $table->timestampTz('updated_at')->nullable();
