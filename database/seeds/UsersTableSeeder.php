@@ -15,12 +15,12 @@ class UsersTableSeeder extends Seeder
     {
         $faker = Faker::create('id_ID');
          for ($i=0; $i<5 ; $i++) {
-            DB::table ('UsersTableSeeder')->insert([
-                'nama' => $faker->name,
+            DB::table ('users')->insert([
+                'name' => $faker->name,
                 'email' => $faker->freeEmail,
                 'password' => Hash::make('password'),
                 'address' => $faker->address,
-                'phone_number' => $faker->mobileNumber,
+                'phone_number' => $faker->phoneNumber,
                 'saving_id' => 1,
                 'garbage_bank_id' => 1
             ]);
