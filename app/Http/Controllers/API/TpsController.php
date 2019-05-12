@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\Recycle;
+use App\Models\Tps;
 use Illuminate\Http\Request;
 
-class RecycleController extends Controller
+class TpsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class RecycleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Recycle  $recycle
+     * @param  \App\Tps  $tps
      * @return \Illuminate\Http\Response
      */
-    public function show(Recycle $recycle)
+    public function show(Tps $tps)
     {
         //
     }
@@ -52,10 +52,10 @@ class RecycleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Recycle  $recycle
+     * @param  \App\Tps  $tps
      * @return \Illuminate\Http\Response
      */
-    public function edit(Recycle $recycle)
+    public function edit(Tps $tps)
     {
         //
     }
@@ -64,10 +64,10 @@ class RecycleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Recycle  $recycle
+     * @param  \App\Tps  $tps
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Recycle $recycle)
+    public function update(Request $request, Tps $tps)
     {
         //
     }
@@ -75,10 +75,10 @@ class RecycleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Recycle  $recycle
+     * @param  \App\Tps  $tps
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Recycle $recycle)
+    public function destroy(Tps $tps)
     {
         //
     }

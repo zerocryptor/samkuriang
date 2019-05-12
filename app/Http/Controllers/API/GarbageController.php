@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\GarbageOfficer;
+use App\Models\Garbage;
 use Illuminate\Http\Request;
 
-class GarbageOfficerController extends Controller
+class GarbageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class GarbageOfficerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\GarbageOfficer  $garbageOfficer
+     * @param  \App\Garbage  $garbage
      * @return \Illuminate\Http\Response
      */
-    public function show(GarbageOfficer $garbageOfficer)
+    public function show(Garbage $garbage)
     {
         //
     }
@@ -52,10 +52,10 @@ class GarbageOfficerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\GarbageOfficer  $garbageOfficer
+     * @param  \App\Garbage  $garbage
      * @return \Illuminate\Http\Response
      */
-    public function edit(GarbageOfficer $garbageOfficer)
+    public function edit(Garbage $garbage)
     {
         //
     }
@@ -64,10 +64,10 @@ class GarbageOfficerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\GarbageOfficer  $garbageOfficer
+     * @param  \App\Garbage  $garbage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, GarbageOfficer $garbageOfficer)
+    public function update(Request $request, Garbage $garbage)
     {
         //
     }
@@ -75,10 +75,10 @@ class GarbageOfficerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\GarbageOfficer  $garbageOfficer
+     * @param  \App\Garbage  $garbage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(GarbageOfficer $garbageOfficer)
+    public function destroy(Garbage $garbage)
     {
         //
     }
