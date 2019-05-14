@@ -14,13 +14,21 @@ class AdminsTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create('id_ID');
-        for ($i=0; $i<5 ; $i++) {
-            DB::table ('AdminsTableSeeder')->insert([
-                'username' => $faker->userName,
-                'password' => Hash::make('admin'),
-                'db_user' => 1
-            ]);
-        }
+        // $faker = Faker::create('id_ID');
+        // for ($i=0; $i<5 ; $i++) {
+        //     DB::table ('AdminsTableSeeder')->insert([
+        //         'username' => $faker->userName,
+        //         'password' => Hash::make('admin'),
+        //         'db_user' => 1
+        //     ]);
+        // }
+
+        DB::table('admins')->insert([
+            'name' => 'Admin Samkuriang',
+            'email' => 'admin@samkuriang.com',
+            'password' => Hash::make('admin_samkuriang'),
+            'address' => 'Jalan Admin No. 12',
+            'phone_number' => '08957271637'
+        ]);
     }
 }
