@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\Tps;
+use App\Models\History;
 use Illuminate\Http\Request;
 
-class TpsController extends Controller
+class HistoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class TpsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Tps  $tps
+     * @param  \App\History  $history
      * @return \Illuminate\Http\Response
      */
-    public function show(Tps $tps)
+    public function show(History $history)
     {
         //
     }
@@ -52,10 +52,10 @@ class TpsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Tps  $tps
+     * @param  \App\History  $history
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tps $tps)
+    public function edit(History $history)
     {
         //
     }
@@ -64,10 +64,10 @@ class TpsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Tps  $tps
+     * @param  \App\History  $history
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tps $tps)
+    public function update(Request $request, History $history)
     {
         //
     }
@@ -75,10 +75,10 @@ class TpsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Tps  $tps
+     * @param  \App\History  $history
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tps $tps)
+    public function destroy(History $history)
     {
         //
     }

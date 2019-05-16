@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\GarbagePriceList;
+use App\Models\GarbageOfficer;
 use Illuminate\Http\Request;
 
-class GarbagePriceListController extends Controller
+class GarbageOfficerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class GarbagePriceListController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\GarbagePriceList  $garbagePriceList
+     * @param  \App\GarbageOfficer  $garbageOfficer
      * @return \Illuminate\Http\Response
      */
-    public function show(GarbagePriceList $garbagePriceList)
+    public function show(GarbageOfficer $garbageOfficer)
     {
         //
     }
@@ -52,10 +52,10 @@ class GarbagePriceListController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\GarbagePriceList  $garbagePriceList
+     * @param  \App\GarbageOfficer  $garbageOfficer
      * @return \Illuminate\Http\Response
      */
-    public function edit(GarbagePriceList $garbagePriceList)
+    public function edit(GarbageOfficer $garbageOfficer)
     {
         //
     }
@@ -64,10 +64,10 @@ class GarbagePriceListController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\GarbagePriceList  $garbagePriceList
+     * @param  \App\GarbageOfficer  $garbageOfficer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, GarbagePriceList $garbagePriceList)
+    public function update(Request $request, GarbageOfficer $garbageOfficer)
     {
         //
     }
@@ -75,10 +75,10 @@ class GarbagePriceListController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\GarbagePriceList  $garbagePriceList
+     * @param  \App\GarbageOfficer  $garbageOfficer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(GarbagePriceList $garbagePriceList)
+    public function destroy(GarbageOfficer $garbageOfficer)
     {
         //
     }

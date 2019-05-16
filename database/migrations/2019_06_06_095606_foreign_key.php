@@ -23,9 +23,9 @@ class ForeignKey extends Migration
             $table->unsignedInteger('garbage_bank_id');
             $table->foreign('garbage_bank_id')->references('id')->on('garbage_banks')->onUpdate('cascade')->onDelete('cascade');
 
-            $table->timestampTz('created_at')->useCurrent();
-            $table->timestampTz('updated_at')->nullable();
-            $table->softDeletesTz();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable();
+            $table->softDeletes();
             $table->string('created_by');
             $table->string('update_by')->nullable();
             $table->string('deleted_by')->nullable(); 
@@ -39,9 +39,9 @@ class ForeignKey extends Migration
             $table->unsignedInteger('recycle_id');
             $table->foreign('recycle_id')->references('id')->on('recycles')->onUpdate('cascade')->onDelete('cascade');
 
-            $table->timestampTz('created_at')->useCurrent();
-            $table->timestampTz('updated_at')->nullable();
-            $table->softDeletesTz();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable();
+            $table->softDeletes();
             $table->string('created_by');
             $table->string('update_by')->nullable();
             $table->string('deleted_by')->nullable();
@@ -55,9 +55,9 @@ class ForeignKey extends Migration
             $table->unsignedInteger('garbage_officer_id');
             $table->foreign('garbage_officer_id')->references('id')->on('garbage_officers')->onUpdate('cascade')->onDelete('cascade');
 
-            $table->timestampTz('created_at')->useCurrent();
-            $table->timestampTz('updated_at')->nullable();
-            $table->softDeletesTz();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable();
+            $table->softDeletes();
             $table->string('created_by');
             $table->string('update_by')->nullable();
             $table->string('deleted_by')->nullable();
@@ -74,9 +74,9 @@ class ForeignKey extends Migration
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
 
-            $table->timestampTz('created_at')->useCurrent();
-            $table->timestampTz('updated_at')->nullable();
-            $table->softDeletesTz();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable();
+            $table->softDeletes();
             $table->string('created_by');
             $table->string('update_by')->nullable();
             $table->string('deleted_by')->nullable();
@@ -90,9 +90,9 @@ class ForeignKey extends Migration
             // $table->unsignedInteger('garbage_bank_id');
             // $table->foreign('garbage_bank_id')->references('id')->on('garbage_banks')->onUpdate('cascade')->onDelete('cascade');
 
-            $table->timestampTz('created_at')->useCurrent();
-            $table->timestampTz('updated_at')->nullable();
-            $table->softDeletesTz();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable();
+            $table->softDeletes();
             $table->string('created_by');
             $table->string('update_by')->nullable();
             $table->string('deleted_by')->nullable();

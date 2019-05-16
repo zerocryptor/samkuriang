@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\GarbageBank;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Admin;
 
-class GarbageBankController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,9 @@ class GarbageBankController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json([
+            'index' => 'data yang didapat dari index'
+        ]);
     }
 
     /**
@@ -24,7 +27,9 @@ class GarbageBankController extends Controller
      */
     public function create()
     {
-        //
+        return response()->json([
+            'create' => 'data yang didapat dari create'
+        ]);
     }
 
     /**
@@ -35,51 +40,61 @@ class GarbageBankController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return response()->json([
+            'store' => 'store, insert data'
+        ]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\GarbageBank  $garbageBank
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(GarbageBank $garbageBank)
+    public function show($id)
     {
-        //
+        return response()->json([
+            'show' => 'ini show, id ke '. $id
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\GarbageBank  $garbageBank
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(GarbageBank $garbageBank)
+    public function edit($id)
     {
-        //
+        return response()->json([
+            'edit' => 'ini edit, id ke '. $id
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\GarbageBank  $garbageBank
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, GarbageBank $garbageBank)
+    public function update(Request $request, $id)
     {
-        //
+        return response()->json([
+            'update' => 'ini update, id ke '. $id
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\GarbageBank  $garbageBank
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(GarbageBank $garbageBank)
+    public function destroy($id)
     {
-        //
+        return response()->json([
+            'delete' => 'ini delete, id ke '. $id
+        ]);
     }
 }

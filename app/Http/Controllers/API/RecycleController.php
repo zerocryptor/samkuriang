@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\History;
+use App\Models\Recycle;
 use Illuminate\Http\Request;
 
-class HistoryController extends Controller
+class RecycleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class HistoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\History  $history
+     * @param  \App\Recycle  $recycle
      * @return \Illuminate\Http\Response
      */
-    public function show(History $history)
+    public function show(Recycle $recycle)
     {
         //
     }
@@ -52,10 +52,10 @@ class HistoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\History  $history
+     * @param  \App\Recycle  $recycle
      * @return \Illuminate\Http\Response
      */
-    public function edit(History $history)
+    public function edit(Recycle $recycle)
     {
         //
     }
@@ -64,10 +64,10 @@ class HistoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\History  $history
+     * @param  \App\Recycle  $recycle
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, History $history)
+    public function update(Request $request, Recycle $recycle)
     {
         //
     }
@@ -75,10 +75,10 @@ class HistoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\History  $history
+     * @param  \App\Recycle  $recycle
      * @return \Illuminate\Http\Response
      */
-    public function destroy(History $history)
+    public function destroy(Recycle $recycle)
     {
         //
     }

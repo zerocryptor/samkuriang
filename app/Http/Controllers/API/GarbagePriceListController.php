@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\Garbage;
+use App\Models\GarbagePriceList;
 use Illuminate\Http\Request;
 
-class GarbageController extends Controller
+class GarbagePriceListController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class GarbageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Garbage  $garbage
+     * @param  \App\GarbagePriceList  $garbagePriceList
      * @return \Illuminate\Http\Response
      */
-    public function show(Garbage $garbage)
+    public function show(GarbagePriceList $garbagePriceList)
     {
         //
     }
@@ -52,10 +52,10 @@ class GarbageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Garbage  $garbage
+     * @param  \App\GarbagePriceList  $garbagePriceList
      * @return \Illuminate\Http\Response
      */
-    public function edit(Garbage $garbage)
+    public function edit(GarbagePriceList $garbagePriceList)
     {
         //
     }
@@ -64,10 +64,10 @@ class GarbageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Garbage  $garbage
+     * @param  \App\GarbagePriceList  $garbagePriceList
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Garbage $garbage)
+    public function update(Request $request, GarbagePriceList $garbagePriceList)
     {
         //
     }
@@ -75,10 +75,10 @@ class GarbageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Garbage  $garbage
+     * @param  \App\GarbagePriceList  $garbagePriceList
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Garbage $garbage)
+    public function destroy(GarbagePriceList $garbagePriceList)
     {
         //
     }
