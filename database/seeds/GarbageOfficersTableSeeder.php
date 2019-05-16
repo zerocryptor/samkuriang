@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class GarbageOfficersTableSeeder extends Seeder
 {
@@ -13,13 +14,12 @@ class GarbageOfficersTableSeeder extends Seeder
     {
         for ($i=0; $i<5; $i++) {
             $faker = Faker::create('id_ID'); 
-            DB::table ('GarbageOfficersTableSeeder')->insert([
+            DB::table ('garbage_officers')->insert([
                 'email'=>$faker->email,
                 'name'=>$faker->name,
                 'address'=>$faker->address,
                 'phonenumber'=>$faker->phonenumber,
-                'password'=>hash::make('password'),
-                'savingId'=>1
+                'password'=>hash::make('password')
             ]);
         }
     }

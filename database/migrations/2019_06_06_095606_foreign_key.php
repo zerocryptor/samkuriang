@@ -87,8 +87,8 @@ class ForeignKey extends Migration
             /**
              * @foreign table garbage_banks
              */
-            $table->unsignedInteger('garbage_bank_id');
-            $table->foreign('garbage_bank_id')->references('id')->on('garbage_banks')->onUpdate('cascade')->onDelete('cascade');
+            // $table->unsignedInteger('garbage_bank_id');
+            // $table->foreign('garbage_bank_id')->references('id')->on('garbage_banks')->onUpdate('cascade')->onDelete('cascade');
 
             $table->timestampTz('created_at')->useCurrent();
             $table->timestampTz('updated_at')->nullable();

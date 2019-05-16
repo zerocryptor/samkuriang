@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
-
+use App\Admin;
 
 class UsersTableSeeder extends Seeder
 {
@@ -21,8 +21,8 @@ class UsersTableSeeder extends Seeder
                 'password' => Hash::make('password'),
                 'address' => $faker->address,
                 'phone_number' => $faker->phoneNumber,
-                'saving_id' => 1,
-                'garbage_bank_id' => 1
+                // 'garbage_bank_id' => 1,
+                'created_by' => 'Admin'
             ]);
         }
     }  

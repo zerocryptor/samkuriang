@@ -14,7 +14,7 @@ class TpsTableSeeder extends Seeder
     {
         for ($i=0; $i<5 ; $i++) {
             $faker = Faker::create('id_ID'); 
-            DB::table('TpsTableSeeder')->insert([
+            DB::table('tps')->insert([
                 'name'=>$faker->name,
                 'address'=>$faker->address,
                 'phonenumber'=>$faker->phonenumber
