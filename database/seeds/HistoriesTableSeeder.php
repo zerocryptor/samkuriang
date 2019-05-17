@@ -12,7 +12,7 @@ class HistoriesTableSeeder extends Seeder
     public function run()
     {
         for ($i=0; $i<5 ; $i++) {
-            DB::table ('HistoriesTableSeeder')->insert([
+            DB::table ('histories')->insert([
                 'user_id' => 1
             ]);
         }

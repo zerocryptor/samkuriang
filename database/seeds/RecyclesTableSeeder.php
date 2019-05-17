@@ -14,7 +14,7 @@ class RecyclesTableSeeder extends Seeder
     {
         for ($i=0; $i<5; $i++) {
             $faker = Faker::create('id_ID');  
-            DB::table('RecyclesTableSeeder')->insert([
+            DB::table('recycles')->insert([
                 'name'=>$faker->name,
                 'type'=>$faker->type
             ]);

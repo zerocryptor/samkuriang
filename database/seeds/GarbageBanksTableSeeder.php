@@ -14,7 +14,7 @@ class GarbageBanksTableSeeder extends Seeder
     {
         for ($i=0; $i < 5 ; $i++) {
             $faker = Faker::create('id_ID'); 
-            DB::table ('GarbageBanksTableSeeder')->insert([
+            DB::table ('garbage_banks')->insert([
                 'name'=>$faker->name,
                 'latitude'=>latitude($min = -90, $max = 90),
                 'longitude'=>longitude($min = -180, $max = 180),
