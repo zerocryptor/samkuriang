@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class AuthController extends Controller
+class GarbageOfficerController extends Controller
 {
     /**
      * Create a new AuthController instance.
@@ -83,11 +81,10 @@ class AuthController extends Controller
             'expires_in' => $this->guard()->factory()->getTTL() * 60
         ]);
     }
-
-public function payload()
-{
-    return auth()->payload();
-}
+    public function payload()
+    {
+        return auth()->payload();
+    }
     /**
      * Get the guard to be used during authentication.
      *
@@ -95,6 +92,6 @@ public function payload()
      */
     public function guard()
     {
-        return Auth::guard();
+        return Auth::guard('garbage-officers');
     }
 }

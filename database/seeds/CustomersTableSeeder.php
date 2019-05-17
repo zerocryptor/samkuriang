@@ -1,10 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
 
-
-class UsersTableSeeder extends Seeder
+class CustomersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,7 +11,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-       // $faker = Faker::create('id_ID');
+              // $faker = Faker::create('id_ID');
        //  for ($i=0; $i<5 ; $i++) {
            // DB::table ('users')->insert([
            //     'name' => $faker->name,
@@ -26,13 +24,12 @@ class UsersTableSeeder extends Seeder
            // ]);
 
            // }
-             DB::table('users')->insert([
-            'name' => 'Admin Samkuriang',
-            'email' => 'admin@samkuriang.com',
-            'password' => Hash::make('admin123'),
-            'address' => 'Jalan Admin No. 12',
-            'phone_number' => '08957271637'
-        ]);
-        
-    }  
+             DB::table('customers')->insert([
+            'name' => 'User Samkuriang',
+            'email' => 'user@samkuriang.com',
+            'password' => Hash::make('user123'),
+            'address' => 'Jalan User No. 12',
+            'phone_number' => '08957271622'
+        ]); 
+    }
 }

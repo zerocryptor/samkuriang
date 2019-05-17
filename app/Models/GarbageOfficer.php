@@ -16,6 +16,42 @@ class GarbageOfficer extends Authenticatable implements JWTSubject
 
     protected $guarded = ['id'];
 
+
+    /**
+     * column database
+     */
+
+    protected $fillable = [
+        'name', 'email', 'password', 'address', 'phone_number'
+    ];
+
+    /**
+     * this is for validation, link rules: https://laravel.com/docs/5.8/validation
+     */
+    public static function rules($update = false, $id = null){
+        $rules = [
+            'name' => 'required|string|max:50',
+            'email' => [
+                'required', Rule::unique('users')->ignore($id)
+            ],
+            'email' => 'required|email|max:70',
+            'password' => 'required|string|max:72',
+            'address' => 'nullable|max:150',
+            'phone_number' => 'nullable|max:16',
+            'created_by' => 'required'
+        ];
+    }
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *

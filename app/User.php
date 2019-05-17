@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Admin extends Authenticatable implements JWTSubject
+
+class User extends Authenticatable 
 {
     use Notifiable;
     /**
@@ -22,7 +22,7 @@ class Admin extends Authenticatable implements JWTSubject
      */
 
     protected $fillable = [
-        'name', 'email', 'password', 'address', 'no_telp'
+        'name', 'email', 'password', 'address', 'phone_number'
     ];
 
     /**
@@ -37,7 +37,7 @@ class Admin extends Authenticatable implements JWTSubject
             'email' => 'required|email|max:70',
             'password' => 'required|string|max:72',
             'address' => 'nullable|max:150',
-            'no_telp' => 'nullable|max:15',
+            'phone_number' => 'nullable|max:16',
             'created_by' => 'required'
         ];
     }
@@ -51,33 +51,5 @@ class Admin extends Authenticatable implements JWTSubject
         'password', 'remember_token',
     ];
 
-
-    /**
-     * Get the identifier that will be stored in the subject claim of the JWT.
-     *
-     * @return mixed
-     */
-    public function getJWTIdentifier()
-    {
-        return $this->getKey();
-    }
-
-
-    /**
-     * Return a key value array, containing any custom claims to be added to the JWT.
-     *
-     * @return array
-     */
-    public function getJWTCustomClaims()
-    {
-        return [];
-    }
-
-
-    public function setPasswordAttribute($password)
-    {
-        if ( $password !== null & $password !== "" ) {
-            $this->attributes['password'] = bcrypt($password);
-        }
-    }
 }
+

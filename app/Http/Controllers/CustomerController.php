@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Customer;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class AuthController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Create a new AuthController instance.
@@ -95,6 +96,6 @@ public function payload()
      */
     public function guard()
     {
-        return Auth::guard();
+        return Auth::guard('customers');
     }
 }
