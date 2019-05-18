@@ -13,7 +13,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-<<<<<<< HEAD
        // $faker = Faker::create('id_ID');
        //  for ($i=0; $i<5 ; $i++) {
            // DB::table ('users')->insert([
@@ -35,19 +34,5 @@ class UsersTableSeeder extends Seeder
             'phone_number' => '08957271637'
         ]);
         
-=======
-        $faker = Faker::create('id_ID');
-         for ($i=0; $i<5 ; $i++) {
-            DB::table ('users')->insert([
-                'name' => $faker->name,
-                'email' => $faker->freeEmail,
-                'password' => Hash::make('password'),
-                'address' => $faker->address,
-                'phone_number' => $faker->phoneNumber,
-                // 'garbage_bank_id' => 1,
-                'created_by' => 'Admin'
-            ]);
-        }
->>>>>>> 6740637f80466573a752fa11ce8cba6d0d4d789e
     }  
 }
