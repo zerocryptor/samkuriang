@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'api',
-        'passwords' => 'admins',
+        'passwords' => 'users',
     ],
 
     /*
@@ -30,7 +30,7 @@ return [
     | All authentication drivers have a user provider. This defines how the
     | users are actually retrieved out of your database or other storage
     | mechanisms used by this application to persist your user's data.
-    |
+    |   
     | Supported: "session", "token"
     |
     */
@@ -46,12 +46,14 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
-         'garbage-officers' => [
+
+        'garbage-officers' => [
             'driver' => 'session',
             'provider' => 'garbageofficers',
             'hash' => false,
         ],
-         'customers' => [
+        
+        'customers' => [
             'driver' => 'jwt',
             'provider' => 'customers',
             'hash' => false,
@@ -78,7 +80,7 @@ return [
     'providers' => [
         'customers' => [
             'driver' => 'eloquent',
-            'model' => App\Customer::class,
+            'model' => App\Models\Customer::class,
         ],
 
         'garbageofficers' => [
@@ -113,8 +115,8 @@ return [
     */
 
     'passwords' => [
-        'admins' => [
-            'provider' => 'admins',
+        'users' => [
+            'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
         ],

@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Customer;
+use App\Models\Customer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
+use Hash;
+use Illuminate\Support\Facades\Validator;
 
 class CustomerController extends Controller
 {
@@ -16,7 +19,7 @@ class CustomerController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('jwt', ['except' => ['login']]);
+        $this->middleware('jwt', ['except' => ['login', 'register']]);
     }
 
     /**
@@ -85,10 +88,11 @@ class CustomerController extends Controller
         ]);
     }
 
-public function payload()
-{
-    return auth()->payload();
-}
+    public function payload()
+    {
+        return auth()->payload();
+    }
+
     /**
      * Get the guard to be used during authentication.
      *
@@ -97,5 +101,39 @@ public function payload()
     public function guard()
     {
         return Auth::guard('customers');
+    }
+
+    public function register(Request $request){
+        $validator = Validator::make($request->all(), \App\Models\Customer::rules(false));
+        
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        };
+
+        $customer = new \App\Models\Customer;
+        
+        $customer->name = $request->post('name');
+        $customer->email = $request->post('email');
+        $customer->password = Hash::make($request->post('password'));
+        $customer->address = $request->post('address');
+        $customer->phone_number = $request->post('phone_number');
+        $customer->created_at = Carbon::now();
+        $customer->created_by = 'admin';
+
+        if(!$customer->save()){
+            
+            return [
+                'message' => 'Bad Request',
+                'code' => 400
+            ];
+
+        } else {
+            
+            return [
+                'message' => 'OK',
+                'code' => 200,
+            ];
+
+        }
     }
 }

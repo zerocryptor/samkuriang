@@ -4,7 +4,6 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Admin;
 
 class AdminController extends Controller
 {
@@ -15,6 +14,7 @@ class AdminController extends Controller
      */
     public function index()
     {
+        // query
         return response()->json([
             'index' => 'data yang didapat dari index'
         ]);
@@ -57,6 +57,7 @@ class AdminController extends Controller
             'show' => 'ini show, id ke '. $id
         ]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
