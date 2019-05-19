@@ -30,7 +30,7 @@ return [
     | All authentication drivers have a user provider. This defines how the
     | users are actually retrieved out of your database or other storage
     | mechanisms used by this application to persist your user's data.
-    |
+    |   
     | Supported: "session", "token"
     |
     */
@@ -44,6 +44,12 @@ return [
         'api' => [
             'driver' => 'jwt',
             'provider' => 'admins',
+            'hash' => false,
+        ],
+
+        'garbage' => [
+            'driver' => 'jwt',
+            'provider' => 'garbage',
             'hash' => false,
         ],
     ],
@@ -69,6 +75,11 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
+        ],
+
+        'garbage' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\GarbageOfficer::class,
         ],
 
         // 'users' => [
