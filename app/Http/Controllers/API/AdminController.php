@@ -14,6 +14,7 @@ class AdminController extends Controller
      */
     public function index()
     {
+        // query
         return response()->json([
             'index' => 'data yang didapat dari index'
         ]);
@@ -56,6 +57,7 @@ class AdminController extends Controller
             'show' => 'ini show, id ke '. $id
         ]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
