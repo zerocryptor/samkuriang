@@ -13,6 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
+// post
+
+// put/patch
+
+// delete
+
 Route::group([
     'prefix' => 'auth'
 
@@ -22,6 +28,35 @@ Route::group([
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
+    Route::post('payload', 'AuthController@payload');
+
+});
+
+Route::group([
+    'prefix' => 'garbage-officers'
+
+], function ($router) {
+
+    Route::post('login', 'GarbageOfficerController@login');
+    Route::post('logout', 'GarbageOfficerController@logout');
+    Route::post('refresh', 'GarbageOfficerController@refresh');
+    Route::post('me', 'GarbageOfficerController@me');
+    Route::post('payload', 'GarbageOfficerController@payload');
+
+});
+
+Route::group([
+    'prefix' => 'customers'
+
+], function ($router) {
+
+    Route::post('login', 'CustomerController@login');
+    Route::post('logout', 'CustomerController@logout');
+    Route::post('refresh', 'CustomerController@refresh');
+    Route::post('me', 'CustomerController@me');
+    Route::post('payload', 'CustomerController@payload');
+    Route::get('tabungan', 'CustomerController@tabungan');
+    Route::post('register', 'CustomerController@register');
 
 });
 
@@ -31,3 +66,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResources(['admins' => 'API\AdminController']);
+

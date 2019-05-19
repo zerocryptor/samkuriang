@@ -4,23 +4,23 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGarbageOfficersTable extends Migration
+class CreateCustomersTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+   public function up()
     {
-        Schema::create('garbage_officers', function (Blueprint $table) {
+        Schema::create('customers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name',50);
-            $table->string('email',50)->unique();
+            $table->string('email',70)->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('password',72);
-            $table->string('address',80);
-            $table->string('phone_number',16);
-            // $table->integer('saving_id');
+            $table->string('address',150);
+            $table->string('phone_number', 16);
             $table->rememberToken();
         });
     }
@@ -32,6 +32,6 @@ class CreateGarbageOfficersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('garbage_officers');
+        Schema::dropIfExists('customers');
     }
 }

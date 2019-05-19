@@ -19,7 +19,7 @@ class CreateAdminsTable extends Migration
             $table->string('email',70)->unique();
             $table->string('password',72);
             $table->string('address',150);
-            $table->string('phone_number', 15);
+            $table->string('phone_number', 16);
             $table->rememberToken();
         });
     }
