@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use DB;
+use Hash;
 
 class CustomerController extends Controller
 {
