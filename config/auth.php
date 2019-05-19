@@ -46,20 +46,16 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
-         'garbage-officers' => [
+
+        'garbage-officers' => [
             'driver' => 'session',
             'provider' => 'garbageofficers',
             'hash' => false,
         ],
-         'customers' => [
+        
+        'customers' => [
             'driver' => 'jwt',
             'provider' => 'customers',
-            'hash' => false,
-        ],
-
-        'garbage' => [
-            'driver' => 'jwt',
-            'provider' => 'garbage',
             'hash' => false,
         ],
     ],
@@ -84,7 +80,7 @@ return [
     'providers' => [
         'customers' => [
             'driver' => 'eloquent',
-            'model' => App\Customer::class,
+            'model' => App\Models\Customer::class,
         ],
 
         'garbageofficers' => [
@@ -95,11 +91,6 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
-        ],
-
-        'garbage' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\GarbageOfficer::class,
         ],
 
         // 'users' => [
