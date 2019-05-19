@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Customer;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
+use DB;
 
-class AuthController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Create a new AuthController instance.
@@ -95,6 +98,52 @@ public function payload()
      */
     public function guard()
     {
-        return Auth::guard();
+        return Auth::guard('customers');
+    }
+
+    public function tabungan(){
+        return response()->json([
+            "nama" => "andi",
+            "jumlah_tabungan" => 10000,
+            "berat_sampah" => 1
+        ]);
+    }
+
+    public function register(Request $request){
+        
+        
+        $nama = $request->post('nama');
+        $alamat = $request->post('alamat');
+        $nomor_hp = $request->post('nomor_hp');
+        $email = $request->post('email');
+        $password = $request->post('password');
+        $confirm_password = $request->post('confirm_password');
+
+        $data = [
+            'name' => $nama,
+            'email' => $email,
+            'password' => Hash::make($password),
+            'address' => $alamat,
+            'phone_number' => $nomor_hp,
+            'created_at' => Carbon::now(),
+            'created_by' => 'admin',
+        ];
+
+        // query insert
+        $insert = DB::table('customers')->insert($data);    
+
+        if($insert){
+            
+            return response()->json([
+                'message' => 'success'
+            ]);
+
+        } else {
+            
+            return response()->json([
+                'message' => 'error'
+            ]);
+
+        }
     }
 }

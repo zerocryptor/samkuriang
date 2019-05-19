@@ -66,13 +66,13 @@ class ForeignKey extends Migration
 
         Schema::table('savings', function (Blueprint $table) {
             /**
-             * @foreign table garbages,users
+             * @foreign table garbages,customers
              */
             $table->unsignedInteger('garbage_id');
             $table->foreign('garbage_id')->references('id')->on('garbages')->onUpdate('cascade')->onDelete('cascade');
 
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedInteger('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customers')->onUpdate('cascade')->onDelete('cascade');
 
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();
@@ -83,7 +83,7 @@ class ForeignKey extends Migration
             
         });   
 
-         Schema::table('users', function (Blueprint $table) {
+        Schema::table('customers', function (Blueprint $table) {
             /**
              * @foreign table garbage_banks
              */
@@ -93,11 +93,26 @@ class ForeignKey extends Migration
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();
             $table->softDeletes();
-            $table->string('created_by');
+            $table->string('created_by')->default('admin');
             $table->string('update_by')->nullable();
             $table->string('deleted_by')->nullable();
             
         });   
+            Schema::table('users', function (Blueprint $table) {
+            /**
+             * @foreign table garbage_banks
+             */
+            // $table->unsignedInteger('garbage_bank_id');
+            // $table->foreign('garbage_bank_id')->references('id')->on('garbage_banks')->onUpdate('cascade')->onDelete('cascade');
+
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable();
+            $table->softDeletes();
+            $table->string('created_by')->default('admin');
+            $table->string('update_by')->nullable();
+            $table->string('deleted_by')->nullable();
+            
+        });  
     }
 
     /**
