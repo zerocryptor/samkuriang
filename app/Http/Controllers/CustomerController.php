@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use DB;
+use Hash;
 
 class CustomerController extends Controller
 {
@@ -18,7 +19,7 @@ class CustomerController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('jwt', ['except' => ['login']]);
+        $this->middleware('jwt', ['except' => ['login', 'register']]);
     }
 
     /**
@@ -110,21 +111,12 @@ public function payload()
     }
 
     public function register(Request $request){
-        
-        
-        $nama = $request->post('nama');
-        $alamat = $request->post('alamat');
-        $nomor_hp = $request->post('nomor_hp');
-        $email = $request->post('email');
-        $password = $request->post('password');
-        $confirm_password = $request->post('confirm_password');
-
         $data = [
-            'name' => $nama,
-            'email' => $email,
-            'password' => Hash::make($password),
-            'address' => $alamat,
-            'phone_number' => $nomor_hp,
+            'name' => $request->post('name'),
+            'email' => $request->post('email'),
+            'password' => Hash::make($request->post('password')),
+            'address' => $request->post('address'),
+            'phone_number' => $request->post('phone_number'),
             'created_at' => Carbon::now(),
             'created_by' => 'admin',
         ];

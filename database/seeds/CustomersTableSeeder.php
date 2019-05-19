@@ -24,12 +24,12 @@ class CustomersTableSeeder extends Seeder
            // ]);
 
            // }
-             DB::table('customers')->insert([
-            'name' => 'User Samkuriang',
-            'email' => 'user@samkuriang.com',
-            'password' => Hash::make('user123'),
-            'address' => 'Jalan User No. 12',
-            'phone_number' => '08957271622'
-        ]); 
+            DB::table('customers')->insert([
+                'name' => 'User Samkuriang',
+                'email' => 'user@samkuriang.com',
+                'password' => Hash::make('user123'),
+                'address' => 'Jalan User No. 12',
+                'phone_number' => '08957271622'
+            ]); 
     }
 }
