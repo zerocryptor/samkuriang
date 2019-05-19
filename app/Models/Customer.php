@@ -1,11 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Validation\Rule;
 
 class Customer extends Authenticatable implements JWTSubject
 {
@@ -24,6 +25,20 @@ class Customer extends Authenticatable implements JWTSubject
     protected $fillable = [
         'name', 'email', 'password', 'address', 'no_telp'
     ];
+
+    public static function rules($update = false, $id = null){
+        return $rules = [
+            'name' => 'required|string|max:50',
+            'email' => [
+                'required', Rule::unique('customers')->ignore($id)
+            ],
+            'email' => 'required|email|max:70',
+            'password' => 'required|string|max:72',
+            'address' => 'nullable|max:150',
+            'phone_number' => 'nullable|max:16',
+            // 'created_by' => 'required'
+        ];
+    }
     
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
@@ -34,6 +49,8 @@ class Customer extends Authenticatable implements JWTSubject
     {
         return $this->getKey();
     }
+
+    
 
 
     /**

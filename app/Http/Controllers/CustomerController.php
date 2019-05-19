@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Customer;
+use App\Models\Customer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
-use DB;
 use Hash;
+use Illuminate\Support\Facades\Validator;
 
 class CustomerController extends Controller
 {
@@ -88,10 +88,11 @@ class CustomerController extends Controller
         ]);
     }
 
-public function payload()
-{
-    return auth()->payload();
-}
+    public function payload()
+    {
+        return auth()->payload();
+    }
+
     /**
      * Get the guard to be used during authentication.
      *
@@ -102,39 +103,36 @@ public function payload()
         return Auth::guard('customers');
     }
 
-    public function tabungan(){
-        return response()->json([
-            "nama" => "andi",
-            "jumlah_tabungan" => 10000,
-            "berat_sampah" => 1
-        ]);
-    }
-
     public function register(Request $request){
-        $data = [
-            'name' => $request->post('name'),
-            'email' => $request->post('email'),
-            'password' => Hash::make($request->post('password')),
-            'address' => $request->post('address'),
-            'phone_number' => $request->post('phone_number'),
-            'created_at' => Carbon::now(),
-            'created_by' => 'admin',
-        ];
+        $validator = Validator::make($request->all(), \App\Models\Customer::rules(false));
+        
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        };
 
-        // query insert
-        $insert = DB::table('customers')->insert($data);    
+        $customer = new \App\Models\Customer;
+        
+        $customer->name = $request->post('name');
+        $customer->email = $request->post('email');
+        $customer->password = Hash::make($request->post('password'));
+        $customer->address = $request->post('address');
+        $customer->phone_number = $request->post('phone_number');
+        $customer->created_at = Carbon::now();
+        $customer->created_by = 'admin';
 
-        if($insert){
+        if(!$customer->save()){
             
-            return response()->json([
-                'message' => 'success'
-            ]);
+            return [
+                'message' => 'Bad Request',
+                'code' => 400
+            ];
 
         } else {
             
-            return response()->json([
-                'message' => 'error'
-            ]);
+            return [
+                'message' => 'OK',
+                'code' => 200,
+            ];
 
         }
     }
