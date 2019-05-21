@@ -55,8 +55,9 @@ Route::group([
     Route::post('refresh', 'CustomerController@refresh');
     Route::post('me', 'CustomerController@me');
     Route::post('payload', 'CustomerController@payload');
-    Route::get('tabungan', 'CustomerController@tabungan');
+    Route::get('tabungan/{id}', 'CustomerController@tabungan');
     Route::post('register', 'CustomerController@register');
+    Route::get('profile/{id}', 'CustomerController@profile');
 
 });
 
