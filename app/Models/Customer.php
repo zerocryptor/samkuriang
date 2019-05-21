@@ -64,10 +64,10 @@ class Customer extends Authenticatable implements JWTSubject
     }
 
 
-    public function setPasswordAttribute($password)
-    {
-        if ( $password !== null & $password !== "" ) {
-            $this->attributes['password'] = bcrypt($password);
-        }
-    }
+    // public function setPasswordAttribute($password)
+    // {
+    //     if ( $password !== null & $password !== "" ) {
+    //         $this->attributes['password'] = Hash::make($password);
+    //     }
+    // }
 }

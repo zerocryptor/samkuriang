@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CustomersTableSeeder extends Seeder
+class zCustomersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,6 +16,14 @@ class CustomersTableSeeder extends Seeder
             'email' => 'user@samkuriang.com',
             'password' => Hash::make('user123'),
             'address' => 'Jalan User No. 12',
+            'phone_number' => '08957271622'
+        ]); 
+
+        DB::table('customers')->insert([
+            'name' => 'User Samkuriang 2',
+            'email' => 'user2@samkuriang.com',
+            'password' => Hash::make('user1234'),
+            'address' => 'Jalan User No. 32',
             'phone_number' => '08957271622'
         ]); 
     }

@@ -34,10 +34,22 @@ class CustomerController extends Controller
         $credentials = $request->only('email', 'password');
 
         if ($token = $this->guard()->attempt($credentials)) {
-            return $this->respondWithToken($token);
+            $customer = \App\Models\Customer::where('email', $request->post('email'))->get();
+            
+            return response()->json([
+                'error' => false,
+                'message' => 'login successfully',
+                'customer' => $customer,
+                'session' => $this->respondWithToken($token),
+            ], 200);
         }
 
-        return response()->json(['error' => 'Unauthorized'], 401);
+        return response()->json(
+            [
+                'error' => true,
+                'message' => 'Sign in error!'
+            ]
+            , 401);
     }
 
     /**
@@ -122,17 +134,17 @@ class CustomerController extends Controller
 
         if(!$customer->save()){
             
-            return [
+            return response()->json([
                 'message' => 'Bad Request',
                 'code' => 400
-            ];
+            ]);
 
         } else {
             
-            return [
-                'message' => 'OK',
+            return response()->json([
+                'message' => 'Register was Successfully!!',
                 'code' => 200,
-            ];
+            ]);
 
         }
     }

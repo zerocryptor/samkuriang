@@ -60,6 +60,12 @@ Route::group([
 
 });
 
+Route::get('contoh', function(){
+    return response()->json([
+        'contoh' => 'ini contoh'
+    ]);
+});
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
