@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'api',
+        'guard' => 'user',
         'passwords' => 'users',
     ],
 
@@ -41,15 +41,15 @@ return [
         //     'provider' => 'users',
         // ],
 
-        'api' => [
+        'user' => [
             'driver' => 'session',
             'provider' => 'users',
             'hash' => false,
         ],
 
-        'garbage-officers' => [
+        'garbage_officer' => [
             'driver' => 'session',
-            'provider' => 'garbageofficers',
+            'provider' => 'garbage_officers',
             'hash' => false,
         ],
         
@@ -83,7 +83,7 @@ return [
             'model' => App\Models\Customer::class,
         ],
 
-        'garbageofficers' => [
+        'garbage_officers' => [
             'driver' => 'eloquent',
             'model' => App\Models\GarbageOfficer::class,
         ],
