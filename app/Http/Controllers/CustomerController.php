@@ -72,7 +72,9 @@ class CustomerController extends Controller
     {
         $this->guard()->logout();
 
-        return response()->json(['message' => 'Successfully logged out']);
+        return response()->json(
+            ['message' => 'Successfully logged out']
+        );
     }
 
     /**
@@ -82,7 +84,9 @@ class CustomerController extends Controller
      */
     public function refresh()
     {
-        return $this->respondWithToken($this->guard()->refresh());
+        return $this->respondWithToken(
+            $this->guard()->refresh()
+        );
     }
 
     /**
