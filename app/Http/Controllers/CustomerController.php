@@ -156,4 +156,32 @@ class CustomerController extends Controller
 
         }
     }
+    public function profile($id)
+    {
+        try {
+            $customer = \App\Models\Customer::findOrFail($id);    
+            
+            return $customer;
+        } catch (\Throwable $th) {
+            return [
+                'message' => 'Bad Request',
+                'code' => 400
+            ];
+        }
+            
+    }
+
+    public function tabungan($id)
+    { 
+        // return response()->json([
+        //     'name' => 'Abigail',
+        //     'state' => 'CA'
+        // ]);
+        $price = \App\Models\Savings::findOrFail($id);
+        $price = DB::table('savings')->sum('price');
+            return [
+                'tabungan' => $price ,
+                'berat' => '400'
+            ];      
+    }
 }

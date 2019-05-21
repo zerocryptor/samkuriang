@@ -68,8 +68,8 @@ class ForeignKey extends Migration
             /**
              * @foreign table garbages,customers
              */
-            $table->unsignedInteger('garbage_id');
-            $table->foreign('garbage_id')->references('id')->on('garbages')->onUpdate('cascade')->onDelete('cascade');
+            // $table->unsignedInteger('garbage_id');
+            // $table->foreign('garbage_id')->references('id')->on('garbages')->onUpdate('cascade')->onDelete('cascade');
 
             $table->unsignedInteger('customer_id');
             $table->foreign('customer_id')->references('id')->on('customers')->onUpdate('cascade')->onDelete('cascade');
@@ -77,7 +77,7 @@ class ForeignKey extends Migration
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();
             $table->softDeletes();
-            $table->string('created_by');
+            $table->string('created_by')->nullable();
             $table->string('update_by')->nullable();
             $table->string('deleted_by')->nullable();
             
