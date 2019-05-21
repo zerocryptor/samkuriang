@@ -19,7 +19,7 @@ class CustomerController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('jwt', ['except' => ['login', 'register']]);
+        // $this->middleware('jwt', ['except' => ['login', 'register']]);
     }
 
     /**
@@ -34,10 +34,23 @@ class CustomerController extends Controller
         $credentials = $request->only('email', 'password');
 
         if ($token = $this->guard()->attempt($credentials)) {
-            return $this->respondWithToken($token);
+            $customer = \App\Models\Customer::where('email', $request->post('email'))->get();
+            
+            return response()->json([
+                'error' => false,
+                'message' => 'Login sucessfully',
+                'customer' => $customer[0],
+                'token' => $this->respondWithToken($token)
+                // 'customer' => $customer,
+            ], 200);
         }
 
-        return response()->json(['error' => 'Unauthorized'], 401);
+        return response()->json(
+            [
+                'error' => true,
+                'message' => 'Sign in error!'
+            ]
+            , 200);
     }
 
     /**
@@ -122,17 +135,20 @@ class CustomerController extends Controller
 
         if(!$customer->save()){
             
-            return [
+            return response()->json([
                 'message' => 'Bad Request',
                 'code' => 400
-            ];
+            ]);
 
         } else {
-            
-            return [
-                'message' => 'OK',
-                'code' => 200,
-            ];
+            $getCustomer = \App\Models\Customer::where('email', $request->post('email'))->get();
+
+            return response()->json([
+                'error' => false,
+                'message' => 'Register was Successfully!!',
+                'customer' => $getCustomer[0],
+                'code' => 200
+            ], 200);
 
         }
     }
