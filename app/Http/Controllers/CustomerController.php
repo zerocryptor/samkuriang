@@ -19,7 +19,7 @@ class CustomerController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('jwt', ['except' => ['login', 'register']]);
+        // $this->middleware('jwt', ['except' => ['login', 'register']]);
     }
 
     /**
@@ -38,9 +38,10 @@ class CustomerController extends Controller
             
             return response()->json([
                 'error' => false,
-                'message' => 'login successfully',
-                'customer' => $customer,
-                'session' => $this->respondWithToken($token),
+                'message' => 'Login sucessfully',
+                'customer' => $customer[0],
+                'token' => $this->respondWithToken($token)
+                // 'customer' => $customer,
             ], 200);
         }
 
@@ -49,7 +50,7 @@ class CustomerController extends Controller
                 'error' => true,
                 'message' => 'Sign in error!'
             ]
-            , 401);
+            , 200);
     }
 
     /**
@@ -140,11 +141,14 @@ class CustomerController extends Controller
             ]);
 
         } else {
-            
+            $getCustomer = \App\Models\Customer::where('email', $request->post('email'))->get();
+
             return response()->json([
+                'error' => false,
                 'message' => 'Register was Successfully!!',
-                'code' => 200,
-            ]);
+                'customer' => $getCustomer[0],
+                'code' => 200
+            ], 200);
 
         }
     }
