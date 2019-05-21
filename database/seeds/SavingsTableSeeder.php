@@ -11,11 +11,12 @@ class SavingsTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i<5 ; $i++) {
+        // for ($i=0; $i<5 ; $i++) {
             DB::table ('savings')->insert([
-                'garbage_id' => 1,
-                'user_id' => 1
+                'customer_id' => 1 ,
+                'price' => '125000',
+                'size' => '10'
             ]);
-        }
+        // }
     }
 }

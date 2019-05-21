@@ -23,7 +23,7 @@ class GarbageOfficersTableSeeder extends Seeder
         //        'savingId'=>1
         //    ]);
         // }
-         DB::table('garbage_officers')->insert([
+        DB::table('garbage_officers')->insert([
             'name' => 'Petugas Bank Sampah',
             'email' => 'petugas@samkuriang.com',
             'password' => Hash::make('petugas123'),
