@@ -15,8 +15,8 @@ class CreateSavingsTable extends Migration
     {
         Schema::create('savings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('price',25);
-            $table->string('size',25);
+            $table->decimal('price',15,2);
+            $table->decimal('size',15,2);
         });
     }
 

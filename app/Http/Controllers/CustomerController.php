@@ -19,7 +19,7 @@ class CustomerController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('jwt', ['except' => ['login', 'register']]);
+        // $this->middleware('jwt', ['except' => ['login', 'register']]);
     }
 
     /**
@@ -34,10 +34,23 @@ class CustomerController extends Controller
         $credentials = $request->only('email', 'password');
 
         if ($token = $this->guard()->attempt($credentials)) {
-            return $this->respondWithToken($token);
+            $customer = \App\Models\Customer::where('email', $request->post('email'))->get();
+            
+            return response()->json([
+                'error' => false,
+                'message' => 'Login sucessfully',
+                'customer' => $customer[0],
+                'token' => $this->respondWithToken($token)
+                // 'customer' => $customer,
+            ], 200);
         }
 
-        return response()->json(['error' => 'Unauthorized'], 401);
+        return response()->json(
+            [
+                'error' => true,
+                'message' => 'Sign in error!'
+            ]
+            , 200);
     }
 
     /**
@@ -59,7 +72,9 @@ class CustomerController extends Controller
     {
         $this->guard()->logout();
 
-        return response()->json(['message' => 'Successfully logged out']);
+        return response()->json(
+            ['message' => 'Successfully logged out']
+        );
     }
 
     /**
@@ -69,7 +84,9 @@ class CustomerController extends Controller
      */
     public function refresh()
     {
-        return $this->respondWithToken($this->guard()->refresh());
+        return $this->respondWithToken(
+            $this->guard()->refresh()
+        );
     }
 
     /**
@@ -122,18 +139,49 @@ class CustomerController extends Controller
 
         if(!$customer->save()){
             
+            return response()->json([
+                'message' => 'Bad Request',
+                'code' => 400
+            ]);
+
+        } else {
+            $getCustomer = \App\Models\Customer::where('email', $request->post('email'))->get();
+
+            return response()->json([
+                'error' => false,
+                'message' => 'Register was Successfully!!',
+                'customer' => $getCustomer[0],
+                'code' => 200
+            ], 200);
+
+        }
+    }
+    public function profile($id)
+    {
+        try {
+            $customer = \App\Models\Customer::findOrFail($id);    
+            
+            return $customer;
+        } catch (\Throwable $th) {
             return [
                 'message' => 'Bad Request',
                 'code' => 400
             ];
-
-        } else {
-            
-            return [
-                'message' => 'OK',
-                'code' => 200,
-            ];
-
         }
+            
+    }
+
+    public function tabungan($id)
+    { 
+        // return response()->json([
+        //     'name' => 'Abigail',
+        //     'state' => 'CA'
+        // ]);
+        $price = \App\Models\Savings::findOrFail($id);
+        $price = DB::table('savings')->sum('price');
+            return [
+                'tabungan' => $price ,
+                'berat' => '400'
+            ];      
     }
 }
