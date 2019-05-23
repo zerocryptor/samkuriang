@@ -1,0 +1,10 @@
+.logo {
+    height: 50px;
+    width: 200px;
+    padding-left: 0px;
+    cursor: pointer;
+}
+
+.bg {
+    background-color: #055A3D;
+}

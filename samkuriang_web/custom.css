@@ -1,0 +1,18 @@
+.logo {
+    height: 100px;
+    width: 300px;
+    padding-left: 0px;
+}
+
+.bg {
+    background-color: #055A3D;
+}
+
+.navbar {
+    position: absolute;
+}
+
+.login {
+    height: 50px;
+    width: 100px;
+}
