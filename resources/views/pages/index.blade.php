@@ -13,7 +13,5 @@
     <div id="preloader">
         <div class="samkuriang-load"></div>
     </div>
-
-
 </body>
 </html>
