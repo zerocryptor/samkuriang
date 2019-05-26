@@ -50,13 +50,10 @@ class LoginController extends Controller
         
         $credentials = $request->only('email', 'password');
 
-        if (Auth::guard('garbage_officer')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-            
-            $request->session()->regenerate();
-
-            $this->clearLoginAttempts($request);
+        if (Auth::guard('garbage_officer')->attempt($credentials, $request->get('remember'))) {
 
             return redirect()->intended('/garbage_officer');
+
         }
 
         return back()->withInput($request->only('email', 'remember'));
