@@ -46,6 +46,7 @@ Route::group([
 });
 
 Route::group([
+    
     'prefix' => 'customers'
 
 ], function ($router) {
@@ -58,7 +59,7 @@ Route::group([
     Route::get('tabungan/{id}', 'CustomerController@tabungan');
     Route::post('register', 'CustomerController@register');
     Route::get('profile/{id}', 'CustomerController@profile');
-
+    Route::put('update-profile/{id}', 'CustomerController@updateProfile');
 });
 
 Route::get('contoh', function(){
