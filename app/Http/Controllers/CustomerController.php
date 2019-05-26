@@ -152,6 +152,7 @@ class CustomerController extends Controller
 
         }
     }
+    
     public function profile($id)
     {
         try {
