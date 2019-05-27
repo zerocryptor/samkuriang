@@ -206,11 +206,11 @@ class CustomerController extends Controller
 
     public function tabungan($id)
     { 
-        $price = \App\Models\Savings::findOrFail($id);
-        $price = DB::table('savings')->sum('price');
-            return [
-                'tabungan' => $price,
-                'berat' => '400'
-            ];      
+        $price = \App\Models\Savings::where('customer_id', $id)->select('price')->sum('price');
+        $size = \App\Models\Savings::where('customer_id', $id)->select('size')->sum('size');
+        return response()->json([
+            'tabungan' => $price,
+            'berat' => $size
+        ]);     
     }
 }

@@ -17,6 +17,13 @@ class SavingsTableSeeder extends Seeder
                 'price' => '125000',
                 'size' => '10'
             ]);
+
+            DB::table ('savings')->insert([
+                'customer_id' => 1 ,
+                'price' => '13500',
+                'size' => '110'
+            ]);
+
         // }
     }
 }
