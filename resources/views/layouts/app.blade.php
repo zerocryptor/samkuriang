@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +13,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
+    <!-- icon -->
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -21,8 +24,13 @@
     <link rel="stylesheet" href="{{ asset('vendors/bootstrap-4.0.0/dist/css/bootstrap.min.css') }}">
 </head>
 <body>
+    <!-- Preloader Start -->
+    <div id="preloader">
+        <div class="samkuriang-load"></div>
+    </div>
+    
     <nav id="topheader" class="navbar navbar-expand-lg navbar-light bg-light pt-3">
-        <a class="navbar-brand pl-3 mb-3 pt-4" href="#"><img src="../../public/asset/logo.png {{ asset('vendors/bootstrap-4.0.0/dist/css/bootstrap.min.css') }}" alt="" class="logo"><strong>Samkuriang</strong></a>
+        <a class="navbar-brand pl-3 mb-3 pt-4" href="#"><img src="{{asset('img/logo.png')}}" alt="" class="logo"><strong>Samkuriang</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -47,11 +55,9 @@
             </form>
         </div>
     </nav>
+    @yield('content')
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+    <!-- taro footer disini -->
 
     <!-- script -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

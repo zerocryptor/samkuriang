@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Samkuriang | A fine glass vase goes from treasure to trash, the moment it is broken.</title>
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-</head>
-<body>
-    <!-- Preloader Start -->
-    <div id="preloader">
-        <div class="samkuriang-load"></div>
-    </div>
-</body>
-</html>
+@extends(layouts.app)
+@section('content')
+
 
 <section id="fitur">
     <div class="container">
@@ -63,9 +50,10 @@
               <h3 style="font-size: 20px; font-weight : bold;color:#055A3D">sampah.</h3>
                 <p>Sama halnya dengan bank kovensional, bank sampah yang anda daftarkan pada SAMKURIANG dapat menyimpan duit hasil pertukaran sampah secara realtime dan anda dapat ambil itu kapan saja.</p>
             </div>  
-        </div>x
+        </div>
     </div>
 </section>
+@endsection
 
 <!-- <section id="mitra" style="background-image: url(aset/bg.png)">
         <div class="container">
