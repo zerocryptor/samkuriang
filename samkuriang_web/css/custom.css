@@ -1,0 +1,56 @@
+.logo {
+    height: 50px;
+    width: 200px;
+    padding-left: 0px;
+    cursor: pointer;
+}
+
+.bg {
+    background-color: #055A3D;
+}
+
+.padding-20 {
+	padding: 20px;
+}
+.padding-60 {
+	padding: 60px;
+}
+.padding-30 {
+	padding: 30px;
+}
+
+.garis_hijau {
+	border-bottom: 4px solid   #31A05E ;
+	width: 50px;
+    margin-bottom: 10px;
+}
+
+.garis {
+	border-bottom: 4px solid #EB4231;
+	width: 50px;
+    margin-bottom: 10px;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.imgfitur {
+    height: 100%;
+    width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+}
+
+/* .bg-mitra{
+    background-image: url("aset/bg.png");
+    height: 100%;
+    width : 100%;
+    margin : 0px auto;
+    padding: 15px;
+} */
+
+#mitra{
+    padding: 40px 0px 40px;
+	margin-top: 50px
+}
