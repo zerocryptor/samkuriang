@@ -31,6 +31,16 @@
     padding: 15px;
 }
 
+.img-button{
+    width: 400px;
+    height: 100;
+}
+
+.padding-0{
+    padding: 0px!important;
+}
+
+
 /* .bg-mitra{
     background-image: url("aset/bg.png");
     height: 100%;

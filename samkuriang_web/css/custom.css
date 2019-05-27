@@ -19,6 +19,7 @@
 	padding: 30px;
 }
 
+
 .garis_hijau {
 	border-bottom: 4px solid   #31A05E ;
 	width: 50px;
@@ -40,6 +41,15 @@
     width: 100%;
     margin: 20px auto;
     padding: 15px;
+}
+
+.img-button{
+    width: 400px;
+    height: 100;
+}
+
+.padding-0{
+    padding: 0px!important;
 }
 
 /* .bg-mitra{

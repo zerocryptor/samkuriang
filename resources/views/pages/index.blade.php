@@ -1,6 +1,23 @@
 @extends(layouts.app)
 @section('content')
 
+<section id="home">
+        <div class="row">
+            <div class="padding-60" style="margin-top: 200px; margin-left: 100px;">
+                <h1 class="display-3" style="color: #055A3D; font-weight: 700">Samkuriang</h1> 
+                <p class="lead">Samkuriang adalah aplikasi yang menghubungkan masyarakat dengan Bank Sampah.<br/>
+                            Keunggulan dari Samkuriang adalah dapat mendeteksi jenis sampah, informasi sampah <br/>
+                            dan cek lokasi bank Sampah </p>  
+                <p class="lead">Temukan Kami Di</p>    
+                <a href="#" target="_blank">
+                    <img src="aset/playstore.png" class="img-button">    </a>
+            </div>     
+
+            <div class="col padding-0">
+                <img class="img-fluid" src="aset/home.png" alt="thumnail image">
+            </div>
+         </div>
+</section>
 
 <section id="fitur">
     <div class="container">
