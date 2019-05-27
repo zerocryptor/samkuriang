@@ -76,16 +76,13 @@
 
 <section id="fitur">
     <div class="container">
-        <div class="row" >
-            <div class="col-xs-12 col-lg-12 text-center">
+        <div class="row">
+        <div class="col-xs-12 col-lg-12 text-center">
             <div class="padding-20"></div>
             <h3 style="font-size: 30px; font-weight : bold; color: #055A3D">Fitur Samkuriang.</h3>
             <div class="garis" style="margin:10px auto"></div>
-        </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
+            </div>
+
             <div class="col-xs-12 col-md-6">
             <div class="padding-60"></div>
             <h3 style="font-size: 25px; margin-bottom: -4px; font-weight : bold; color: #055A3D">Scan</h3>
