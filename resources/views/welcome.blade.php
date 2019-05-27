@@ -1,101 +1,226 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="{{app()->getLocale() }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <title>Samkuriang | A fine glass vase goes from treasure to trash, the moment it is broken.</title>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
-            .full-height {
-                height: 100vh;
-            }
+    <!-- icon -->
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('asset_login/css/style.css') }}">
 
-            .position-ref {
-                position: relative;
-            }
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ asset('vendors/bootstrap-4.0.0/dist/css/bootstrap.min.css') }}">
+</head>
+<body>
+    <!-- Preloader Start -->
+    <div id="preloader">
+        <div class="samkuriang-load"></div>
+    </div>
+    
+    <nav id="topheader" class="navbar navbar-expand-lg navbar-light bg-light pt-3">
+        <a class="navbar-brand pl-3 mb-3 pt-4" href="#"><img src="{{asset('img/logo.png')}}" alt="" class="logo"><strong>Samkuriang</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+        <div class="collapse navbar-collapse pr-4" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto pr-3">
+                <li class="nav-item active pr-3">
+                    <a class="nav-link" href="#">Beranda<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item pr-3">
+                    <a class="nav-link" href="#">Fitur</a>
+                </li>
+                <li class="nav-item pr-3">
+                    <a class="nav-link" href="#">Mitra</a>
+                </li>
+                <li class="nav-item pr-3">
+                    <a class="nav-link" href="#">FAQ</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+            <a href="{{ route('login') }}" button class="btn btn-outline-success my-2 my-sm-0 btn-1 sign-in-btn" type="submit">Login</button></a>
+            </form>
+        </div>
+    </nav>
+    <section id="home">
+        <div class="row">
+            <div class="padding-40" style="margin-top: 130px; margin-left: 100px;">
+                <h2 class="display-3" style="color: #055A3D; font-weight: 400">Samkuriang</h1> 
+                <p class="lead">Samkuriang adalah aplikasi yang menghubungkan masyarakat dengan Bank Sampah.<br/>
+                            Keunggulan dari Samkuriang adalah dapat mendeteksi jenis sampah, informasi sampah <br/>
+                            dan cek lokasi bank Sampah </p>  
+                <p class="lead">Temukan Kami Di</p>    
+                <a href="#" target="_blank">
+                    <img src="{{asset('img/playstore.png')}}" class="img-button">    </a>
+            </div>     
 
-            .content {
-                text-align: center;
-            }
+            <div class="col padding-0">
+                <img class="img-fluid" src="{{asset('img/home.png')}}" alt="thumbnail image">
+            </div>
+         </div>
+</section>
 
-            .title {
-                font-size: 84px;
-            }
+<section id="fitur">
+    <div class="container">
+        <div class="row" >
+            <div class="col-xs-12 col-lg-12 text-center">
+            <div class="padding-20"></div>
+            <h3 style="font-size: 30px; font-weight : bold; color: #055A3D">Fitur Samkuriang.</h3>
+            <div class="garis" style="margin:10px auto"></div>
+        </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+            <div class="padding-60"></div>
+            <h3 style="font-size: 25px; margin-bottom: -4px; font-weight : bold; color: #055A3D">Scan</h3>
+            <h3 style="font-size: 25px; font-weight : bold; color: #055A3D">sampah.</h3>
+                <p class="lead">Anda dapat memilah jenis dan bentuk sampah dengan mudah dengan bantuan object detection pada aplikasi SAMKURIANG.</p>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <img class="imgfitur" src="{{asset('img/scan2.png')}}">
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <img class="imgfitur" src="{{asset('img/search.png')}}">
+            </div>
+            <div class="col-xs-12 col-md-6">
+            <div class="padding-60"></div>
+            <h3 style="font-size: 25px; margin-bottom: -4px; font-weight : bold; color: #055A3D">Search</h3>
+            <h3 style="font-size: 25px; font-weight : bold; color: #055A3D">bank sampah.</h3>
+                <p class="lead">Mencari bank sampah terdekat dengan lingkungan anda menjadi mudah dan menyenangkan menggunakan SAMKURIANG.</p>
+            </div>  
+            <div class="col-xs-12 col-md-6">
+            <div class="padding-60"></div>
+            <h3 style="font-size: 25px; margin-bottom: -4px; font-weight : bold; color: #055A3D">Navigasi ke</h3> 
+            <h3 style="font-size: 25px; font-weight : bold; color: #055A3D">bank sampah.</h3>
+                <p class="lead">Bertemu dengan bank sampah terdekat belum lengkap jika tidak adanya navigasi menuju ke tempat tujuan, di SAMKURIANG anda dapatkan itu secara gratis.</p>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <img class="imgfitur" src="{{asset('img/navigate.png')}}">
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <img class="imgfitur" src="{{asset('img/nabung.png')}}">
+            </div>
+            <div class="col-xs-12 col-md-6">
+            <div class="padding-60"></div>
+              <h3 style="font-size: 25px ; margin-bottom: -3px; font-weight : bold; color:#055A3D">Tabungan</h3>
+              <h3 style="font-size: 25px; font-weight : bold;color:#055A3D">sampah.</h3>
+                <p class="lead">Sama halnya dengan bank kovensional, bank sampah yang anda daftarkan pada SAMKURIANG dapat menyimpan duit hasil pertukaran sampah secara realtime dan anda dapat ambil itu kapan saja.</p>
+            </div>  
+        </div>
+    </div>
+</section>
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+<section id="faq-section">
+        <div class="container">
+          <div class="row">
+            <!-- ***** FAQ Start ***** -->
+            <div class="col-md-6 offset-md-3">
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="faq-title text-center pb-3">
+                    <h2>FAQ</h2>
                 </div>
             </div>
+            <div class="col-md-6 offset-md-3">
+                <div class="faq" id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="faqHeading-1">
+                            <div class="mb-0">
+                                <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-1" data-aria-expanded="true" data-aria-controls="faqCollapse-1">
+                                    <span class="badge">1</span>Apa itu Petugas Bank Sampah?
+                                </h5>
+                            </div>
+                        </div>
+                        <div id="faqCollapse-1" class="collapse" aria-labelledby="faqHeading-1" data-parent="#accordion">
+                            <div class="card-body">
+                                <p>Petugas Bank Sampah adalah orang yang menjadi admin dimasing masing bank sampah yang dia tempati. Petugas Bank Sampah dapat mengubah total sampah yang disetorkan oleh nasabah dan total duit yang nasabah kumpulkan setiap menyetorkan sampahnya di bank sampah yang sudah ia daftarkan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="faqHeading-2">
+                            <div class="mb-0">
+                                <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-2" data-aria-expanded="false" data-aria-controls="faqCollapse-2">
+                                    <span class="badge">2</span>Apa itu Bank Sampah?
+                                </h5>
+                            </div>
+                        </div>
+                        <div id="faqCollapse-2" class="collapse" aria-labelledby="faqHeading-2" data-parent="#accordion">
+                            <div class="card-body">
+                                <p>Bank Sampah adalah suatu tempat yang digunakan untuk mengumpulkan sampah yang sudah dipilah-pilah. Hasil dari pengumpulan sampah yang sudah dipilah akan disetorkan ke tempat pembuatan kerajinan sampah atau ke tempat pengepul sampah terdekat di daerahnya. Bank Sampah dikelola menggunakan sistem di web yang dilakukan oleh penjaga bank sampah dari masing-masing tempat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="faqHeading-3">
+                            <div class="mb-0">
+                                <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-3" data-aria-expanded="false" data-aria-controls="faqCollapse-3">
+                                    <span class="badge">3</span>Apa itu Nasabah?
+                                </h5>
+                            </div>
+                        </div>
+                        <div id="faqCollapse-3" class="collapse" aria-labelledby="faqHeading-3" data-parent="#accordion">
+                            <div class="card-body">
+                                <p>Nasabah adalah orang yang sudah terdaftar menjadi anggota suatu bank sampah. Aktivitas nasabah baik penukaran sampah yang dilakukan maupun penyimpanan duit pada bank sampah tersebut akan selalu tercatat di setiap akun nasabah. Duit penyimpanan nasabah yang ada di Bank Sampah, bisa diambil kapanpun sesuka hati langsung dari Bank Sampahnya.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="faqHeading-4">
+                            <div class="mb-0">
+                                <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-4" data-aria-expanded="false" data-aria-controls="faqCollapse-4">
+                                    <span class="badge">4</span>Bagaimana cara daftar sebagai Petugas Bank Sampah?
+                                </h5>
+                            </div>
+                        </div>
+                        <div id="faqCollapse-4" class="collapse" aria-labelledby="faqHeading-4" data-parent="#accordion">
+                            <div class="card-body">
+                                <p>Anda dapat mendaftarkan sebagai Petugas Bank Sampah yang anda naungi melalui registrasi di web.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="faqHeading-6">
+                            <div class="mb-0">
+                                <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-6" data-aria-expanded="false" data-aria-controls="faqCollapse-6">
+                                    <span class="badge">5</span>Bagaimana caranya menjadi Nasabah?
+                                </h5>
+                            </div>
+                        </div>
+                        <div id="faqCollapse-6" class="collapse" aria-labelledby="faqHeading-6" data-parent="#accordion">
+                            <div class="card-body">
+                                <p>Anda dapat mendaftarkan sebagai Nasabah sudah terdaftar pada suatu bank sampah melalui registrasidi aplikasi Samkuriang. Pengajuan pendaftaran pada suatu bank sampah terdapat di menu home aplikasi Samkuriang.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
-    </body>
+</section>
+
+
+
+    <!-- taro footer disini -->
+
+    <!-- script -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
 </html>
