@@ -43,3 +43,41 @@
     padding: 40px 0px 40px;
 	margin-top: 50px
 }
+
+.logo {height: 70px; width: 70px;}
+        .navbar-light{
+            background-color: #e8f8eb;
+        }
+
+        .navbar-brand{
+            color: #055a3d;
+        }
+
+        #topheader .navbar-nav li > a {
+            text-transform: capitalize;
+            color: #333;
+            transition: color .2s;
+        }
+        #topheader .navbar-nav li > a:hover, #topheader .navbar-nav li > a:focus {
+            color: #31a05e;
+        }
+        #topheader .navbar-nav li.active > a {
+            color: #31a05e;
+        }
+
+        .btn {
+            width: 110px;
+            text-align: center;
+            transition: 0.7s;
+            background-size: 180% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 40px;
+        }
+        .btn:hover {
+            background-position: right center;
+            color: white;
+        }
+        .btn-1 {
+            background-image: linear-gradient(to right, #055a3d 0%, #002031 51%, #055a3d 100%);
+        }
