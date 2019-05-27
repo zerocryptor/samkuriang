@@ -128,7 +128,7 @@ class CustomerController extends Controller
         };
 
         $customer = new \App\Models\Customer;
-        
+
         $customer->name = $request->post('name');
         $customer->email = $request->post('email');
         $customer->password = Hash::make($request->post('password'));
@@ -156,11 +156,12 @@ class CustomerController extends Controller
 
         }
     }
+
     public function profile($id)
     {
         try {
             $customer = \App\Models\Customer::findOrFail($id);    
-            
+
             return $customer;
         } catch (\Throwable $th) {
             return [
@@ -168,19 +169,47 @@ class CustomerController extends Controller
                 'code' => 400
             ];
         }
-            
+    }
+
+    public function updateProfile(Request $request, \App\Models\Customer $customer){
+        $validator = Validator::make($request->all(), \App\Models\Customer::rules(true, $customer->id));
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        };
+
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'address' => $request->address,
+            'phone_number' => $request->phone_number,
+            'created_by' => 'admin'
+        ];
+
+        if(!$customer->where('id', $request->id)->update($data)){
+
+            return response()->json([
+                'message' => 'Bad Request',
+                'code' => 400,
+            ]);
+
+        } else {
+
+            return response()->json([
+                'message' => 'OK',
+                'code' => 201,
+            ]);
+
+        }
     }
 
     public function tabungan($id)
     { 
-        // return response()->json([
-        //     'name' => 'Abigail',
-        //     'state' => 'CA'
-        // ]);
         $price = \App\Models\Savings::findOrFail($id);
         $price = DB::table('savings')->sum('price');
             return [
-                'tabungan' => $price ,
+                'tabungan' => $price,
                 'berat' => '400'
             ];      
     }

@@ -21,7 +21,7 @@ class GarbageOfficersTableSeeder extends Seeder
         //        'phonenumber'=>$faker->phonenumber,
         //        'password'=>hash::make('password'),
         //        'savingId'=>1
-        //    ]);
+        //    ]);   
         // }
         DB::table('garbage_officers')->insert([
             'name' => 'Petugas Bank Sampah',
