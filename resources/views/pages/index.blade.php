@@ -34,10 +34,10 @@
                 <p>Anda dapat memilah jenis dan bentuk sampah dengan mudah dengan bantuan object detection pada aplikasi SAMKURIANG.</p>
             </div>
             <div class="col-xs-12 col-md-6">
-                <img class="imgfitur" src="aset/scan2.png">
+                <img class="imgfitur" src="{{asset('img/scan2.png')}}">
             </div>
             <div class="col-xs-12 col-md-6">
-                <img class="imgfitur" src="aset/search.png">
+                <img class="imgfitur" src="{{asset('img/search.png')}}">
             </div>
             <div class="col-xs-12 col-md-6">
             <div class="padding-60"></div>
@@ -52,10 +52,10 @@
                 <p>Bertemu dengan bank sampah terdekat belum lengkap jika tidak adanya navigasi menuju ke tempat tujuan, di SAMKURIANG anda dapatkan itu secara gratis.</p>
             </div>
             <div class="col-xs-12 col-md-6">
-                <img class="imgfitur" src="aset/navigate.png">
+                <img class="imgfitur" src="{{asset('img/navigate.png')}}">
             </div>
             <div class="col-xs-12 col-md-6">
-                <img class="imgfitur" src="aset/nabung.png">
+                <img class="imgfitur" src="{{asset('img/nabung.png')}}">
             </div>
             <div class="col-xs-12 col-md-6">
             <div class="padding-60"></div>
@@ -63,11 +63,11 @@
               <h3 style="font-size: 20px; font-weight : bold;color:#055A3D">sampah.</h3>
                 <p>Sama halnya dengan bank kovensional, bank sampah yang anda daftarkan pada SAMKURIANG dapat menyimpan duit hasil pertukaran sampah secara realtime dan anda dapat ambil itu kapan saja.</p>
             </div>  
-        </div>
+        </div>x
     </div>
 </section>
 
-<section id="mitra" style="background-image: url(aset/bg.png)">
+<!-- <section id="mitra" style="background-image: url(aset/bg.png)">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-lg-12 text-center">
@@ -101,4 +101,4 @@
                     <p style="color : #fffefe ">cimanggis</p>
                 </div>
     </div>
-</section>
+</section> -->
