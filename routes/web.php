@@ -15,10 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login/garbage_officer', 'Auth\LoginController@showGarbageOfficerLoginForm');
+Route::get('/register/garbage_officer', 'Auth\RegisterController@showGarbageOfficerRegisterForm');
+Route::post('/login/garbage_officer', 'Auth\LoginController@garbageofficerLogin');
+Route::post('/register/garbage_officer', 'Auth\RegisterController@createGarbageOfficer');
+
 Auth::routes();
 
+Route::get('/garbage_officer', 'GarbageOfficerController@index')->name('home_garbage_officer');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');

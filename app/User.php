@@ -15,7 +15,7 @@ class User extends Authenticatable
      */
 
     protected $guarded = ['id'];
-
+    protected $guard = 'user';
 
     /**
      * column database
@@ -38,7 +38,7 @@ class User extends Authenticatable
             'password' => 'required|string|max:72',
             'address' => 'nullable|max:150',
             'phone_number' => 'nullable|max:16',
-            'created_by' => 'required'
+            //'created_by' => 'required'
         ];
     }
 

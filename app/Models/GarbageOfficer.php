@@ -15,7 +15,7 @@ class GarbageOfficer extends Authenticatable implements JWTSubject
      */
 
     protected $guarded = ['id'];
-
+    protected $guard = 'garbage_officer';
 
     /**
      * column database
@@ -38,7 +38,7 @@ class GarbageOfficer extends Authenticatable implements JWTSubject
             'password' => 'required|string|max:72',
             'address' => 'nullable|max:150',
             'phone_number' => 'nullable|max:16',
-            'created_by' => 'required'
+           // 'created_by' => 'required'
         ];
     }
 
