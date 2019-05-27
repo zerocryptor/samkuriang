@@ -65,7 +65,7 @@
             color: #31a05e;
         }
 
-        .btn {
+        .form-inline .btn {
             width: 110px;
             text-align: center;
             transition: 0.7s;
