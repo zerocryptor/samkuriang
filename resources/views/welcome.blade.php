@@ -79,7 +79,8 @@
                 <div class="col-md-6 pl-5 pt-4">
                     <h1 class="pt-5" style="color: #055A3D; font-weight: 400">Samkuriang</h1> 
                     <p class="pb-5">Samkuriang adalah aplikasi yang menghubungkan masyarakat dengan Bank Sampah. Keunggulan dari Samkuriang adalah dapat mendeteksi jenis sampah, informasi sampah dan cek lokasi bank Sampah </p>  
-                    <p class="">Temukan Kami Di</p> 
+                    <br><br><br>
+                    <p class="">Temukan kami di:</p> 
                     <a href="#" target="_blank">
                         <img src="{{asset('img/playstore.png')}}" class="img-button img-fluid">
                     </a>
@@ -149,7 +150,7 @@
         </div>
     </div>
 </section>
-    <section id="mitra" class="bg-mitra">
+    <!-- <section id="mitra" class="bg-mitra">
             <div class="container"></div>
                 <div class="row">
                         <div class="col-xs-12 col-lg-12 text-center">
@@ -183,7 +184,7 @@
                             <p style="color : #fffefe ">cimanggis</p>
                             </div>
                 </div>
-    </section>
+    </section> -->
     <section id="faq-section">
         <div class="container">
           <div class="row">

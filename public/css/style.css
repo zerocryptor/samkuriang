@@ -69,8 +69,9 @@
 
 
 .img-button{
-    width: 400px;
-    height: 100;
+    width: 150px;
+    margin-left: -15px;
+    margin-top: -16px;
 }
 
 .padding-0{
