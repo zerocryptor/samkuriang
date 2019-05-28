@@ -12,6 +12,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
 
     <!-- icon -->
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
@@ -29,98 +30,121 @@
     <div id="preloader">
         <div class="samkuriang-load"></div>
     </div>
-    
-    <nav id="topheader" class="navbar navbar-expand-lg navbar-light bg-light pt-3">
-        <a class="navbar-brand pl-3 mb-3 pt-4" href="#"><img src="{{asset('img/logo.png')}}" alt="" class="logo"><strong>Samkuriang</strong></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse pr-4" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto pr-3">
-                <li class="nav-item active pr-3">
-                    <a class="nav-link" href="#">Beranda<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item pr-3">
-                    <a class="nav-link" href="#">Fitur</a>
-                </li>
-                <li class="nav-item pr-3">
-                    <a class="nav-link" href="#">Mitra</a>
-                </li>
-                <li class="nav-item pr-3">
-                    <a class="nav-link" href="#">FAQ</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-            <a href="{{ route('login') }}" button class="btn btn-outline-success my-2 my-sm-0 btn-1 sign-in-btn" type="submit">Login</button></a>
-            </form>
-        </div>
-    </nav>
-    <section id="home">
+
+    <div class="container-fluid">
         <div class="row">
-            <div class="padding-40" style="margin-top: 130px; margin-left: 100px;">
-                <h2 class="display-3" style="color: #055A3D; font-weight: 400">Samkuriang</h1> 
-                <p class="lead">Samkuriang adalah aplikasi yang menghubungkan masyarakat dengan Bank Sampah.<br/>
-                            Keunggulan dari Samkuriang adalah dapat mendeteksi jenis sampah, informasi sampah <br/>
-                            dan cek lokasi bank Sampah </p>  
-                <p class="lead">Temukan Kami Di</p>    
-                <a href="#" target="_blank">
-                    <img src="{{asset('img/playstore.png')}}" class="img-button">    </a>
-            </div>     
-
-            <div class="col padding-0">
-                <img class="img-fluid" src="{{asset('img/home.png')}}" alt="thumbnail image">
+            <div class="col-md-6">
+                <nav class="navbar navbar-expand-lg navbar-light py-0">
+                <a class="navbar-brand pl-3 mb-3 pt-4" href="#"><img src="{{asset('img/logo.png')}}" alt="" class="logo"><strong>Samkuriang</strong></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                </nav>
             </div>
-         </div>
-</section>
+            <div class="col-md-6">
+            <nav id="topheader" class="navbar navbar-expand-lg navbar-light py-0">
+                <div class="collapse navbar-collapse pr-4">
+                        <ul class="navbar-nav ml-auto pr-3">
+                            <li class="nav-item active pr-3">
+                                <a class="nav-link" href="#"><strong>Beranda</strong><span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item pr-3">
+                                <a class="nav-link" href="#"><strong>Fitur</strong></a>
+                            </li>
+                            <li class="nav-item pr-3">
+                                <a class="nav-link" href="#"><strong>Mitra</strong></a>
+                            </li>
+                            <li class="nav-item pr-3">
+                                <a class="nav-link" href="#"><strong>FAQ</strong></a>
+                            </li>
+                            </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <a href="{{ route('login') }}" button class="btn btn-outline-success my-2 my-sm-0 btn-1" type="submit">Login
+                            </button></a>
+                    </form>
+                       </div>
+                    </nav>
+                    
+
+            </div>
+        </div>
+    </div>    
+    
+            
+            
+    <section id="home">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 pl-5 pt-4">
+                    <h1 class="pt-5" style="color: #055A3D; font-weight: 400">Samkuriang</h1> 
+                    <p class="pb-5">Samkuriang adalah aplikasi yang menghubungkan masyarakat dengan Bank Sampah. Keunggulan dari Samkuriang adalah dapat mendeteksi jenis sampah, informasi sampah dan cek lokasi bank Sampah </p>  
+                    <p class="">Temukan Kami Di</p> 
+                    <a href="#" target="_blank">
+                        <img src="{{asset('img/playstore.png')}}" class="img-button img-fluid">
+                    </a>
+                </div>     
+
+                <div class="col-md-6 pr-0 pl-3 pb-5 gambar-home">
+                    <img class="img-fluid" src="{{asset('img/home2.png')}}" alt="thumbnail image" class="img-fluid">
+                </div>
+            </div>
+
+
+        </div>
+    </section>
 
 <section id="fitur">
-    <div class="container">
-        <div class="row" >
-            <div class="col-xs-12 col-lg-12 text-center">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-xs-12 col-lg-12 text-center">
             <div class="padding-20"></div>
             <h3 style="font-size: 30px; font-weight : bold; color: #055A3D">Fitur Samkuriang.</h3>
             <div class="garis" style="margin:10px auto"></div>
         </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
             <div class="col-xs-12 col-md-6">
             <div class="padding-60"></div>
+            <div class="fitur-text-left">
             <h3 style="font-size: 25px; margin-bottom: -4px; font-weight : bold; color: #055A3D">Scan</h3>
             <h3 style="font-size: 25px; font-weight : bold; color: #055A3D">sampah.</h3>
                 <p class="lead">Anda dapat memilah jenis dan bentuk sampah dengan mudah dengan bantuan object detection pada aplikasi SAMKURIANG.</p>
             </div>
-            <div class="col-xs-12 col-md-6">
-                <img class="imgfitur" src="{{asset('img/scan2.png')}}">
+            </div>
+            <div class="col-xs-12 col-md-6 padding-right-40">
+                <img class="imgfitur-right" src="{{asset('img/scan2.png')}}">
             </div>
             <div class="col-xs-12 col-md-6">
-                <img class="imgfitur" src="{{asset('img/search.png')}}">
+                <img class="imgfitur-left" src="{{asset('img/search.png')}}">
             </div>
             <div class="col-xs-12 col-md-6">
             <div class="padding-60"></div>
+            <div class="fitur-text-right">
             <h3 style="font-size: 25px; margin-bottom: -4px; font-weight : bold; color: #055A3D">Search</h3>
             <h3 style="font-size: 25px; font-weight : bold; color: #055A3D">bank sampah.</h3>
                 <p class="lead">Mencari bank sampah terdekat dengan lingkungan anda menjadi mudah dan menyenangkan menggunakan SAMKURIANG.</p>
+            </div>
             </div>  
             <div class="col-xs-12 col-md-6">
             <div class="padding-60"></div>
+            <div class="fitur-text-left">
             <h3 style="font-size: 25px; margin-bottom: -4px; font-weight : bold; color: #055A3D">Navigasi ke</h3> 
             <h3 style="font-size: 25px; font-weight : bold; color: #055A3D">bank sampah.</h3>
                 <p class="lead">Bertemu dengan bank sampah terdekat belum lengkap jika tidak adanya navigasi menuju ke tempat tujuan, di SAMKURIANG anda dapatkan itu secara gratis.</p>
             </div>
-            <div class="col-xs-12 col-md-6">
-                <img class="imgfitur" src="{{asset('img/navigate.png')}}">
             </div>
             <div class="col-xs-12 col-md-6">
-                <img class="imgfitur" src="{{asset('img/nabung.png')}}">
+                <img class="imgfitur-right" src="{{asset('img/navigate.png')}}">
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <img class="imgfitur-left" src="{{asset('img/nabung.png')}}">
             </div>
             <div class="col-xs-12 col-md-6">
             <div class="padding-60"></div>
-              <h3 style="font-size: 25px ; margin-bottom: -3px; font-weight : bold; color:#055A3D">Tabungan</h3>
-              <h3 style="font-size: 25px; font-weight : bold;color:#055A3D">sampah.</h3>
+            <div class="fitur-text-right">
+            <h3 style="font-size: 25px ; margin-bottom: -3px; font-weight : bold; color:#055A3D">Tabungan</h3>
+            <h3 style="font-size: 25px; font-weight : bold;color:#055A3D">sampah.</h3>
                 <p class="lead">Sama halnya dengan bank kovensional, bank sampah yang anda daftarkan pada SAMKURIANG dapat menyimpan duit hasil pertukaran sampah secara realtime dan anda dapat ambil itu kapan saja.</p>
+            </div>
             </div>  
         </div>
     </div>

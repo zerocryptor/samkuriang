@@ -1,3 +1,14 @@
+.gambar-home {
+  background-color: #e8f8eb;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.navbar-brand{
+  /* font-family: Raleway; font-weight: bolder; */
+  font: normal bold 20px Raleway;
+}
+
 .padding-20 {
 	padding: 20px;
 }
@@ -24,12 +35,38 @@
 	text-align: center;
 }
 
-.imgfitur {
+/* FITUR */
+.margin-left-40{
+  margin: 40px;
+}
+.pading-left-40{
+  padding-left: 100px;
+}
+
+.pading-right-40{
+  padding-right: 100px;
+}
+.fitur-text-left {
+  margin: 20px auto;
+  padding-left: 140px;
+}
+.fitur-text-right {
+  margin: 20px auto;
+  padding-right: 140px;
+}
+.imgfitur-right {
     height: 100%;
     width: 100%;
     margin: 20px auto;
-    padding: 15px;
+    padding-right : 140px;
 }
+.imgfitur-left {
+  height: 100%;
+  width: 100%;
+  margin: 20px auto;
+  padding-left : 80px;
+}
+
 
 .img-button{
     width: 400px;
@@ -54,7 +91,16 @@
 	margin-top: 50px
 }
 
+#topheader {
+  background-color: #e8f8eb
+}
+
+.navbar-nav {
+  font-family: Raleway; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px;
+}
+
 .logo {height: 70px; width: 70px;}
+
 .navbar-light{
     background-color: #e8f8eb;
 }
