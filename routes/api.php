@@ -13,38 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-// post
-
-// put/patch
-
-// delete
-
-Route::group([
-    'prefix' => 'auth'
-
-], function ($router) {
-
-    Route::post('login', 'AuthController@login');
-    Route::post('logout', 'AuthController@logout');
-    Route::post('refresh', 'AuthController@refresh');
-    Route::post('me', 'AuthController@me');
-    Route::post('payload', 'AuthController@payload');
-
-});
-
-Route::group([
-    'prefix' => 'garbage-officers'
-
-], function ($router) {
-
-    Route::post('login', 'GarbageOfficerController@login');
-    Route::post('logout', 'GarbageOfficerController@logout');
-    Route::post('refresh', 'GarbageOfficerController@refresh');
-    Route::post('me', 'GarbageOfficerController@me');
-    Route::post('payload', 'GarbageOfficerController@payload');
-
-});
-
 Route::group([
     
     'prefix' => 'customers'

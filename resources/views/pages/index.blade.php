@@ -7,11 +7,20 @@
     <title>Samkuriang | A fine glass vase goes from treasure to trash, the moment it is broken.</title>
 
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+
+    <!-- webflow -->
+    
+
 </head>
 <body>
     <!-- Preloader Start -->
     <div id="preloader">
         <div class="samkuriang-load"></div>
     </div>
+
+
+
+    <!-- js plugin -->
+    <script src="{{ asset('vendors/jquery/jquery.min.js') }}"></script>
 </body>
 </html>
