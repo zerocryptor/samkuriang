@@ -826,3 +826,21 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
   }
   }
 
+  .logo {height: 70px; width: 70px;}
+  #footer {
+      background: #fdfdfd;
+    }
+  .bg{
+      background-image: linear-gradient(to right, #055a3d 0%, #002031 51%, #055a3d 100%);
+      padding: 20px;
+      text-align: center;
+      background-size: 160% auto;
+  }
+  .konten{
+      font-size: 13px;
+  }
+  .copyright{
+      padding-top: 60px;
+      font-size: 13px;
+      color: grey;
+  }

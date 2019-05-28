@@ -245,6 +245,24 @@
         </div>
 </section>
     <!-- taro footer disini -->
+    <section id="footer">
+        <div class="container-fluid bg">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <img src="{{asset('img/logo.png')}}" alt="" class="logo">
+                </div>
+                <div class="col-md-6 offset-md-3 text-white">
+                    <h2>Samkuriang</h2>
+                    <p class="konten pb-5">dengan nabung sampah,
+                        <br>
+                        ku riang!
+                    </p>
+                    <img src="{{asset('img/sosmed.png')}}" alt="">
+                    <p class="copyright">Copyright &copy; 2019 Samkuriang - All right reserved. A product of Bodo Amat</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- script -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
