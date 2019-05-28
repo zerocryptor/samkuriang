@@ -149,8 +149,42 @@
         </div>
     </div>
 </section>
-
-<section id="faq-section">
+    <section id="mitra" class="bg-mitra">
+            <div class="container"></div>
+                <div class="row">
+                        <div class="col-xs-12 col-lg-12 text-center">
+                            <div class="padding-60"></div>
+                            <h3 style="font-size: 24px; font-weight : bold; color: #fffefe">Mitra Samkuriang.</h3>
+                            <div class="garis_hijau" style="margin:10px auto"></div>
+                        </div>
+                        <div class="col-xs-12 col-md-3 text-center">
+                            <div class="padding-30"></div>
+                            <p style="margin-bottom: -20px; color : #fffefe ">bank <p>
+                            <p style="margin-bottom: -3px; color : #fffefe ">sampah</p>
+                            <p style="color : #fffefe ">beji</p>
+                        </div>
+                        <div class="col-xs-12 col-md-3 text-center">
+                            <div class="padding-30"></div>
+                            <p style="margin-bottom: -20px; color : #fffefe ">bank <p>
+                            <p style="margin-bottom: -3px; color : #fffefe ">sampah</p>
+                            <p style="margin-bottom: -3px; color : #fffefe ">tanah</p>
+                            <p style="color : #fffefe ">baru</p>
+                            </div>
+                        <div class="col-xs-12 col-md-3 text-center">
+                            <div class="padding-30"></div>
+                            <p style="margin-bottom: -3px; font-weight: bold; color : #f5e52e ">tps</p>
+                            <p style="margin-bottom: -4px; font-weight: bold; color : #F5E52E ">universitas</p>
+                            <p style=" font-weight: bold; color : #F5E52E">indonesia</p>
+                            </div>
+                        <div class="col-xs-12 col-md-3 text-center">
+                            <div class="padding-30"></div>
+                            <p style="margin-bottom: -3px;color : #fffefe ">bank</p>
+                            <p style="margin-bottom: -4px;color : #fffefe ">sampah</p>
+                            <p style="color : #fffefe ">cimanggis</p>
+                            </div>
+                </div>
+    </section>
+    <section id="faq-section">
         <div class="container">
           <div class="row">
             <!-- ***** FAQ Start ***** -->
@@ -237,9 +271,6 @@
             </div>
         </div>
 </section>
-
-
-
     <!-- taro footer disini -->
     <section id="footer">
         <div class="container-fluid bg">
