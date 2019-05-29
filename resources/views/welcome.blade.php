@@ -32,12 +32,12 @@
     </div>
 
                 <nav class="navbar navbar-expand-lg navbar-light py-0">
-                <a class="navbar-brand pl-3 mb-3 pt-4" href="#"><img src="{{asset('img/logo.png')}}" alt="" class="logo"><strong>Samkuriang</strong></a>
+                <a class="navbar-brand pl-3 mb-3 pt-4" href="#"><img src="{{asset('img/logo.png')}}" alt="" class="logo img-fluid"><strong>Samkuriang</strong></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 
-                <div class="collapse navbar-collapse pr-4">
+                <div class="collapse navbar-collapse pr-4" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto pr-3">
                             <li class="nav-item active pr-3">
                                 <a class="nav-link" href="#"><strong>Beranda</strong><span class="sr-only">(current)</span></a>
@@ -105,10 +105,10 @@
             </div>
             </div>
             <div class="col-xs-12 col-md-6 padding-right-40">
-                <img class="imgfitur-right" src="{{asset('img/scan2.png')}}">
+                <img class="imgfitur-right img-fluid" src="{{asset('img/scan2.png')}}">
             </div>
             <div class="col-xs-12 col-md-6">
-                <img class="imgfitur-left" src="{{asset('img/search.png')}}">
+                <img class="imgfitur-left img-fluid" src="{{asset('img/search.png')}}">
             </div>
             <div class="col-xs-12 col-md-6">
             <div class="padding-60"></div>
@@ -127,10 +127,10 @@
             </div>
             </div>
             <div class="col-xs-12 col-md-6">
-                <img class="imgfitur-right" src="{{asset('img/navigate.png')}}">
+                <img class="imgfitur-right img-fluid" src="{{asset('img/navigate.png')}}">
             </div>
             <div class="col-xs-12 col-md-6">
-                <img class="imgfitur-left" src="{{asset('img/nabung.png')}}">
+                <img class="imgfitur-left img-fluid" src="{{asset('img/nabung.png')}}">
             </div>
             <div class="col-xs-12 col-md-6">
             <div class="padding-60"></div>
@@ -270,7 +270,7 @@
         <div class="container-fluid bg">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
-                    <img src="{{asset('img/logo.png')}}" alt="" class="logo">
+                    <img src="{{asset('img/logo.png')}}" alt="" class="logo img-fluid">
                 </div>
                 <div class="col-md-6 offset-md-3 text-white">
                     <h2>Samkuriang</h2>
