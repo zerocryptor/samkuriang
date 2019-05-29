@@ -31,19 +31,12 @@
         <div class="samkuriang-load"></div>
     </div>
 
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
                 <nav class="navbar navbar-expand-lg navbar-light py-0">
                 <a class="navbar-brand pl-3 mb-3 pt-4" href="#"><img src="{{asset('img/logo.png')}}" alt="" class="logo"><strong>Samkuriang</strong></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                </nav>
-            </div>
-            <div class="col-md-6">
-            <nav id="topheader" class="navbar navbar-expand-lg navbar-light py-0">
+                
                 <div class="collapse navbar-collapse pr-4">
                         <ul class="navbar-nav ml-auto pr-3">
                             <li class="nav-item active pr-3">
@@ -52,9 +45,9 @@
                             <li class="nav-item pr-3">
                                 <a class="nav-link" href="#"><strong>Fitur</strong></a>
                             </li>
-                            <li class="nav-item pr-3">
+                            <!-- <li class="nav-item pr-3">
                                 <a class="nav-link" href="#"><strong>Mitra</strong></a>
-                            </li>
+                            </li> -->
                             <li class="nav-item pr-3">
                                 <a class="nav-link" href="#"><strong>FAQ</strong></a>
                             </li>
@@ -96,7 +89,7 @@
     </section>
 
 <section id="fitur">
-    <div class="container-fluid">
+    <div class="container-fluid mb-5">
         <div class="row">
         <div class="col-xs-12 col-lg-12 text-center">
             <div class="padding-20"></div>
@@ -186,7 +179,7 @@
                 </div>
     </section> -->
     <section id="faq-section">
-        <div class="container">
+        <div class="container mb-4">
           <div class="row">
             <!-- ***** FAQ Start ***** -->
             <div class="col-md-6 offset-md-3">
