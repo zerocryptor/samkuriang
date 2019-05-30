@@ -1,7 +1,10 @@
+/*custom spacing*/
+.pt-6 ,.py-6{
+  padding-top:5rem!important
+}
+
 .gambar-home {
   background-color: #e8f8eb;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
 }
 
 .navbar-brand{
@@ -19,8 +22,10 @@
 	padding: 30px;
 }
 
+.logo {height: 50px; width: 50px;}
+
 .garis_hijau {
-	border-bottom: 4px solid   #31A05E ;
+	border-bottom: 4px solid#31A05E ;
 	width: 50px;
     margin-bottom: 10px;
 }
@@ -92,15 +97,15 @@
 	margin-top: 50px
 }
 
-#topheader {
-  background-color: #e8f8eb
-}
-
 .navbar-nav {
-  font-family: Raleway; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px;
+  font-family: Raleway; 
+  font-size: 18px; 
+  font-style: normal; 
+  font-variant: normal; 
+  font-weight: 700; 
+  line-height: 15.4px;
+  margin: 0px 20px;
 }
-
-.logo {height: 70px; width: 70px;}
 
 .navbar-light{
     background-color: #e8f8eb;
@@ -114,6 +119,7 @@
     text-transform: capitalize;
     color: #333;
     transition: color .2s;
+    margin: 0px 8px;
 }
 #topheader .navbar-nav li > a:hover, #topheader .navbar-nav li > a:focus {
     color: #31a05e;
@@ -131,12 +137,13 @@
             box-shadow: 0 0 20px #eee;
             border-radius: 40px;
         }
+
         .btn:hover {
             background-position: right center;
             color: white;
         }
         .btn-1 {
-            background-image: linear-gradient(to right, #055a3d 0%, #002031 51%, #055a3d 100%);
+            background-image: linear-gradient(to right, #055a3d 0%, #002031 51%, #055a3d 100%) !important;
         }
 
         .sign-in-btn{
@@ -741,7 +748,7 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
   
 
 .form-inline .btn {
-    width: 110px;
+    width: 135px;
     text-align: center;
     transition: 0.7s;
     background-size: 180% auto;
@@ -752,9 +759,6 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
 .btn:hover {
     background-position: right center;
     color: white;
-}
-.btn-1 {
-    background-image: linear-gradient(to right, #055a3d 0%, #002031 51%, #055a3d 100%);
 }
         
 .faq-section {
@@ -873,7 +877,6 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
   }
   }
 
-  .logo {height: 70px; width: 70px;}
   #footer {
       background: #fdfdfd;
     }
@@ -891,3 +894,76 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
       font-size: 13px;
       color: grey;
   }
+
+
+/* ham */
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+
+.line {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke:#000;
+  stroke-width:5.5;
+  stroke-linecap:round;
+}
+.ham8 .top {
+  stroke-dasharray: 40 160;
+}
+.ham8 .middle {
+  stroke-dasharray: 40 142;
+  transform-origin: 50%;
+  transition: transform 400ms;
+}
+.ham8 .bottom {
+  stroke-dasharray: 40 85;
+  transform-origin: 50%;
+  transition: transform 400ms, stroke-dashoffset 400ms;
+}
+.ham8.active .top {
+  stroke-dashoffset: -64px;
+}
+.ham8.active .middle {
+  /* stroke-dashoffset: -20px; */
+  transform: rotate(90deg);
+}
+.ham8.active .bottom {
+  stroke-dashoffset: -64px;
+}
+
+/* custom css */
+section#topheader {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  transition: all 0.3s;
+}
+
+section#topheader form a {
+  font-weight: bold;
+}
+
+.leading-text h1 {
+  color: #055a3d;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.leading-text p.pb-3 {
+  font-size: 18px;
+}
+
+.fixed-white-background {
+  background: #e8f8eb;
+  box-shadow: 0px 0px 10px #cecece;
+}

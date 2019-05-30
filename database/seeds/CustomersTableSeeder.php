@@ -18,6 +18,7 @@ class CustomersTableSeeder extends Seeder
             'address' => 'Jalan User No. 12',
             'phone_number' => '08957271622'
         ]); 
+
         DB::table('customers')->insert([
             'name' => 'Second User Samkuriang',
             'email' => 'user2@samkuriang.com',
