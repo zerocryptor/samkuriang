@@ -1,0 +1,30 @@
+@media(max-width: 1024px){
+    
+}
+
+@media(max-width: 768px){
+    /*header*/
+    #topheader {
+        background:#e8f8eb;
+    }
+
+    .gambar-home {
+        display: none;
+    }
+}
+
+@media(max-width: 360px){
+
+}
+
+@media(width: 768px) and (height:1024px){
+    body {
+        display: none;
+    }
+}
+
+@media(width: 1024px) and (height:1366px){
+    body {
+        display: none;
+    }
+}

@@ -1,6 +1,6 @@
 @extends(layouts.app)
-@section('content')
 
+@section('content')
 <section id="home">
         <div class="row">
             <div class="padding-60" style="margin-top: 200px; margin-left: 100px;">
