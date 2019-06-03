@@ -66,7 +66,7 @@
                 </ul>
 
                 <form class="form-inline my-2 my-lg-0">
-                    <a href="{{ route('login') }}" class="btn btn-outline-success my-2 my-sm-0 py-2 btn-1">Login</a>
+                    <a href="{{ url('login/garbage_officer') }}" class="btn btn-outline-success my-2 my-sm-0 py-2 btn-1">Login</a>
                 </form>
             </div>
         </nav>

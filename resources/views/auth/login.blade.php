@@ -12,6 +12,11 @@
     <!-- Main css -->
     <link rel="stylesheet" href="{{ asset('asset_login/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <style>
+        .main {
+            padding: 40px 0px !important;
+        }
+    </style>
 </head>
 <body>
 
