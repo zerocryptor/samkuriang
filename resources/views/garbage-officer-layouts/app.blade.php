@@ -86,10 +86,10 @@
                             </div>
                             <div class="widget-content-left  ml-3 header-user-info">
                                 <div class="widget-heading">
-                                    {{ Auth::user()->name }}
+                                    {{ auth('garbage_officer')->user()->name }}
                                 </div>
                                 <div class="widget-subheading">
-                                    Administrator
+                                    Garbage Officer
                                 </div>
                             </div>
                             <div class="widget-content-right header-user-info ml-3">
@@ -437,7 +437,7 @@
                                 <i class="pe-7s-leaf icon-gradient bg-mean-fruit">
                                 </i>
                             </div>
-                            <div>Administrator Samkuriang Dashboard
+                            <div>Garbage Officer Samkuriang Dashboard
                                 <div class="page-title-subheading">Last login: Yesterday, 12-6-2019
                                 </div>
                             </div>
