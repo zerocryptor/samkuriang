@@ -19,6 +19,7 @@ class CustomersTableSeeder extends Seeder
             'phone_number' => '08957271622',
             'garbage_bank_id' => 1
         ]); 
+        
         // DB::table('customers')->insert([
         //     'name' => 'Second User Samkuriang',
         //     'email' => 'user2@samkuriang.com',
