@@ -6,3 +6,12 @@ $(window).scroll(function(){
         $('#topheader').removeClass('fixed-white-background');
     }
 });
+
+(function(){
+    pagePrgoress('.page-progress',{
+        color: '#31A05E',
+        size: '5px',
+        position: 'top',
+        speed: '500'
+    });
+})()

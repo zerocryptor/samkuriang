@@ -72,8 +72,6 @@
                                         <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                     </a>
                                     <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-                                        <button type="button" tabindex="0" class="dropdown-item">Profile</button>
-                                        <div tabindex="-1" class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
@@ -88,10 +86,10 @@
                             </div>
                             <div class="widget-content-left  ml-3 header-user-info">
                                 <div class="widget-heading">
-                                    {{ Auth::user()->name }}
+                                    {{ auth('garbage_officer')->user()->name }}
                                 </div>
                                 <div class="widget-subheading">
-                                    Administrator
+                                    Garbage Officer
                                 </div>
                             </div>
                             <div class="widget-content-right header-user-info ml-3">
@@ -421,22 +419,9 @@
                     <ul class="vertical-nav-menu">
                         <li class="app-sidebar__heading">Dashboards</li>
                         <li>
-                            <a href="{{ url('home') }}" class="mm-active">
+                            <a href="index.html" class="mm-active">
                                 <i class="metismenu-icon pe-7s-rocket"></i>
-                                Main Dashboard
-                            </a>
-                        </li>
-                        <li class="app-sidebar__heading">Main Menu</li>
-                        <li>
-                            <a href="{{ url('garbage-bank/lists') }}">
-                                <i class="metismenu-icon pe-7s-rocket"></i>
-                                Garbage Bank Lists
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('customer/lists') }}">
-                                <i class="metismenu-icon pe-7s-rocket"></i>
-                                Customer Lists
+                                Dashboard Utama
                             </a>
                         </li>
                     </ul>
@@ -452,62 +437,8 @@
                                 <i class="pe-7s-leaf icon-gradient bg-mean-fruit">
                                 </i>
                             </div>
-                            <div>Administrator Samkuriang Dashboard
+                            <div>Garbage Officer Samkuriang Dashboard
                                 <div class="page-title-subheading">Last login: Yesterday, 12-6-2019
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-xl-4">
-                        <div class="card mb-3 widget-content bg-grow-early">
-                            <div class="widget-content-wrapper text-white">
-                                <div class="widget-content-left">
-                                    <div class="widget-heading">Garbage Bank</div>
-                                    <div class="widget-subheading">Total</div>
-                                </div>
-                                <div class="widget-content-right">
-                                    <div class="widget-numbers text-white"><span>1896</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-4">
-                        <div class="card mb-3 widget-content bg-grow-early">
-                            <div class="widget-content-wrapper text-white">
-                                <div class="widget-content-left">
-                                    <div class="widget-heading">Customer</div>
-                                    <div class="widget-subheading">Total</div>
-                                </div>
-                                <div class="widget-content-right">
-                                    <div class="widget-numbers text-white"><span>568</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-4">
-                        <div class="card mb-3 widget-content bg-grow-early">
-                            <div class="widget-content-wrapper text-white">
-                                <div class="widget-content-left">
-                                    <div class="widget-heading">News</div>
-                                    <div class="widget-subheading">People Interested</div>
-                                </div>
-                                <div class="widget-content-right">
-                                    <div class="widget-numbers text-white"><span>19</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-xl-none d-lg-block col-md-6 col-xl-4">
-                        <div class="card mb-3 widget-content bg-premium-dark">
-                            <div class="widget-content-wrapper text-white">
-                                <div class="widget-content-left">
-                                    <div class="widget-heading">Products Sold</div>
-                                    <div class="widget-subheading">Revenue streams</div>
-                                </div>
-                                <div class="widget-content-right">
-                                    <div class="widget-numbers text-warning"><span>$14M</span></div>
                                 </div>
                             </div>
                         </div>
