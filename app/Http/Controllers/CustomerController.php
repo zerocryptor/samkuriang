@@ -191,8 +191,6 @@ class CustomerController extends Controller
             'phone_number' => $request->phone_number
         ];
 
-        $newCustomer = \App\Models\Customer::where('email', $request->email)->get();
-
         if(!$customer->where('id', $customer->id)->update($data)){
 
             return response()->json([
@@ -202,7 +200,8 @@ class CustomerController extends Controller
             ], 200);
 
         } else {
-
+            $newCustomer = \App\Models\Customer::where('email', $request->email)->get();
+            
             return response()->json([
                 'error' => false,
                 'message' => 'Register was Successfully!!',
