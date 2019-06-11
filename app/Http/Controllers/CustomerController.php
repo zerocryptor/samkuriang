@@ -223,4 +223,17 @@ class CustomerController extends Controller
             'berat' => $size
         ]);     
     }
+
+    public function history($id)
+    { 
+        $customer = \App\Models\Customer::where('customer_id', $id)->select('name');     
+        $size = \App\Models\Savings::where('customer_id', $id)->select('size')->sum('size');
+        $price = \App\Models\Savings::where('customer_id', $id)->select('price')->sum('price');
+        // findOrFail($id);   
+        return response()->json([
+            'Nama' => $customer,
+            'jumlah tabungan'=> $price,
+            'berat sampah' => $size
+        ]);     
+    }
 }
