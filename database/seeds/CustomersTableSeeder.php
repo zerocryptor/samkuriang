@@ -16,14 +16,16 @@ class CustomersTableSeeder extends Seeder
             'email' => 'user@samkuriang.com',
             'password' => Hash::make('user123'),
             'address' => 'Jalan User No. 12',
-            'phone_number' => '08957271622'
+            'phone_number' => '08957271622',
+            'garbage_bank_id' => 1
         ]); 
-        DB::table('customers')->insert([
-            'name' => 'Second User Samkuriang',
-            'email' => 'user2@samkuriang.com',
-            'password' => Hash::make('user223'),
-            'address' => 'Jalan User No. 11',
-            'phone_number' => '08957271621'
-        ]);
+        
+        // DB::table('customers')->insert([
+        //     'name' => 'Second User Samkuriang',
+        //     'email' => 'user2@samkuriang.com',
+        //     'password' => Hash::make('user223'),
+        //     'address' => 'Jalan User No. 11',
+        //     'phone_number' => '08957271621'
+        // ]);
     }
 }

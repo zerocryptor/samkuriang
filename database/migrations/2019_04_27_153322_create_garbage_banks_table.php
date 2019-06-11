@@ -16,11 +16,11 @@ class CreateGarbageBanksTable extends Migration
         Schema::create('garbage_banks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name',50);
-            $table->string('latitude',10);
-            $table->string('longitude',10);
+            $table->string('latitude',15);
+            $table->string('longitude',15);
             $table->string('address',85);
-            $table->string('contact',12);
-            $table->decimal('garbage_price',15,2);
+            $table->string('contact',15);
+            // $table->decimal('garbage_price',15,2);
             
         });
     }

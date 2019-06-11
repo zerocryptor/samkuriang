@@ -26,8 +26,8 @@ class Customer extends Authenticatable implements JWTSubject
         'name', 'email', 'password', 'address', 'no_telp'
     ];
 
-    public static function rules($update = false, $id = null){
-        return $rules = [
+    public static function rules($update = false, $id = null, $type = false){
+        $rules = [
             'name' => 'required|string|max:50',
             'email' => [
                 'required', Rule::unique('customers')->ignore($id)
@@ -35,9 +35,21 @@ class Customer extends Authenticatable implements JWTSubject
             'email' => 'required|email|max:70',
             'password' => 'required|string|max:72',
             'address' => 'nullable|max:150',
-            'phone_number' => 'nullable|max:16',
-            // 'created_by' => 'required'
+            'phone_number' => 'nullable|max:16'
         ];
+
+        if($type){
+            unset($rules['password']);
+            return $rules;
+        }
+
+        if($update){
+            return $rules;
+        }
+        
+        return array_merge($rules, [
+            'email'         => 'required|unique:users,email',
+        ]);
     }
     
     /**

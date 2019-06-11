@@ -1,0 +1,23 @@
+.app-header__logo .logo-src {
+    width: 109px !important;
+}
+
+.app-sidebar__heading {
+    color: #31A05E !important;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    background-color: #31A05E !important;
+}
+
+.search-wrapper .input-holder .search-icon span::before {
+    background: #31A05E !important;
+}
+
+.search-wrapper .input-holder .search-icon span::after {
+    border: 2px solid #31A05E !important;
+}
+
+.search-wrapper .close::before, .search-wrapper .close::after {
+    background: #31A05E !important;
+}

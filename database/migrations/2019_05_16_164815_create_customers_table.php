@@ -11,7 +11,7 @@ class CreateCustomersTable extends Migration
      *
      * @return void
      */
-   public function up()
+    public function up()
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -21,6 +21,7 @@ class CreateCustomersTable extends Migration
             $table->string('password',72);
             $table->string('address',150);
             $table->string('phone_number', 16);
+            $table->string('status')->default(0);
             $table->rememberToken();
         });
     }

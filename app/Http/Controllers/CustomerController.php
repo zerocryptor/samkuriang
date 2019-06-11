@@ -38,9 +38,9 @@ class CustomerController extends Controller
             
             return response()->json([
                 'error' => false,
-                'message' => 'Login sucessfully',
-                'customer' => $customer[0],
-                'token' => $this->respondWithToken($token)
+                'message' => 'Sign in sucessfully',
+                'customer' => $customer[0]
+                // 'token' => $this->respondWithToken($token)
                 // 'customer' => $customer,
             ], 200);
         }
@@ -145,6 +145,7 @@ class CustomerController extends Controller
             ]);
 
         } else {
+
             $getCustomer = \App\Models\Customer::where('email', $request->post('email'))->get();
 
             return response()->json([
@@ -160,19 +161,24 @@ class CustomerController extends Controller
     public function profile($id)
     {
         try {
+
             $customer = \App\Models\Customer::findOrFail($id);    
 
             return $customer;
+
         } catch (\Throwable $th) {
+
             return [
                 'message' => 'Bad Request',
                 'code' => 400
             ];
+            
         }
+
     }
 
-    public function updateProfile(Request $request, \App\Models\Customer $customer){
-        $validator = Validator::make($request->all(), \App\Models\Customer::rules(true, $customer->id));
+    public function updateProfile(Request $request, $id){
+        $validator = Validator::make($request->all(), \App\Models\Customer::rules(true, $id, true));
 
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
@@ -181,25 +187,28 @@ class CustomerController extends Controller
         $data = [
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
             'address' => $request->address,
-            'phone_number' => $request->phone_number,
-            'created_by' => 'admin'
+            'phone_number' => $request->phone_number
         ];
 
-        if(!$customer->where('id', $request->id)->update($data)){
+        if(!\App\Models\Customer::where('id', $id)->update($data)){
 
             return response()->json([
+                'error'=> true,
                 'message' => 'Bad Request',
-                'code' => 400,
-            ]);
+                'code' => 400
+            ], 200);
 
         } else {
 
+            $newCustomer = \App\Models\Customer::where('id', $id)->get();
+
             return response()->json([
-                'message' => 'OK',
+                'error' => false,
+                'message' => 'Register was Successfully!!',
                 'code' => 201,
-            ]);
+                'customer' => $newCustomer[0]
+            ], 200);
 
         }
     }
@@ -208,6 +217,7 @@ class CustomerController extends Controller
     { 
         $price = \App\Models\Savings::where('customer_id', $id)->select('price')->sum('price');
         $size = \App\Models\Savings::where('customer_id', $id)->select('size')->sum('size');
+
         return response()->json([
             'tabungan' => $price,
             'berat' => $size

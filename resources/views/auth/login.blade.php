@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign in</title>
+    <title>Sign in | Samkuriang</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="{{ asset('asset_login/fonts/material-icon/css/material-design-iconic-font.min.css') }}">
@@ -12,6 +12,11 @@
     <!-- Main css -->
     <link rel="stylesheet" href="{{ asset('asset_login/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <style>
+        .main {
+            padding: 40px 0px !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -53,14 +58,6 @@
                             <button class="btn btn-outline-success my-2 my-sm-0 btn-1 sign-in-btn" type="submit">Login</button>
                             </div>
                         </form>
-                        <!-- <div class="social-login">
-                            <span class="social-label">Or login with</span>
-                            <ul class="socials">
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
-                            </ul>
-                        </div> -->
                     </div>
                 </div>
             </div>

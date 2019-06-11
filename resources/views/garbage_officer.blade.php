@@ -1,4 +1,4 @@
-@extends('garbage_officer_layouts.app')
+@extends('garbage-officer-layouts.app')
 
 @section('content')
 <div class="container">
