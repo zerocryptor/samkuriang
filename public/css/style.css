@@ -43,15 +43,19 @@
 
  .bg-mitra{
     background-image: url('../img/bg.png');
-    height: 100%;
-    width : 100%;
+    height: auto;
+    width : auto;
     margin : 0px auto;
     padding: 15px;
+    /* background-position : 100% 100%; */
 } 
+
+.mitracolor{
+  background-color: #002031;
+}
 
 #mitra{
     padding: 40px 0px 40px;
-	margin-top: 50px
 }
 
 .logo {height: 70px; width: 70px;}

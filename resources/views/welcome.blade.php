@@ -123,8 +123,8 @@
     </div>
 </section>
     <section id="mitra" class="bg-mitra">
-            <div class="container"></div>
-                <div class="row">
+            <div class="container-fluid"></div>
+                <div class="row mitracolor">
                         <div class="col-xs-12 col-lg-12 text-center">
                             <div class="padding-60"></div>
                             <h3 style="font-size: 24px; font-weight : bold; color: #fffefe">Mitra Samkuriang.</h3>
@@ -245,24 +245,24 @@
         </div>
 </section>
     <!-- taro footer disini -->
-    <section id="footer">
-        <div class="container-fluid bg">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <img src="{{asset('img/logo.png')}}" alt="" class="logo">
-                </div>
-                <div class="col-md-6 offset-md-3 text-white">
-                    <h2>Samkuriang</h2>
-                    <p class="konten pb-5">dengan nabung sampah,
-                        <br>
-                        ku riang!
-                    </p>
-                    <img src="{{asset('img/sosmed.png')}}" alt="">
-                    <p class="copyright">Copyright &copy; 2019 Samkuriang - All right reserved. A product of Bodo Amat</p>
+<section id="footer">
+    <div class="container-fluid bg">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <img src="{{asset('img/logo.png')}}" alt="" class="logo">
+            </div>
+            <div class="col-md-6 offset-md-3 text-white">
+                <h2>Samkuriang</h2>
+                <p class="konten pb-5">dengan nabung sampah,
+                    <br>
+                    ku riang!
+                </p>
+                <img src="{{asset('img/sosmed.png')}}" alt="">
+                <p class="copyright">Copyright &copy; 2019 Samkuriang - All right reserved. A product of Bodo Amat</p>
                 </div>
             </div>
         </div>
-    </section>
+</section>
 
     <!-- script -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
