@@ -95,48 +95,7 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-    <section id="mitra" class="bg-mitra">
-            <div class="container-fluid"></div>
-                <div class="row mitracolor">
-                        <div class="col-xs-12 col-lg-12 text-center">
-                            <div class="padding-60"></div>
-                            <h3 style="font-size: 24px; font-weight : bold; color: #fffefe">Mitra Samkuriang.</h3>
-                            <div class="garis_hijau" style="margin:10px auto"></div>
-                        </div>
-                        <div class="col-xs-12 col-md-3 text-center">
-                            <div class="padding-30"></div>
-                            <p style="margin-bottom: -20px; color : #fffefe ">bank <p>
-                            <p style="margin-bottom: -3px; color : #fffefe ">sampah</p>
-                            <p style="color : #fffefe ">beji</p>
-                        </div>
-                        <div class="col-xs-12 col-md-3 text-center">
-                            <div class="padding-30"></div>
-                            <p style="margin-bottom: -20px; color : #fffefe ">bank <p>
-                            <p style="margin-bottom: -3px; color : #fffefe ">sampah</p>
-                            <p style="margin-bottom: -3px; color : #fffefe ">tanah</p>
-                            <p style="color : #fffefe ">baru</p>
-                            </div>
-                        <div class="col-xs-12 col-md-3 text-center">
-                            <div class="padding-30"></div>
-                            <p style="margin-bottom: -3px; font-weight: bold; color : #f5e52e ">tps</p>
-                            <p style="margin-bottom: -4px; font-weight: bold; color : #F5E52E ">universitas</p>
-                            <p style=" font-weight: bold; color : #F5E52E">indonesia</p>
-                            </div>
-                        <div class="col-xs-12 col-md-3 text-center">
-                            <div class="padding-30"></div>
-                            <p style="margin-bottom: -3px;color : #fffefe ">bank</p>
-                            <p style="margin-bottom: -4px;color : #fffefe ">sampah</p>
-                            <p style="color : #fffefe ">cimanggis</p>
-                            </div>
-                </div>
-    </section>
-    <section id="faq-section">
-        <div class="container">
-          <div class="row">
-            <!-- ***** FAQ Start ***** -->
-            <div class="col-md-6 offset-md-3">
+    </section> 
 
     <section id="fitur" class="mt-5">
         <div class="container-fluid mb-5">
@@ -199,26 +158,38 @@
                 </div>
             </div>
         </div>
-</section>
-    <!-- taro footer disini -->
-<section id="footer">
-    <div class="container-fluid bg">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <img src="{{asset('img/logo.png')}}" alt="" class="logo">
-            </div>
-            <div class="col-md-6 offset-md-3 text-white">
-                <h2>Samkuriang</h2>
-                <p class="konten pb-5">dengan nabung sampah,
-                    <br>
-                    ku riang!
-                </p>
-                <img src="{{asset('img/sosmed.png')}}" alt="">
-                <p class="copyright">Copyright &copy; 2019 Samkuriang - All right reserved. A product of Bodo Amat</p>
+    </section>
+
+    <section id="mitra-samkuriang" class="mt-6 pt-7">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 mt-6 text-center">
+                    <h3 style="font-size: 35px; font-weight : 500; color: #fff">Mitra Samkuriang.</h3>
+                    <div class="garis" style="margin:10px auto;"></div>
                 </div>
             </div>
         </div>
-</section>
+        <div class="container-fluid">
+            <div class="row text-center text-white mt-5 pt-5">
+                <div class="col-xl-3 col-md-3 mitra">
+                    <img src="{{asset('img/bekasi.png')}}" alt="" class="" id="mitra-bank-sampah">
+                    <h5 class="pt-4">Bank Sampah Beji</h5>
+                </div>
+                <div class="col-xl-3 col-md-3 mitra">
+                    <img src="{{asset('img/bekasi.png')}}" alt="" id="mitra-bank-sampah">
+                    <h5 class="pt-4">Bank Sampah Tanah Baru</h5>
+                </div>
+                <div class="col-xl-3 col-md-3 mitra">
+                    <img src="{{asset('img/bekasi.png')}}" alt="" id="mitra-bank-sampah">
+                    <h5 class="pt-4">Bank Sampah Universitas Indonesia</h5>
+                </div>
+                <div class="col-xl-3 col-md-3 mitra">
+                    <img src="{{asset('img/bekasi.png')}}" alt="" id="mitra-bank-sampah">
+                    <h5 class="pt-4">Bank Sampah Tanah Cipayung</h5>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- script -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
