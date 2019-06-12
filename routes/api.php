@@ -57,6 +57,7 @@ Route::group([
     Route::post('me', 'CustomerController@me');
     Route::post('payload', 'CustomerController@payload');
     Route::get('tabungan/{id}', 'CustomerController@tabungan');
+    Route::get('history/{id}', 'CustomerController@history');
     Route::post('register', 'CustomerController@register');
     Route::get('profile/{id}', 'CustomerController@profile');
     Route::put('update-profile/{id}', 'CustomerController@updateProfile');
