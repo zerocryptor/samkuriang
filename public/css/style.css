@@ -820,6 +820,7 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
   background: #FFFFFF;
   box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
   border-radius: 4px;
+  box-sizing: content-box;
   }
   
   .faq .card {
@@ -1012,8 +1013,61 @@ section#topheader form a {
   background-size: auto 110%;
   background-position: center top;
   height: 1200px;
+  margin-bottom: 270px;
 }
 
 .page-progress {
   z-index: 99999;
+}
+
+.mitra {
+  color: #9a9a99;
+  opacity: 0.7;
+  transition: all 0.25s ease-in-out;
+}
+
+.mitra:hover {
+  color: #f5e52e;
+  opacity: 1;
+}
+
+#mitra-bank-sampah{
+  width: auto;
+  height: 50%;
+}
+
+@media (max-width: 738px) {
+  #mitra-samkuriang {
+    background-size: auto 110%;
+    height: 1200px;
+  }
+}
+
+.orang {
+  margin-top: 500px;
+  margin-left: 10px;
+  width: auto;
+  height: 400px;
+}
+
+.faq-section {
+  padding-top: 0;
+}
+
+.faq {
+  margin-top: 50px;
+}
+
+.faq-head {
+  margin-top: 120px;
+}
+
+#footer {
+  background-image: linear-gradient(to right, #055a3d 0%, #002031 51%, #002031 100%);
+}
+
+.sosmed {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 
 }
