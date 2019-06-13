@@ -15,13 +15,13 @@ class SavingsTableSeeder extends Seeder
             DB::table ('savings')->insert([
                 'customer_id' => 1 ,
                 'price' => '125000',
-                'size' => '10'
+                'size' => '5.6'
             ]);
 
             DB::table ('savings')->insert([
                 'customer_id' => 1 ,
                 'price' => '13500',
-                'size' => '110'
+                'size' => '2.2'
             ]);
 
         // }
