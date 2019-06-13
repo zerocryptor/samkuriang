@@ -81,6 +81,27 @@ class ForeignKey extends Migration
             $table->string('update_by')->nullable();
             $table->string('deleted_by')->nullable();
             
+        });
+        
+        Schema::table('historys', function (Blueprint $table) {
+            /**
+             * @foreign table savings,customers
+             */
+           
+
+            $table->unsignedInteger('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customers')->onUpdate('cascade')->onDelete('cascade');
+
+            $table->unsignedInteger('savings_id');
+            $table->foreign('savings_id')->references('id')->on('savings')->onUpdate('cascade')->onDelete('cascade');
+
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable();
+            $table->softDeletes();
+            $table->string('created_by')->nullable();
+            $table->string('update_by')->nullable();
+            $table->string('deleted_by')->nullable();
+            
         });   
 
         Schema::table('customers', function (Blueprint $table) {

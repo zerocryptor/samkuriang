@@ -177,8 +177,8 @@ class CustomerController extends Controller
 
     }
 
-    public function updateProfile(Request $request, \App\Models\Customer $customer){
-        $validator = Validator::make($request->all(), \App\Models\Customer::rules(true, $customer->id, true));
+    public function updateProfile(Request $request, $id){
+        $validator = Validator::make($request->all(), \App\Models\Customer::rules(true, $id, true));
 
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
@@ -191,17 +191,17 @@ class CustomerController extends Controller
             'phone_number' => $request->phone_number
         ];
 
-        $newCustomer = \App\Models\Customer::where('email', $request->email)->get();
-
-        if(!$customer->where('id', $newCustomer[0]->id)->update($data)){
+        if(!\App\Models\Customer::where('id', $id)->update($data)){
 
             return response()->json([
-                'error', true,
+                'error'=> true,
                 'message' => 'Bad Request',
                 'code' => 400
             ], 200);
 
         } else {
+
+            $newCustomer = \App\Models\Customer::where('id', $id)->get();
 
             return response()->json([
                 'error' => false,
@@ -221,6 +221,18 @@ class CustomerController extends Controller
         return response()->json([
             'tabungan' => $price,
             'berat' => $size
+        ]);     
+    }
+
+    public function history($id)
+    { 
+        // $customer = \App\Models\Customer::findOrFail($id);
+        $size = \App\Models\Savings::where('customer_id', $id)->select('size')->sum('size');
+        $price = \App\Models\Savings::where('customer_id', $id)->select('price')->sum('price');
+        return response()->json([
+            // 'Nama' => $customer,
+            'jumlah tabungan'=> $price,
+            'berat sampah' => $size
         ]);     
     }
 }
