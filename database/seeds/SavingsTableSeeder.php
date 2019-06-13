@@ -14,14 +14,12 @@ class SavingsTableSeeder extends Seeder
         // for ($i=0; $i<5 ; $i++) {
             DB::table ('savings')->insert([
                 'price' => '125000',
-                'size' => '10',
-                'customer_id' => 1
+                'size' => '5.6'
             ]);
 
             DB::table ('savings')->insert([
                 'price' => '13500',
-                'size' => '110',
-                'customer_id' => 1
+                'size' => '2.2'
             ]);
 
         // }
