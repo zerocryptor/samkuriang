@@ -205,7 +205,7 @@ class CustomerController extends Controller
 
             return response()->json([
                 'error' => false,
-                'message' => 'Register was Successfully!!',
+                'message' => 'Update Success',
                 'code' => 201,
                 'customer' => $newCustomer[0]
             ], 200);
@@ -226,12 +226,11 @@ class CustomerController extends Controller
 
     public function history($id)
     { 
-        $customer = \App\Models\Customer::where('customer_id', $id)->select('name');     
+        // $customer = \App\Models\Customer::findOrFail($id);
         $size = \App\Models\Savings::where('customer_id', $id)->select('size')->sum('size');
         $price = \App\Models\Savings::where('customer_id', $id)->select('price')->sum('price');
-        // findOrFail($id);   
         return response()->json([
-            'Nama' => $customer,
+            // 'Nama' => $customer,
             'jumlah tabungan'=> $price,
             'berat sampah' => $size
         ]);     

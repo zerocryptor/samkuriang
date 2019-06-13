@@ -189,6 +189,116 @@
                 </div>
             </div>
         </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-8 mb-5">
+                    <div class="row">
+                        <div class="col-md-2 offset-md-3"></div>
+                        <div class="col-md-10 offset-md-1">
+                            <h3 class="faq-head">Frequently Asked <br> Question</h3>
+                            <div class="garis" style="margin:10px 0 0 0 auto"></div>
+                            <div class="faq" id="accordion">
+                                <div class="card">
+                                    <div class="card-header" id="faqHeading-1">
+                                        <div class="mb-0">
+                                            <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-1" data-aria-expanded="true" data-aria-controls="faqCollapse-1">
+                                                <span class="badge">1</span>Apa itu Petugas Bank Sampah?
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div id="faqCollapse-1" class="collapse" aria-labelledby="faqHeading-1" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Petugas Bank Sampah adalah orang yang menjadi admin dimasing masing bank sampah yang dia tempati. Petugas Bank Sampah dapat mengubah total sampah yang disetorkan oleh nasabah dan total duit yang nasabah kumpulkan setiap menyetorkan sampahnya di bank sampah yang sudah ia daftarkan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="faqHeading-2">
+                                        <div class="mb-0">
+                                            <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-2" data-aria-expanded="false" data-aria-controls="faqCollapse-2">
+                                                <span class="badge">2</span>Apa itu Bank Sampah?
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div id="faqCollapse-2" class="collapse" aria-labelledby="faqHeading-2" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Bank Sampah adalah suatu tempat yang digunakan untuk mengumpulkan sampah yang sudah dipilah-pilah. Hasil dari pengumpulan sampah yang sudah dipilah akan disetorkan ke tempat pembuatan kerajinan sampah atau ke tempat pengepul sampah terdekat di daerahnya. Bank Sampah dikelola menggunakan sistem di web yang dilakukan oleh penjaga bank sampah dari masing-masing tempat.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="faqHeading-3">
+                                        <div class="mb-0">
+                                            <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-3" data-aria-expanded="false" data-aria-controls="faqCollapse-3">
+                                                <span class="badge">3</span>Apa itu Nasabah?
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div id="faqCollapse-3" class="collapse" aria-labelledby="faqHeading-3" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Nasabah adalah orang yang sudah terdaftar menjadi anggota suatu bank sampah. Aktivitas nasabah baik penukaran sampah yang dilakukan maupun penyimpanan duit pada bank sampah tersebut akan selalu tercatat di setiap akun nasabah. Duit penyimpanan nasabah yang ada di Bank Sampah, bisa diambil kapanpun sesuka hati langsung dari Bank Sampahnya.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="faqHeading-4">
+                                        <div class="mb-0">
+                                            <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-4" data-aria-expanded="false" data-aria-controls="faqCollapse-4">
+                                                <span class="badge">4</span>Bagaimana cara daftar sebagai Petugas Bank Sampah?
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div id="faqCollapse-4" class="collapse" aria-labelledby="faqHeading-4" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Anda dapat mendaftarkan sebagai Petugas Bank Sampah yang anda naungi melalui registrasi di web.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="faqHeading-6">
+                                        <div class="mb-0">
+                                            <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-6" data-aria-expanded="false" data-aria-controls="faqCollapse-6">
+                                                <span class="badge">5</span>Bagaimana caranya menjadi Nasabah?
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div id="faqCollapse-6" class="collapse" aria-labelledby="faqHeading-6" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Anda dapat mendaftarkan sebagai Nasabah sudah terdaftar pada suatu bank sampah melalui registrasidi aplikasi Samkuriang. Pengajuan pendaftaran pada suatu bank sampah terdapat di menu home aplikasi Samkuriang.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <img src="{{ asset('img/orang.png') }}" alt="" class="orang">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="footer" class="text-center text-white pt-5">
+        <div class="container-fluid">
+            <img src="{{ asset('img/logo.png') }}" alt="" class="logo">
+            <h5 class="pt-2 mb-0">Samkuriang</h5>
+            <div class="row">
+                <div class="col-12">
+                    <span class="mb-2">dengan nabung sampah <br> ku riang</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <img src="{{ asset('img/sosmed.png') }}" alt="" class="sosmed">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 pb-4">
+                    <span>Copyright &copy; 2019 Samkuriang - All right reserved. A product of BodoAmat</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- script -->
