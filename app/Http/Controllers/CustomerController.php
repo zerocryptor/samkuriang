@@ -193,21 +193,21 @@ class CustomerController extends Controller
 
         $newCustomer = \App\Models\Customer::where('email', $request->email)->get();
 
-        if(!$customer->where('id', $request->id)->update($data)){
+        if(!$customer->where('id', $newCustomer[0]->id)->update($data)){
 
             return response()->json([
                 'error', true,
                 'message' => 'Bad Request',
                 'code' => 400
-            ]);
+            ], 200);
 
         } else {
 
             return response()->json([
                 'error' => false,
-                'message' => 'Register was Successfully!!',
+                'message' => 'Update Success',
                 'code' => 201,
-                'customer' => $newCustomer
+                'customer' => $newCustomer[0]
             ], 200);
 
         }
