@@ -138,7 +138,7 @@ class CustomerController extends Controller
         $customer->created_by = 'admin';
 
         if(!$customer->save()){
-            
+
             return response()->json([
                 'message' => 'Bad Request',
                 'code' => 400
@@ -172,7 +172,7 @@ class CustomerController extends Controller
                 'message' => 'Bad Request',
                 'code' => 400
             ];
-            
+
         }
 
     }
@@ -224,15 +224,12 @@ class CustomerController extends Controller
         ]);     
     }
 
-    public function history($id)
+    public function getHistories($id)
     { 
-        // $customer = \App\Models\Customer::findOrFail($id);
-        $size = \App\Models\Savings::where('customer_id', $id)->select('size')->sum('size');
-        $price = \App\Models\Savings::where('customer_id', $id)->select('price')->sum('price');
+        $histories = \App\Models\History::leftJoin('customers');
+
         return response()->json([
-            // 'Nama' => $customer,
-            'jumlah tabungan'=> $price,
-            'berat sampah' => $size
-        ]);     
+            'histories' => $histories
+        ]);
     }
 }

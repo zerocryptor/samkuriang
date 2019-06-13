@@ -61,6 +61,7 @@ Route::group([
     Route::post('register', 'CustomerController@register');
     Route::get('profile/{id}', 'CustomerController@profile');
     Route::put('update-profile/{id}', 'CustomerController@updateProfile');
+    Route::get('histories/{id}', 'CustomerController@getHistories');
 });
 
 Route::get('contoh', function(){

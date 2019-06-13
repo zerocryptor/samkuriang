@@ -11,9 +11,14 @@ class HistoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table ('historys')->insert([
+        DB::table('historys')->insert([
             'customer_id' => 1 ,
             'savings_id' => 1
+        ]);
+
+        DB::table('historys')->insert([
+            'customer_id' => 1 ,
+            'savings_id' => 2
         ]);
     }
 }
