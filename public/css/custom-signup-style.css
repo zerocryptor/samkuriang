@@ -1,0 +1,16 @@
+#regis-form .col-8.offset-2 {
+    background: #f3f3f3;
+    border-radius: 5px;
+}
+
+.garis_hijau {
+    border-bottom: 4px solid#31A05E;
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.garis {
+    border-bottom: 4px solid #eb4231;
+    width: 50px;
+    margin-bottom: 10px;
+}
