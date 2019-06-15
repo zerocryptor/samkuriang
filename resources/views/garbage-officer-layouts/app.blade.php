@@ -444,6 +444,41 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-12">
+                     <div class="main-card mb-3 card">
+                        <div class="card-body"><h5 class="card-title">Data Nasabah</h5>
+                            <table class="mb-0 table">
+                                <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>10000</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>9000</td>
+                                </tr>
+                                            
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>7000</td>
+                       
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
