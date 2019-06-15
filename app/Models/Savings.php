@@ -70,4 +70,9 @@ class Savings extends Authenticatable implements JWTSubject
             $this->attributes['password'] = bcrypt($password);
         }
     }
+
+    public function customer(){
+        return $this->belongsTo('App\Models\Customer', 'foreign_key');
+    }
+   
 }

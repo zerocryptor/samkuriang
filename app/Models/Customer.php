@@ -75,6 +75,10 @@ class Customer extends Authenticatable implements JWTSubject
         return [];
     }
 
+    public function savings()
+    {
+        return $this->hasMany('App\Models\Savings');
+    }
 
     // public function setPasswordAttribute($password)
     // {

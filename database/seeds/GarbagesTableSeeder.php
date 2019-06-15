@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
-use App\Garbage;
+use App\Models\Garbage;
 
 class GarbagesTableSeeder extends Seeder
 {
@@ -13,14 +13,21 @@ class GarbagesTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create('id_ID');
-        $garbage = new Garbage();
-        for ($i=0; $i<5 ; $i++) {
-            $garbage->setName($faker->name);
-            $garbage->setType($faker->randomBetween(1,2));
-            $garbage->setSum($faker->text);
-            $garbage->setPrice($faker->randomNumber(10));
-            $garbage->setAge($faker->numberBetween(25,40));
-        }
+        // $faker = Faker::create('id_ID');
+        // $garbage = new Garbage();
+        // for ($i=0; $i<5 ; $i++) {
+        //     $garbage->setName($faker->name);
+        //     $garbage->setType($faker->randomBetween(1,2));
+        //     $garbage->setSum($faker->text);
+        //     $garbage->setPrice($faker->randomNumber(10));
+        //     $garbage->setAge($faker->numberBetween(25,40));
+        // }
+
+        DB::table ('garbages')->insert([
+            'name' => 'botol',
+            'price' => '15000',
+            'age' => '72'
+        ]);
+
     }
 }

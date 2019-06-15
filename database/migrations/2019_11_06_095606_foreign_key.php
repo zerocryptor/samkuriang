@@ -33,8 +33,8 @@ class ForeignKey extends Migration
             /**
              * @foreign table recycle
              */
-            $table->unsignedInteger('recycle_id');
-            $table->foreign('recycle_id')->references('id')->on('recycles')->onUpdate('cascade')->onDelete('cascade');
+            // $table->unsignedInteger('recycle_id');
+            // $table->foreign('recycle_id')->references('id')->on('recycles')->onUpdate('cascade')->onDelete('cascade');
 
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();
