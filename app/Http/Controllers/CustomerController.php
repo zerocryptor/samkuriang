@@ -213,6 +213,37 @@ class CustomerController extends Controller
         }
     }
 
+    public function updatePassword(Request $request, $id){
+        $getSpecifiedUser = \App\Models\Customer::findOrFail($id);
+
+        if(!(Hash::make($request->old_password) == $getSpecifiedUser->password)){
+            return response()->json([
+                'message' => 'password lama tidak sama dengan data kami'
+            ]);
+        }
+
+        if(!\App\Models\Customer::where('id', $id)->update('password', Hash::make($request->password))){
+            
+            return response()->json([
+                'error'=> true,
+                'message' => 'Bad Request',
+                'code' => 400
+            ], 200);
+
+        } else {
+
+            $newCustomer = \App\Models\Customer::where('id', $id)->get();
+
+            return response()->json([
+                'error' => false,
+                'message' => 'Update Success',
+                'code' => 201,
+                'customer' => $newCustomer[0]
+            ], 200);
+            
+        }
+    }
+
     public function tabungan($id)
     { 
         $price = \App\Models\Savings::where('customer_id', $id)->select('price')->sum('price');
