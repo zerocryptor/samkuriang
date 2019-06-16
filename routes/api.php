@@ -61,6 +61,7 @@ Route::group([
     Route::post('register', 'CustomerController@register');
     Route::get('profile/{id}', 'CustomerController@profile');
     Route::put('update-profile/{id}', 'CustomerController@updateProfile');
+    Route::get('histories/{id}', 'CustomerController@getHistories');
 });
 
 Route::get('contoh', function(){
@@ -68,7 +69,6 @@ Route::get('contoh', function(){
         'contoh' => 'ini contoh'
     ]);
 });
-
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

@@ -16,8 +16,8 @@ class CreateGarbagesTable extends Migration
         Schema::create('garbages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name',50);
-            $table->string('type',50);
-            $table->string('sum',25);
+            $table->string('type',50)->nullable();
+            $table->string('sum',25)->nullable();
             $table->string('price',25);
             $table->string('age',25);
         });

@@ -138,7 +138,7 @@ class CustomerController extends Controller
         $customer->created_by = 'admin';
 
         if(!$customer->save()){
-            
+
             return response()->json([
                 'message' => 'Bad Request',
                 'code' => 400
@@ -172,7 +172,7 @@ class CustomerController extends Controller
                 'message' => 'Bad Request',
                 'code' => 400
             ];
-            
+
         }
 
     }
@@ -205,7 +205,7 @@ class CustomerController extends Controller
 
             return response()->json([
                 'error' => false,
-                'message' => 'Register was Successfully!!',
+                'message' => 'Update Success',
                 'code' => 201,
                 'customer' => $newCustomer[0]
             ], 200);
@@ -224,16 +224,15 @@ class CustomerController extends Controller
         ]);     
     }
 
-    public function history($id)
-    { 
-        // $customer = \App\Models\Customer::findOrFail($id);
-        $size = \App\Models\Savings::where('customer_id', $id)->select('size')->sum('size');
-        $price = \App\Models\Savings::where('customer_id', $id)->select('price')->sum('price');
-        // findOrFail($id);   
+    public function getHistories($id)
+    {
+        $savings = \App\Models\Savings::leftjoin('customers','savings.customer_id','=','customer_id')
+        ->select('savings.id', 'savings.price', 'savings.size', 'garbages.name', 'savings.created_at')
+        ->leftjoin('garbages','savings.garbage_id','=','garbage_id')
+        ->get();
+
         return response()->json([
-            // 'Nama' => $customer,
-            'jumlah tabungan'=> $price,
-            'berat sampah' => $size
-        ]);     
+            'history' => $savings
+        ]);
     }
 }

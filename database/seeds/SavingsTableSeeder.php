@@ -13,15 +13,19 @@ class SavingsTableSeeder extends Seeder
     {
         // for ($i=0; $i<5 ; $i++) {
             DB::table ('savings')->insert([
-                'customer_id' => 1 ,
                 'price' => '125000',
-                'size' => '10'
+                'size' => '5.6',
+                'customer_id' => '1',
+                'garbage_id' => '1',
+                'garbage_bank_id' => '1'
             ]);
 
             DB::table ('savings')->insert([
-                'customer_id' => 1 ,
                 'price' => '13500',
-                'size' => '110'
+                'size' => '2.2',
+                'customer_id' => '1',
+                'garbage_id' => '1',
+                'garbage_bank_id' => '1'
             ]);
 
         // }
