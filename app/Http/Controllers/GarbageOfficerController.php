@@ -18,6 +18,20 @@ class GarbageOfficerController extends Controller
     }
 
     public function index(){
-        return view('garbage_officer');
+        return view('garbage-officer-pages/dashboard');
     }
+
+    public function customers(){
+        return view('garbage-officer-pages/garbage-officer-cust');
+    }
+
+    public function editCust(){
+        return view('garbage-officer-pages/edit-cust');
+    }
+
+    public function detailCust(){
+        return view('garbage-officer-pages/detail-cust');
+    }
+    
+
 }

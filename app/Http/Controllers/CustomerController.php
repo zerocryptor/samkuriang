@@ -256,12 +256,14 @@ class CustomerController extends Controller
     }
 
     public function getHistories($id)
-    { 
-        // $histories = \App\Models\History::leftJoin('customers');
-        $savings = \App\Models\Savings::leftjoin('customers','savings.customer_id','=','customer_id')->leftjoin('garbages','savings.garbage_id','=','garbage_id')->leftjoin('garbage_banks','savings.garbage_bank_id','=','garbage_bank_id')->get();
+    {
+        $savings = \App\Models\Savings::leftjoin('customers','savings.customer_id','=','customer_id')
+        ->select('savings.id', 'savings.price', 'savings.size', 'garbages.name', 'savings.created_at')
+        ->leftjoin('garbages','savings.garbage_id','=','garbage_id')
+        ->get();
+
         return response()->json([
             'history' => $savings
-
         ]);
     }
 }

@@ -419,9 +419,15 @@
                     <ul class="vertical-nav-menu">
                         <li class="app-sidebar__heading">Dashboards</li>
                         <li>
-                            <a href="index.html" class="mm-active">
+                            <a href="{{ url('garbage_officer') }}" class="{{ (\Request::route()->getName() == 'home_garbage_officer') ? 'mm-active' : ''}}">
                                 <i class="metismenu-icon pe-7s-rocket"></i>
                                 Dashboard Utama
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('garbage_officer/customers') }}" class="{{ (\Request::route()->getName() == 'customers_garbage_officer-cust') ? 'mm-active' : ''}}">
+                                <i class="metismenu-icon pe-7s-id"></i>
+                                Customers
                             </a>
                         </li>
                     </ul>
@@ -429,57 +435,7 @@
             </div>
         </div>
         <div class="app-main__outer">
-            <div class="app-main__inner">
-                <div class="app-page-title">
-                    <div class="page-title-wrapper">
-                        <div class="page-title-heading">
-                            <div class="page-title-icon">
-                                <i class="pe-7s-leaf icon-gradient bg-mean-fruit">
-                                </i>
-                            </div>
-                            <div>Garbage Officer Samkuriang Dashboard
-                                <div class="page-title-subheading">Last login: Yesterday, 12-6-2019
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                     <div class="main-card mb-3 card">
-                        <div class="card-body"><h5 class="card-title">Data Nasabah</h5>
-                            <table class="mb-0 table">
-                                <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Name</th>
-                                    <th>Price</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>10000</td>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>9000</td>
-                                </tr>
-                                            
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>7000</td>
-                       
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @yield('content-garbage-officer')
         </div>
     </div>
 </div>
