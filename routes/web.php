@@ -23,6 +23,9 @@ Route::post('/register/garbage_officer', 'Auth\RegisterController@createGarbageO
 Auth::routes();
 
 Route::get('/garbage_officer', 'GarbageOfficerController@index')->name('home_garbage_officer');
+Route::get('/garbage_officer/customers', 'GarbageOfficerController@customers')->name('customers_garbage_officer-cust');
+Route::get('/garbage_officer/customers/edit', 'GarbageOfficerController@editCust')->name('edit_garbage_officer-cust');
+Route::get('/garbage_officer/customers/detail', 'GarbageOfficerController@detailCust')->name('detail_garbage_officer-cust');
 Route::get('/home', 'HomeController@index')->name('home');
 
 
