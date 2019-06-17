@@ -14,3 +14,26 @@
     width: 50px;
     margin-bottom: 10px;
 }
+
+.btn {
+    width: 110px;
+    text-align: center;
+    transition: all 0.7s;
+    background-size: 180% auto;
+    color: white !important;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 40px;
+}
+
+.btn:hover {
+    background-position: right center;
+    color: white;
+}
+.btn-1 {
+    background-image: linear-gradient(
+        to right,
+        #055a3d 0%,
+        #002031 51%,
+        #055a3d 100%
+    ) !important;
+}

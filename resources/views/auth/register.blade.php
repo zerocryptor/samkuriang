@@ -12,6 +12,15 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('vendors/bootstrap-4.0.0/dist/css/bootstrap.min.css') }}">
+    <style>
+    /* Always set the map height explicitly to define the size of the div
+    * element that contains the map. */
+    #map {
+        width: 100%;
+        height: 400px;
+        margin-top: 10px;
+    }
+    </style>
 </head>
 <body>
 <section id="regis-form" class="py-5">
@@ -19,21 +28,53 @@
         <div class="row">
             <div class="col-8 offset-2 py-3 px-5">
                 <div class="sign-up-title text-center">
-                    <img src="{{ asset('img/navigate.png') }}" alt="img-regis">
-                    <h2>Sign up for best experience!!</h2>
+                    <img src="{{ asset('img/navigate.png') }}" class="img-fluid" alt="img-regis">
+                    <h2>Daftarkan bank sampah anda segera!</h2>
                     <div class="garis" style="margin:10px auto"></div>
                 </div>
-
                 <div class="main-form">
-                    <form action="" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Masukan email anda, Cth: johndoe@gmail.com">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
+                    <form action="{{ route('register') }}" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="namatempat">Nama bank sampah</label>
-                            <input type="namatempat" class="form-control" id="name" aria-describedby="namatempatHelp" placeholder="Masukan nama tempat bank sampah anda">
+                            <input type="text" class="form-control" id="namatempat" name="namatempat" placeholder="Masukan nama tempat bank sampah anda">
+                        </div>
+                        <div class="form-group">
+                            <label for="namapetugas">Nama petugas</label>
+                            <input type="text" class="form-control" id="namapetugas" name="namapetugas" placeholder="Masukan nama petugas bank sampah anda">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Masukan email anda, Cth: johndoe@gmail.com">
+                            <small id="emailHelp" class="form-text text-muted">Pastikan email yang anda masukan adalah email aktif.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Katasandi</label>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Masukan password anda">
+                        </div>
+                        <div class="form-group">
+                            <label for="password-verification">Verifikasi Kata sandi</label>
+                            <input type="password" class="form-control" name="password-verification" id="password-verification" placeholder="Masukan password lagi">
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Lokasi</label>
+                            <input type="text" class="form-control" name="position" id="position" placeholder="Masukan alamat lengkap anda">
+                            <small id="lokasiHelp" class="form-text text-muted">Pastikan titik kordinat berada dilokasi yang tepat.</small>
+                            <div id="map"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <label for="latitude">Latitude</label>
+                                    <input type="text" class="form-control" id="latitude" name="latitude" disabled>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="longitude">Longitude</label>
+                                    <input type="text" class="form-control" id="longitude" name="longitude" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-outline-success my-2 my-sm-0 py-2 btn-1 col-12">Daftar</button>
                         </div>
                     </form>
                 </div>
@@ -41,15 +82,131 @@
         </div>
     </div>
 </section>
-
     <script>
-      var map;
-      function initMap() {
+    var map;
+    function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+            center: {lat: -6.362173, lng: 106.826393},
+            zoom: 13,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
         });
-      }
+        
+        var input = document.getElementById('position');
+        var searchBox = new google.maps.places.SearchBox(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+            searchBox.setBounds(map.getBounds());
+        });
+        
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+            var places = searchBox.getPlaces();
+
+            if (places.length == 0) {
+                return;
+            }
+
+            // Clear out the old markers.
+            markers.forEach(function(marker) {
+                marker.setMap(null);
+            });
+            markers = [];
+
+          // For each place, get the icon, name and location.
+            var bounds = new google.maps.LatLngBounds();
+            places.forEach(function(place) {
+            if (!place.geometry) {
+                console.log("Returned place contains no geometry");
+                return;
+            }
+
+            document.getElementById('latitude').value = place.geometry.location.lat();
+            document.getElementById('longitude').value = place.geometry.location.lng();
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+                map: map,
+                title: place.name,
+                position: place.geometry.location
+            }));
+
+            map.addListener('click', function(e) {
+                animatedMove(markers[0], .5, markers[0].position, e.latLng);
+            });
+
+            if (place.geometry.viewport) {
+                // Only geocodes have viewport.
+                bounds.union(place.geometry.viewport);
+            } else {
+                bounds.extend(place.geometry.location);
+            }
+            });
+            map.fitBounds(bounds);
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+
+        // // Try HTML5 geolocation.
+        // if (navigator.geolocation) {
+        //     navigator.geolocation.getCurrentPosition(function(position) {
+        //     var pos = {
+        //         lat: position.coords.latitude,
+        //         lng: position.coords.longitude
+        //     };
+
+        //     infowindow.setPosition(pos);
+        //     infowindow.setContent('Location found.');
+        //     infowindow.open(map);
+        //     map.setCenter(pos);
+        //     }, function() {
+        //         handleLocationError(true, infowindow, map.getCenter());
+        //     });
+        // } else {
+        //   // Browser doesn't support Geolocation
+        //   handleLocationError(false, infowindow, map.getCenter());
+        // }
+
+        // function handleLocationError(browserHasGeolocation, infowindow, pos) {
+        //     infowindow.setPosition(pos);
+        //     infowindow.setContent(browserHasGeolocation ?
+        //                         'Error: The Geolocation service failed.' :
+        //                         'Error: Your browser doesn\'t support geolocation.');
+        //                         infowindow.open(map);
+        // }
+    }
+
+    // google.maps.event.addDomListener(window, 'load', initMap);
+
+    function animatedMove(marker, t, current, moveto) {
+        var lat = current.lat();
+        var lng = current.lng();
+
+        var deltalat = (moveto.lat() - current.lat()) / 100;
+        var deltalng = (moveto.lng() - current.lng()) / 100;
+
+        document.getElementById('latitude').value = moveto.lat();
+        document.getElementById('longitude').value = moveto.lng();
+
+        var delay = 10 * t;
+        for (var i = 0; i < 100; i++) {
+            (function(ind) {
+            setTimeout(
+                function() {
+                var lat = marker.position.lat();
+                var lng = marker.position.lng();
+                lat += deltalat;
+                lng += deltalng;
+                latlng = new google.maps.LatLng(lat, lng);
+                marker.setPosition(latlng);
+                }, delay * ind
+            );
+            })(i)
+        }
+    }
+
     </script>
 
     <!-- script -->
@@ -58,6 +215,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <!-- gmaps -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGu6Jec5gdAvaD08eYVduRSQGOZteYL8w&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGu6Jec5gdAvaD08eYVduRSQGOZteYL8w&libraries=places&callback=initMap" async defer></script>
 </body>
 </html>
