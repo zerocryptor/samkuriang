@@ -33,31 +33,37 @@
                     <div class="garis" style="margin:10px auto"></div>
                 </div>
                 <div class="main-form">
-                    <form action="{{ route('register') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('register') }}" method="post">
+                    @csrf
                         <div class="form-group">
                             <label for="namatempat">Nama bank sampah</label>
-                            <input type="text" class="form-control" id="namatempat" name="namatempat" placeholder="Masukan nama tempat bank sampah anda">
+                            <input type="text" class="form-control" id="namatempat" name="namatempat" placeholder="Masukan nama tempat bank sampah anda" required>
                         </div>
                         <div class="form-group">
                             <label for="namapetugas">Nama petugas</label>
-                            <input type="text" class="form-control" id="namapetugas" name="namapetugas" placeholder="Masukan nama petugas bank sampah anda">
+                            <input type="text" class="form-control" id="namapetugas" name="namapetugas" placeholder="Masukan nama petugas bank sampah anda" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Masukan email anda, Cth: johndoe@gmail.com">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Masukan email anda, Cth: johndoe@gmail.com" required>
                             <small id="emailHelp" class="form-text text-muted">Pastikan email yang anda masukan adalah email aktif.</small>
                         </div>
                         <div class="form-group">
+                            <label for="phone_number">Nomor Telepon</label>
+                            <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Masukan nomor telepon anda" required>
+                            <small id="phoneHelp" class="form-text text-muted">Pastikan email yang anda masukan adalah nomer telepon aktif.</small>
+                        </div>
+                        <div class="form-group">
                             <label for="password">Katasandi</label>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Masukan password anda">
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Masukan password anda" required>
                         </div>
                         <div class="form-group">
                             <label for="password-verification">Verifikasi Kata sandi</label>
-                            <input type="password" class="form-control" name="password-verification" id="password-verification" placeholder="Masukan password lagi">
+                            <input type="password" class="form-control" name="password-verification" id="password-verification" placeholder="Masukan password lagi" required>
                         </div>
                         <div class="form-group">
                             <label for="position">Lokasi</label>
-                            <input type="text" class="form-control" name="position" id="position" placeholder="Masukan alamat lengkap anda">
+                            <input type="text" class="form-control" name="position" id="position" placeholder="Masukan alamat lengkap anda" required>
                             <small id="lokasiHelp" class="form-text text-muted">Pastikan titik kordinat berada dilokasi yang tepat.</small>
                             <div id="map"></div>
                         </div>
@@ -65,11 +71,11 @@
                             <div class="row">
                                 <div class="col-12 col-md-6">
                                     <label for="latitude">Latitude</label>
-                                    <input type="text" class="form-control" id="latitude" name="latitude" disabled>
+                                    <input type="text" class="form-control" id="latitude" name="latitude" disabled required>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="longitude">Longitude</label>
-                                    <input type="text" class="form-control" id="longitude" name="longitude" disabled>
+                                    <input type="text" class="form-control" id="longitude" name="longitude" disabled required>
                                 </div>
                             </div>
                         </div>

@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\User;
 use App\Models\GarbageOfficer;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use App\Notifications\NewGarbageOfficer;
-// use Notification;
+use Illuminate\Support\Facades\DB;
+use App\Http\Requests;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class RegisterController extends Controller
 {
@@ -31,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
@@ -52,9 +52,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:garbage_officers'],
-            'password' => ['required', 'string', 'min:6', 'confirmed']
+            'namapetugas' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:garbage_officers',
+            'password' => 'required|string|min:6|confirmed',
+            // 'position' => 'required|string|max:100',
+            // 'phone_number' => 'required|string',
+            // 'latitude' => 'required',
+            // 'longitude' => 'required',
+            // 'namatempat' => 'required|string'
         ]);
     }
 
@@ -67,9 +72,15 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return GarbageOfficer::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'name'      => $data['namapetugas'],
+            'email'     => $data['email'],
+            'password'  => bcrypt($data['password']),
+            'address' => $data['position'],
+            'phone_number' => $data['phone_number'],
+            'lat' => $data['latitude'],
+            'lng' => $data['longitude'],
+            'place_name' => $data['namatempat']
         ]);
+        
     }
 }
