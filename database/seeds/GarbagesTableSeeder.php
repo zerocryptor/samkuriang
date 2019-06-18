@@ -24,9 +24,19 @@ class GarbagesTableSeeder extends Seeder
         // }
 
         DB::table ('garbages')->insert([
-            'name' => 'botol',
+            'name' => 'Botol Plastik',
+            'type' => 'Anorganik',
             'price' => '15000',
-            'age' => '72'
+            'age' => '72',
+            'garbage_officer_id' => '1'
+        ]);
+
+        DB::table ('garbages')->insert([
+            'name' => 'Kulit Pisang',
+            'type' => 'Organik',
+            'price' => '10000',
+            'age' => '15',
+            'garbage_officer_id' => '1'
         ]);
 
     }
