@@ -23,8 +23,8 @@ class CreateGarbageOfficersTable extends Migration
             $table->string('lng',20);
             $table->string('place_name', 50);
             $table->string('phone_number',16);
+            $table->boolean('status')->default(false);
             // $table->integer('saving_id');
-            $table->rememberToken();
         });
     }
 
