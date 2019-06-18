@@ -14,7 +14,12 @@ class GarbageController extends Controller
      */
     public function index()
     {
-        //
+        $data = [
+            'a' => 10,
+            'b' => 20
+        ];
+
+        return view('home', $data);
     }
 
     /**

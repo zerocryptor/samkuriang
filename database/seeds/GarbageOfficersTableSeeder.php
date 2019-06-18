@@ -29,8 +29,8 @@ class GarbageOfficersTableSeeder extends Seeder
             'password' => Hash::make('petugas123'),
             'address' => 'Jalan Petugas No. 01',
             'phone_number' => '082112078019',
-            'lat' => 123,
-            'lng' => 123,
+            'lat' => -6.397048,
+            'lng' => 106.841577,
             'place_name' => 'asd'
         ]);
     }
