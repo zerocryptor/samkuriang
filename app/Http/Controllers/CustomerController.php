@@ -216,12 +216,16 @@ class CustomerController extends Controller
     public function updatePassword(Request $request, $id){
         $getSpecifiedUser = \App\Models\Customer::findOrFail($id);
 
-        if(!(Hash::make($request->old_password) == $getSpecifiedUser->password)){
+        if(!(Hash::check($request->old_password, $getSpecifiedUser->password))){
+
             return response()->json([
-                'message' => 'password lama tidak sama dengan data kami'
+                'password_with_encrypt' => $getSpecifiedUser->password,
+                'old_password' => $request->old_password
             ]);
+
         }
-             if(!\App\Models\Customer::where('id', $id)->update('password', Hash::make($request->password))){
+
+        if(!\App\Models\Customer::where('id', $id)->update(['password' => Hash::make($request->password)])){
             
             return response()->json([
                 'error'=> true,
