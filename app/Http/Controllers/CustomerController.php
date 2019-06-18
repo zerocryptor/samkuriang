@@ -160,6 +160,7 @@ class CustomerController extends Controller
 
     public function profile($id)
     {
+
         try {
 
             $customer = \App\Models\Customer::findOrFail($id);    
@@ -219,8 +220,7 @@ class CustomerController extends Controller
         if(!(Hash::check($request->old_password, $getSpecifiedUser->password))){
 
             return response()->json([
-                'password_with_encrypt' => $getSpecifiedUser->password,
-                'old_password' => $request->old_password
+                'message' => 'password lama tidak sama dengan database'
             ]);
 
         }
