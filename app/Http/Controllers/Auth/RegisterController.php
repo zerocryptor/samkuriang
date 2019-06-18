@@ -31,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/dashboard';
+    protected $redirectTo = '/garbage_officer';
 
     /**
      * Create a new controller instance.
@@ -41,6 +41,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->middleware('guest:garbage_officer');
     }
 
     /**
@@ -53,9 +54,9 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'namapetugas' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:garbage_officers',
-            'password' => 'required|string|min:6|confirmed',
-            // 'position' => 'required|string|max:100',
+            // 'email' => 'required|string|email|max:255|unique:garbage_officers',
+            // 'password' => 'required|string|min:6|confirmed',
+            // 'position' => 'required|string',
             // 'phone_number' => 'required|string',
             // 'latitude' => 'required',
             // 'longitude' => 'required',
@@ -81,6 +82,5 @@ class RegisterController extends Controller
             'lng' => $data['longitude'],
             'place_name' => $data['namatempat']
         ]);
-        
     }
 }
