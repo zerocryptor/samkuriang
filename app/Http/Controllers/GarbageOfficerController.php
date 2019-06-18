@@ -14,8 +14,9 @@ class GarbageOfficerController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:garbage_officer');
-    }
+        $this->middleware(['auth:garbage_officer', 'verified']);
+        // $this->middleware('auth:garbage_officer');
+    }   
 
     public function index(){
         $data = [
