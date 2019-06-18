@@ -22,7 +22,7 @@ class GarbageOfficer extends Authenticatable implements JWTSubject
      */
 
     protected $fillable = [
-        'name', 'email', 'password', 'address', 'phone_number'
+        'name', 'email', 'password', 'address', 'phone_number', 'lat', 'lng', 'place_name'
     ];
 
     /**

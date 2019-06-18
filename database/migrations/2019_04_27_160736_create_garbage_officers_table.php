@@ -18,10 +18,13 @@ class CreateGarbageOfficersTable extends Migration
             $table->string('name',50);
             $table->string('email',50)->unique();
             $table->string('password',72);
-            $table->string('address',80);
+            $table->string('address',150);
+            $table->string('lat',20);
+            $table->string('lng',20);
+            $table->string('place_name', 50);
             $table->string('phone_number',16);
+            $table->boolean('status')->default(false);
             // $table->integer('saving_id');
-            $table->rememberToken();
         });
     }
 

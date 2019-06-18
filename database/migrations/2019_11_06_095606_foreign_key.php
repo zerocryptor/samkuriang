@@ -42,6 +42,12 @@ class ForeignKey extends Migration
             
         });
 
+        Schema::table('garbage_officers', function (Blueprint $table) {
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable();
+            $table->softDeletes();
+        });
+
         Schema::table('garbage_banks', function (Blueprint $table) {
             /**
              * @foreign table garbage officer

@@ -28,7 +28,10 @@ class GarbageOfficersTableSeeder extends Seeder
             'email' => 'petugas@samkuriang.com',
             'password' => Hash::make('petugas123'),
             'address' => 'Jalan Petugas No. 01',
-            'phone_number' => '082112078019'
+            'phone_number' => '082112078019',
+            'lat' => -6.397048,
+            'lng' => 106.841577,
+            'place_name' => 'asd'
         ]);
     }
 }
