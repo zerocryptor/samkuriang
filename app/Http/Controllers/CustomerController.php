@@ -220,7 +220,9 @@ class CustomerController extends Controller
         if(!(Hash::check($request->old_password, $getSpecifiedUser->password))){
 
             return response()->json([
+
                 'message' => 'password lama tidak sama dengan database'
+            
             ]);
 
         }

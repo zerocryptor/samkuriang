@@ -20,7 +20,7 @@ Route::get('/register/garbage_officer', 'Auth\RegisterController@showGarbageOffi
 Route::post('/login/garbage_officer', 'Auth\LoginController@garbageofficerLogin');
 Route::post('/register/garbage_officer', 'Auth\RegisterController@createGarbageOfficer');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/garbage_officer', 'GarbageOfficerController@index')->name('home_garbage_officer');
 Route::get('/garbage_officer/customers', 'GarbageOfficerController@customers')->name('customers_garbage_officer-cust');

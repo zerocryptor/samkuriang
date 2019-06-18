@@ -16,7 +16,8 @@ class CreateGarbageOfficersTable extends Migration
         Schema::create('garbage_officers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name',50);
-            $table->string('email',50)->unique();
+            $table->string('email',70)->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('password',72);
             $table->string('address',150);
             $table->string('lat',20);

@@ -21,7 +21,6 @@ class CreateGarbageBanksTable extends Migration
             $table->string('address',85);
             $table->string('contact',15);
             // $table->decimal('garbage_price',15,2);
-            
         });
     }
 
