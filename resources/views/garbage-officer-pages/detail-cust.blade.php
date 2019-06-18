@@ -254,8 +254,8 @@
                                 </div>
                                 <div class="widget-content-right">
                                     <div class="font-size-xlg text-muted">
-                                        <span>54</span>
-                                        <small class="opacity-5 pr-1">Kg</small>
+                                    <small class="opacity-5 pr-1">Rp</small>
+                                        <span>90.000</span>
                                         <small class="text-success pl-2">
                                             <i class="fa fa-angle-up"></i>
                                         </small>

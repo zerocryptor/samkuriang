@@ -25,7 +25,7 @@
                         <div class="widget-subheading">Number of Customers</div>
                     </div>
                     <div class="widget-content-right">
-                        <div class="widget-numbers text-white"><span>50</span></div>
+                        <div class="widget-numbers text-white"><span>{{$customer}}</span></div>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                         <div class="widget-subheading">Total Customer Saving</div>
                     </div>
                     <div class="widget-content-right">
-                        <div class="widget-numbers text-white"><span>Rp 50.000</span></div>
+                        <div class="widget-numbers text-white"><span>{{$saving}}</span></div>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                         <div class="widget-subheading">Collection of Garbages</div>
                     </div>
                     <div class="widget-content-right">
-                        <div class="widget-numbers text-white"><span>20 Kg</span></div>
+                        <div class="widget-numbers text-white"><span>{{$garbage}}Kg</span></div>
                     </div>
                 </div>
             </div>

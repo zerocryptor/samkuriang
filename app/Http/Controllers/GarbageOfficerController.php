@@ -18,7 +18,15 @@ class GarbageOfficerController extends Controller
     }
 
     public function index(){
-        return view('garbage-officer-pages/dashboard');
+        $data = [
+            'customer' => \App\Models\Customer::count(),
+            'saving' =>  'Rp. '.strrev(implode('.',str_split(strrev(strval(\App\Models\Savings::select('price')->sum('price'))),3))),
+            'garbage' =>\App\Models\Garbage::count(),
+            'trash' => \App\Models\Garbage::select('name')
+        ];
+        
+    
+        return view('garbage-officer-pages/dashboard', $data);
     }
 
     public function customers(){
