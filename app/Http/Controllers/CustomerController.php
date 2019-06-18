@@ -221,8 +221,7 @@ class CustomerController extends Controller
                 'message' => 'password lama tidak sama dengan data kami'
             ]);
         }
-
-        if(!\App\Models\Customer::where('id', $id)->update('password', Hash::make($request->password))){
+             if(!\App\Models\Customer::where('id', $id)->update('password', Hash::make($request->password))){
             
             return response()->json([
                 'error'=> true,
@@ -240,7 +239,7 @@ class CustomerController extends Controller
                 'code' => 201,
                 'customer' => $newCustomer[0]
             ], 200);
-            
+
         }
     }
 
