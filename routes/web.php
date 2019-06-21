@@ -26,7 +26,11 @@ Route::get('/garbage_officer', 'GarbageOfficerController@index')->name('home_gar
 Route::get('/garbage_officer/customers', 'GarbageOfficerController@customers')->name('customers_garbage_officer-cust');
 Route::get('/garbage_officer/customers/edit', 'GarbageOfficerController@editCust')->name('edit_garbage_officer-cust');
 Route::get('/garbage_officer/customers/detail', 'GarbageOfficerController@detailCust')->name('detail_garbage_officer-cust');
-Route::get('/home', 'HomeController@index')->name('home');
+
+// admin
+Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/admin/garbage-banks/list', 'AdminController@garbageBankList')->name('admin-garbage-bank');
+Route::get('/admin/customers/list', 'AdminController@customerList')->name('admin-customer');
 
 
 // Route::get('/home', 'HomeController@index')->name('home');

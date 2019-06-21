@@ -15,7 +15,6 @@ class GarbageOfficerController extends Controller
     public function __construct()
     {
         $this->middleware(['auth:garbage_officer', 'verified']);
-        // $this->middleware('auth:garbage_officer');
     }   
 
     public function index(){
@@ -25,7 +24,6 @@ class GarbageOfficerController extends Controller
             'garbage' =>\App\Models\Garbage::count(),
             'trash' => \App\Models\Garbage::select('name')
         ];
-        
     
         return view('garbage-officer-pages/dashboard', $data);
     }
@@ -41,6 +39,4 @@ class GarbageOfficerController extends Controller
     public function detailCust(){
         return view('garbage-officer-pages/detail-cust');
     }
-    
-
 }

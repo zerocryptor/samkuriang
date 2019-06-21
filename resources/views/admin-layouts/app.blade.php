@@ -421,22 +421,22 @@
                     <ul class="vertical-nav-menu">
                         <li class="app-sidebar__heading">Dashboards</li>
                         <li>
-                            <a href="{{ url('home') }}" class="mm-active">
+                            <a href="{{ url('admin') }}" class="{{ (\Request::route()->getName() == 'home_garbage_officer') ? 'mm-active' : ''}}">
                                 <i class="metismenu-icon pe-7s-rocket"></i>
-                                Main Dashboard
+                                Dashboard utama
                             </a>
                         </li>
                         <li class="app-sidebar__heading">Main Menu</li>
                         <li>
-                            <a href="{{ url('garbage-bank/lists') }}">
+                            <a href="{{ url('admin/garbage-banks/list') }}">
                                 <i class="metismenu-icon pe-7s-rocket"></i>
-                                Garbage Bank Lists
+                                Mitra bank sampah
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('customer/lists') }}">
+                            <a href="{{ url('admin/customers/list') }}">
                                 <i class="metismenu-icon pe-7s-rocket"></i>
-                                Customer Lists
+                                Pengguna
                             </a>
                         </li>
                     </ul>
@@ -445,74 +445,7 @@
         </div>
         <div class="app-main__outer">
             <div class="app-main__inner">
-                <div class="app-page-title">
-                    <div class="page-title-wrapper">
-                        <div class="page-title-heading">
-                            <div class="page-title-icon">
-                                <i class="pe-7s-leaf icon-gradient bg-mean-fruit">
-                                </i>
-                            </div>
-                            <div>Administrator Samkuriang Dashboard
-                                <div class="page-title-subheading">Last login: Yesterday, 12-6-2019
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-xl-4">
-                        <div class="card mb-3 widget-content bg-grow-early">
-                            <div class="widget-content-wrapper text-white">
-                                <div class="widget-content-left">
-                                    <div class="widget-heading">Garbage Bank</div>
-                                    <div class="widget-subheading">Total</div>
-                                </div>
-                                <div class="widget-content-right">
-                                    <div class="widget-numbers text-white"><span>1896</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-4">
-                        <div class="card mb-3 widget-content bg-grow-early">
-                            <div class="widget-content-wrapper text-white">
-                                <div class="widget-content-left">
-                                    <div class="widget-heading">Customer</div>
-                                    <div class="widget-subheading">Total</div>
-                                </div>
-                                <div class="widget-content-right">
-                                    <div class="widget-numbers text-white"><span>568</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-4">
-                        <div class="card mb-3 widget-content bg-grow-early">
-                            <div class="widget-content-wrapper text-white">
-                                <div class="widget-content-left">
-                                    <div class="widget-heading">News</div>
-                                    <div class="widget-subheading">People Interested</div>
-                                </div>
-                                <div class="widget-content-right">
-                                    <div class="widget-numbers text-white"><span>19</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-xl-none d-lg-block col-md-6 col-xl-4">
-                        <div class="card mb-3 widget-content bg-premium-dark">
-                            <div class="widget-content-wrapper text-white">
-                                <div class="widget-content-left">
-                                    <div class="widget-heading">Products Sold</div>
-                                    <div class="widget-subheading">Revenue streams</div>
-                                </div>
-                                <div class="widget-content-right">
-                                    <div class="widget-numbers text-warning"><span>$14M</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @yield('content')
             </div>
         </div>
     </div>
