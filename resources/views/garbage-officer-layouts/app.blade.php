@@ -447,7 +447,93 @@
                 <h5 class="modal-title" id="exampleModalLabel">New Customers are Waiting!</h5>
             </div>
             <div class="modal-body">
-                <p class="mb-0">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p>
+                <div class="table-responsive">
+                    <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th>Name</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="text-center text-muted">1</td>
+                            <td>
+                                <div class="widget-content p-0">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left mr-3">
+                                            <div class="widget-content-left">
+                                                <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="widget-content-left flex2">
+                                            <div class="widget-heading">Pamungkas</div>
+                                            <!-- <div class="widget-subheading opacity-7">Web Developer</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                            <button href="#" type="button" id="PopoverCusto\mT-1" class="btn btn-danger btn-sm">Decline</button>
+                            <button href="#" type="button" id="PopoverCusto\mT-1" class="btn btn-success btn-sm">Accept</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center text-muted">2</td>
+                            <td>
+                                <div class="widget-content p-0">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left mr-3">
+                                            <div class="widget-content-left">
+                                                <img width="40" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="widget-content-left flex2">
+                                            <div class="widget-heading">Kaca Beling</div>
+                                            <!-- <div class="widget-subheading opacity-7">Etiam sit amet orci eget</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-center">Anorganik</td>
+                            <td class="text-center">
+                                <div class="">Rp 3.500</div>
+                            </td>
+                            <td class="text-center">
+                                <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Edit</button>
+                                <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center text-muted">2</td>
+                            <td>
+                                <div class="widget-content p-0">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left mr-3">
+                                            <div class="widget-content-left">
+                                                <img width="40" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="widget-content-left flex2">
+                                            <div class="widget-heading">Kulit Pisang</div>
+                                            <!-- <div class="widget-subheading opacity-7">Etiam sit amet orci eget</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-center">Organik</td>
+                            <td class="text-center">
+                                <div class="">-</div>
+                            </td>
+                            <td class="text-center">
+                                <button type="button" id="PopoverCustomT-2" class="btn btn-danger btn-sm">Decline</button>
+                                <button type="button" id="PopoverCustomT-2" class="btn btn-success btn-sm">Accept</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

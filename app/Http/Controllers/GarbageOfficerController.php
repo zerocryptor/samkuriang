@@ -28,6 +28,7 @@ class GarbageOfficerController extends Controller
         return view('garbage-officer-pages/dashboard', $data);
     }
 
+    
 
     public function customers(){
         return view('garbage-officer-pages/garbage-officer-cust');
