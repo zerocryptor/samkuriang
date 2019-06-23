@@ -271,4 +271,12 @@ class CustomerController extends Controller
             'history' => $savings
         ]);
     }
+
+    public function getDataGarbageOfficer(){
+        $getGarbageOfficer = \App\Models\GarbageOfficer::all();
+        
+        return response()->json([
+            'data' => $getGarbageOfficer
+        ]);
+    }
 }
