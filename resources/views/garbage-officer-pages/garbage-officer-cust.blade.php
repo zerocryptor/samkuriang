@@ -19,9 +19,10 @@
                         <tr>
                             <th class="text-center">#</th>
                             <th>Name</th>
-                            <th class="text-center">Garbage Savings</th>
-                            <th class="text-center">Price</th>
-                            <th class="text-center">Actions</th>
+                            <th class="text-center">Tabungan Sampah</th>
+                            <th class="text-center">Total Pendapatan</th>
+                            <th class="text-center">Terakhir Diupdate</th>
+                            <th class="text-center">Opsi</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -46,6 +47,7 @@
                             <td class="text-center">
                                 <div class="">Rp 70.000</div>
                             </td>
+                            <td class="text-center">20/12/2019</td>
                             <td class="text-center">
                                 <a href="{{ url('garbage_officer/customers/edit') }}" type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Edit</a>
                                 <a href="{{ url('garbage_officer/customers/detail') }}" type="button" id="PopoverCustomT-1" class="btn btn-success btn-sm">Detail</a>
@@ -73,6 +75,7 @@
                             <td class="text-center">
                                 <div class="">Rp 100.000</div>
                             </td>
+                            <td class="text-center">20/12/2019</td>
                             <td class="text-center">
                                 <a href="{{ url('garbage_officer/customers/edit') }}" type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm ">Edit</a>
                                 <a href="{{ url('garbage_officer/customers/detail') }}" type="button" id="PopoverCustomT-1" class="btn btn-success btn-sm">Detail</a>
