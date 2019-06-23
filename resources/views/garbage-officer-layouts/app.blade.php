@@ -62,6 +62,7 @@
                 </div>        
             </div>
             <div class="app-header-right">
+                <button type="button" class="mr-4 btn btn-primary" data-toggle="modal" data-target="#exampleModal">Notifikasi Nasabah<span class="badge badge-light">NEW</span></button>
                 <div class="header-btn-lg pr-0">
                     <div class="widget-content p-0">
                         <div class="widget-content-wrapper">
@@ -91,11 +92,6 @@
                                 <div class="widget-subheading">
                                     Garbage Officer
                                 </div>
-                            </div>
-                            <div class="widget-content-right header-user-info ml-3">
-                                <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
-                                    <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -443,9 +439,101 @@
 </body>
 </html>
 
-
-
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nasabah Baru Menunggu Aktivasi!</h5>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th>Name</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="text-center text-muted">1</td>
+                            <td>
+                                <div class="widget-content p-0">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left">
+                                            <div class="widget-content-left">
+                                                <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="widget-content-left flex2">
+                                            <div class="widget-heading">Pamungkas</div>
+                                            <!-- <div class="widget-subheading opacity-7">Web Developer</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-warning">Not Now!</button>
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-primary">Approve</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center text-muted">2</td>
+                            <td>
+                                <div class="widget-content p-0">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left">
+                                            <div class="widget-content-left">
+                                                <img width="40" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="widget-content-left flex2">
+                                            <div class="widget-heading">Budi</div>
+                                            <!-- <div class="widget-subheading opacity-7">Etiam sit amet orci eget</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-warning">Not Now!</button>
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-primary">Approve</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center text-muted">2</td>
+                            <td>
+                                <div class="widget-content p-0">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left">
+                                            <div class="widget-content-left">
+                                                <img width="40" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="widget-content-left flex2">
+                                            <div class="widget-heading">Markus</div>
+                                            <!-- <div class="widget-subheading opacity-7">Etiam sit amet orci eget</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-warning">Not Now!</button>
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-primary">Approve</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

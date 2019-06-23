@@ -15,7 +15,6 @@ class GarbageOfficerController extends Controller
     public function __construct()
     {
         $this->middleware(['auth:garbage_officer', 'verified']);
-        // $this->middleware('auth:garbage_officer');
     }   
 
     public function index(){
@@ -25,12 +24,11 @@ class GarbageOfficerController extends Controller
             'garbage' =>\App\Models\Garbage::count(),
             'trash' => \App\Models\Garbage::select('name')->where('garbage_officer_id','=','1')->get()
         ];
-
-
-        return \App\Models\Garbage::select('name','type','price')->get();
-    
-        // return view('garbage-officer-pages/dashboard', $data);
+        
+        return view('garbage-officer-pages/dashboard', $data);
     }
+
+    
 
     public function customers(){
         return view('garbage-officer-pages/garbage-officer-cust');
@@ -48,8 +46,11 @@ class GarbageOfficerController extends Controller
     }
 
     public function detailCust(){
-        return view('garbage-officer-pages/detail-cust');
-    }
-    
+        $data = [
+            'garbage' =>\App\Models\Garbage::count(),
+            'saving' =>  'Rp. '.strrev(implode('.',str_split(strrev(strval(\App\Models\Savings::select('price')->sum('price'))),3)))
+        ];
 
+        return view('garbage-officer-pages/detail-cust', $data);
+    }
 }

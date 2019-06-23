@@ -63,7 +63,7 @@ Route::group([
     Route::put('update-profile/{id}', 'CustomerController@updateProfile');
     Route::get('histories/{id}', 'CustomerController@getHistories');
     Route::put('update-password/{id}', 'CustomerController@updatePassword');
-    
+    Route::get('data-garbage-officer', 'CustomerController@getDataGarbageOfficer');
 });
 
 Route::get('contoh', function(){
