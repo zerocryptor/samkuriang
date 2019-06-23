@@ -5,10 +5,6 @@
 <form class="pt-5 px-4">
     <h2 class="pb-3">Edit Customer</h2>
   <div class="form-group">
-    <label for="exampleInputName">Name</label>
-    <input type="name" class="form-control" id="exampleInputName" placeholder="Enter name">
-  </div>
-  <div class="form-group">
     <label for="exampleInputNumber">Garbage Savings</label>
     <input type="number" class="form-control" id="exampleInputNumber" placeholder="Enter number">
   </div>
