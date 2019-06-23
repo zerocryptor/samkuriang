@@ -15,20 +15,23 @@ class GarbageOfficerController extends Controller
     public function __construct()
     {
         $this->middleware(['auth:garbage_officer', 'verified']);
+        // $this->middleware('auth:garbage_officer');
     }   
 
     public function index(){
         $data = [
             'customer' => \App\Models\Customer::count(),
             'saving' =>  'Rp. '.strrev(implode('.',str_split(strrev(strval(\App\Models\Savings::select('price')->sum('price'))),3))),
-            'garbage' =>\App\Models\Garbage::count(),
-            'trash' => \App\Models\Garbage::select('name')->where('garbage_officer_id','=','1')->get()
+            'garbagetotal' =>\App\Models\Garbage::count(),
+            'garbage'=> \App\Models\Garbage::select('name','type','price')->get(),
+            'trash' => \App\Models\Garbage::leftJoin('garbage_officers','garbages.garbage_officer_id','=','garbage_officer_id')->get()
         ];
-        
+
+
+        // return \App\Models\Garbage::select('name','type','price')->get();
+    
         return view('garbage-officer-pages/dashboard', $data);
     }
-
-    
 
     public function customers(){
         return view('garbage-officer-pages/garbage-officer-cust');
@@ -42,15 +45,15 @@ class GarbageOfficerController extends Controller
     }
     
     public function createGarbage(){
-        return view('garbage-officer-pages/create-garbage');
+
+        return view('garbage-officer-pages/create-garbage',[
+            'pricelist' => \App\Models\GarbageOfficer::all()
+        ]);
     }
 
     public function detailCust(){
-        $data = [
-            'garbage' =>\App\Models\Garbage::count(),
-            'saving' =>  'Rp. '.strrev(implode('.',str_split(strrev(strval(\App\Models\Savings::select('price')->sum('price'))),3)))
-        ];
-
-        return view('garbage-officer-pages/detail-cust', $data);
+        return view('garbage-officer-pages/detail-cust');
     }
+    
+
 }

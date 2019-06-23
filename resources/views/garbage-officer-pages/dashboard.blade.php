@@ -51,7 +51,7 @@
                         <div class="widget-subheading">Collection of Garbages</div>
                     </div>
                     <div class="widget-content-right">
-                        <div class="widget-numbers text-white"><span>{{$garbage}} Kg</span></div>
+                        <div class="widget-numbers text-white"><span>{{$garbagetotal}} Kg</span></div>
                     </div>
                 </div>
             </div>
@@ -79,84 +79,32 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td class="text-center text-muted">1</td>
-                            <td>
-                                <div class="widget-content p-0">
-                                    <div class="widget-content-wrapper">
-                                        <div class="widget-content-left mr-3">
-                                            <div class="widget-content-left">
-                                                <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="widget-content-left flex2">
-                                            <div class="widget-heading">{{$trash[0]->name}}</div>
-                                            <!-- <div class="widget-subheading opacity-7">Web Developer</div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="text-center">Anorganik</td>
-                            <td class="text-center">
-                                <div class="">Rp 2.000</div>
-                            </td>
-                            <td class="text-center">
-                            <a href="{{ url('garbage_officer/garbages/edit') }}" type="button" id="PopoverCusto\mT-1" class="btn btn-primary btn-sm">Edit</button></a>
-                                <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-                            </td>
-                        </tr>
+                        @foreach($garbage as $data)
                         <tr>
                             <td class="text-center text-muted">2</td>
                             <td>
                                 <div class="widget-content p-0">
                                     <div class="widget-content-wrapper">
-                                        <div class="widget-content-left mr-3">
                                             <div class="widget-content-left">
                                                 <img width="40" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
                                             </div>
-                                        </div>
+                                      
                                         <div class="widget-content-left flex2">
-                                            <div class="widget-heading">Kaca Beling</div>
-                                            <!-- <div class="widget-subheading opacity-7">Etiam sit amet orci eget</div> -->
+                                            <div class="widget-heading">{{$data->name}}</div>
                                         </div>
                                     </div>
                                 </div>
                             </td>
-                            <td class="text-center">Anorganik</td>
+                            <td class="text-center">{{$data->type}}</td>
                             <td class="text-center">
-                                <div class="">Rp 3.500</div>
+                                <div class="">{{$data->price}}</div>
                             </td>
                             <td class="text-center">
                                 <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Edit</button>
                                 <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="text-center text-muted">2</td>
-                            <td>
-                                <div class="widget-content p-0">
-                                    <div class="widget-content-wrapper">
-                                        <div class="widget-content-left mr-3">
-                                            <div class="widget-content-left">
-                                                <img width="40" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="widget-content-left flex2">
-                                            <div class="widget-heading">Kulit Pisang</div>
-                                            <!-- <div class="widget-subheading opacity-7">Etiam sit amet orci eget</div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="text-center">Organik</td>
-                            <td class="text-center">
-                                <div class="">-</div>
-                            </td>
-                            <td class="text-center">
-                                <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Edit</button>
-                                <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-                            </td>
-                        </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
