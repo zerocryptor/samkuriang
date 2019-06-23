@@ -62,7 +62,7 @@
                 </div>        
             </div>
             <div class="app-header-right">
-                <button type="button" class="mr-4 btn btn-primary" data-toggle="modal" data-target="#exampleModal">Who's Next?<span class="badge badge-light">NEW</span></button>
+                <button type="button" class="mr-4 btn btn-primary" data-toggle="modal" data-target="#exampleModal">Notifikasi Nasabah<span class="badge badge-light">NEW</span></button>
                 <div class="header-btn-lg pr-0">
                     <div class="widget-content p-0">
                         <div class="widget-content-wrapper">
@@ -444,7 +444,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">New Customers are Waiting!</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Nasabah Baru Menunggu Aktivasi!</h5>
             </div>
             <div class="modal-body">
                 <div class="table-responsive">
@@ -462,7 +462,7 @@
                             <td>
                                 <div class="widget-content p-0">
                                     <div class="widget-content-wrapper">
-                                        <div class="widget-content-left mr-3">
+                                        <div class="widget-content-left">
                                             <div class="widget-content-left">
                                                 <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
                                             </div>
@@ -475,8 +475,8 @@
                                 </div>
                             </td>
                             <td class="text-center">
-                            <button href="#" type="button" id="PopoverCusto\mT-1" class="btn btn-danger btn-sm">Decline</button>
-                            <button href="#" type="button" id="PopoverCusto\mT-1" class="btn btn-success btn-sm">Accept</button>
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-warning">Not Now!</button>
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-primary">Approve</button>
                             </td>
                         </tr>
                         <tr>
@@ -484,25 +484,21 @@
                             <td>
                                 <div class="widget-content p-0">
                                     <div class="widget-content-wrapper">
-                                        <div class="widget-content-left mr-3">
+                                        <div class="widget-content-left">
                                             <div class="widget-content-left">
                                                 <img width="40" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
                                             </div>
                                         </div>
                                         <div class="widget-content-left flex2">
-                                            <div class="widget-heading">Kaca Beling</div>
+                                            <div class="widget-heading">Budi</div>
                                             <!-- <div class="widget-subheading opacity-7">Etiam sit amet orci eget</div> -->
                                         </div>
                                     </div>
                                 </div>
                             </td>
-                            <td class="text-center">Anorganik</td>
                             <td class="text-center">
-                                <div class="">Rp 3.500</div>
-                            </td>
-                            <td class="text-center">
-                                <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Edit</button>
-                                <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Edit</button>
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-warning">Not Now!</button>
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-primary">Approve</button>
                             </td>
                         </tr>
                         <tr>
@@ -510,25 +506,21 @@
                             <td>
                                 <div class="widget-content p-0">
                                     <div class="widget-content-wrapper">
-                                        <div class="widget-content-left mr-3">
+                                        <div class="widget-content-left">
                                             <div class="widget-content-left">
                                                 <img width="40" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
                                             </div>
                                         </div>
                                         <div class="widget-content-left flex2">
-                                            <div class="widget-heading">Kulit Pisang</div>
+                                            <div class="widget-heading">Markus</div>
                                             <!-- <div class="widget-subheading opacity-7">Etiam sit amet orci eget</div> -->
                                         </div>
                                     </div>
                                 </div>
                             </td>
-                            <td class="text-center">Organik</td>
                             <td class="text-center">
-                                <div class="">-</div>
-                            </td>
-                            <td class="text-center">
-                                <button type="button" id="PopoverCustomT-2" class="btn btn-danger btn-sm">Decline</button>
-                                <button type="button" id="PopoverCustomT-2" class="btn btn-success btn-sm">Accept</button>
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-warning">Not Now!</button>
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-primary">Approve</button>
                             </td>
                         </tr>
                         </tbody>
