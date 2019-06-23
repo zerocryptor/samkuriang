@@ -502,7 +502,7 @@
                             </td>
                             <td class="text-center">
                                 <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Edit</button>
-                                <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                                <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Edit</button>
                             </td>
                         </tr>
                         <tr>
