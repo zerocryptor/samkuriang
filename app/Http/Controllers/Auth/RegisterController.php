@@ -52,16 +52,21 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $message = [
+           
+        'namapetugas.required' => 'Kolom Nama Petugas harus di isi!',
+        
+        ];
         return Validator::make($data, [
             'namapetugas' => 'required|string|max:255',
-            // 'email' => 'required|string|email|max:255|unique:garbage_officers',
+            'email' => 'required|string|email|max:255|unique:garbage_officers',
             // 'password' => 'required|string|min:6|confirmed',
             // 'position' => 'required|string',
             // 'phone_number' => 'required|string',
             // 'latitude' => 'required',
             // 'longitude' => 'required',
             // 'namatempat' => 'required|string'
-        ]);
+        ],$message);
     }
 
     /**
