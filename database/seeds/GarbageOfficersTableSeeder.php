@@ -26,6 +26,7 @@ class GarbageOfficersTableSeeder extends Seeder
         DB::table('garbage_officers')->insert([
             'name' => 'Petugas Bank Sampah',
             'email' => 'petugas@samkuriang.com',
+            'email_verified_at' => '2019-03-11 12:25:00',
             'password' => Hash::make('petugas123'),
             'address' => 'Jalan Petugas No. 01',
             'phone_number' => '082112078019',

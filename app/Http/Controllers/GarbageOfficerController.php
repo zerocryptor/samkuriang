@@ -14,15 +14,15 @@ class GarbageOfficerController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('guest:garbage_officer', ['except' => ['logout']]);
-    }
+        $this->middleware(['auth:garbage_officer', 'verified']);
+    }   
 
     public function index(){
         $data = [
             'customer' => \App\Models\Customer::count(),
             'saving' =>  'Rp. '.strrev(implode('.',str_split(strrev(strval(\App\Models\Savings::select('price')->sum('price'))),3))),
             'garbage' =>\App\Models\Garbage::count(),
-            'trash' => \App\Models\Garbage::select('name')
+            'trash' => \App\Models\Garbage::select('name')->where('garbage_officer_id','=','1')->get()
         ];
         
         return view('garbage-officer-pages/dashboard', $data);
@@ -36,6 +36,13 @@ class GarbageOfficerController extends Controller
     public function editCust(){
         return view('garbage-officer-pages/edit-cust');
     }
+    public function editGarbage(){
+        return view('garbage-officer-pages/edit-garbage');
+    }
+    
+    public function createGarbage(){
+        return view('garbage-officer-pages/create-garbage');
+    }
 
     public function detailCust(){
         $data = [
@@ -45,6 +52,4 @@ class GarbageOfficerController extends Controller
 
         return view('garbage-officer-pages/detail-cust', $data);
     }
-    
-
 }
