@@ -61,6 +61,10 @@
         <div class="col-md-12">
             <div class="main-card mb-3 card">
                 <div class="card-header">List of Garbages</div>
+                <div class="pl-4 pb-1">
+                <a href="{{ url('garbage_officer/garbages/create') }}" class="btn btn-success" >CREATE</a>
+                </div>
+               
                 <div class="table-responsive">
                     <table class="align-middle mb-0 table table-borderless table-striped table-hover">
                         <thead>
@@ -84,7 +88,7 @@
                                             </div>
                                         </div>
                                         <div class="widget-content-left flex2">
-                                            <div class="widget-heading">Botol Plastik</div>
+                                            <div class="widget-heading">{{$trash[0]->name}}</div>
                                             <!-- <div class="widget-subheading opacity-7">Web Developer</div> -->
                                         </div>
                                     </div>
@@ -95,7 +99,8 @@
                                 <div class="">Rp 2.000</div>
                             </td>
                             <td class="text-center">
-                                <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Edit</button>
+                            <a href="{{ url('garbage_officer/garbages/edit') }}" type="button" id="PopoverCusto\mT-1" class="btn btn-primary btn-sm">Edit</button></a>
+                                <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                             </td>
                         </tr>
                         <tr>
@@ -121,6 +126,7 @@
                             </td>
                             <td class="text-center">
                                 <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Edit</button>
+                                <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                             </td>
                         </tr>
                         <tr>
@@ -146,14 +152,13 @@
                             </td>
                             <td class="text-center">
                                 <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Edit</button>
+                                <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                             </td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="d-block text-center card-footer">
-                    <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-                    <button class="btn-wide btn btn-success">Save</button>
                 </div>
             </div>
         </div>

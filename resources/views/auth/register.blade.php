@@ -77,7 +77,7 @@
                             @endif
                         </div>
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password">Katasandi</label>
+                            <label for="password">Kata sandi</label>
                             <input type="password" class="form-control" name="password" id="password" placeholder="Masukan password anda" required>
                             @if ($errors->has('password'))
                                 <span class="help-block">

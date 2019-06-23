@@ -36,6 +36,9 @@ class ForeignKey extends Migration
             // $table->unsignedInteger('recycle_id');
             // $table->foreign('recycle_id')->references('id')->on('recycles')->onUpdate('cascade')->onDelete('cascade');
 
+            $table->unsignedInteger('garbage_officer_id');
+            $table->foreign('garbage_officer_id')->references('id')->on('garbage_officers')->onUpdate('cascade')->onDelete('cascade');
+
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();
             $table->softDeletes();
