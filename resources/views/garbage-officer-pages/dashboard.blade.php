@@ -25,7 +25,7 @@
                         <div class="widget-subheading">Number of Customers</div>
                     </div>
                     <div class="widget-content-right">
-                        <div class="widget-numbers text-white"><span>{{$customer}}</span></div>
+                        <div class="widget-numbers text-white"><span>{{$customertotal}}</span></div>
                     </div>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                         <tbody>
                         @foreach($garbage as $data)
                         <tr>
-                            <td class="text-center text-muted">2</td>
+                            <td class="text-center text-muted">{{++$loop->index}}</td>
                             <td>
                                 <div class="widget-content p-0">
                                     <div class="widget-content-wrapper">
