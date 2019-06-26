@@ -11,6 +11,10 @@ class AdminController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->strange = \App\Models\GarbageOfficer::select('id','name')->where('status',0)->get();
+
+
+
     }
 
     /**
@@ -20,14 +24,22 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin-pages.dashboard');
+        $data = [
+            'petugas' => \App\Models\GarbageOfficer::where ('status',1)->count(),
+            'costumer' =>\App\Models\Customer::where ('status',1)->count(),
+            'totalpetugas' =>\App\Models\GarbageOfficer::count(),
+            'strange' => $this->strange
+        ];
+
+        return view('admin-pages.dashboard',$data);
     }
 
     public function garbageBankList(){
         $garbageOfficer = GarbageOfficer::all();
 
         return view('admin-pages.garbage-bank-list', [
-            'garbage-officer' => $garbageOfficer
+            'garbage_officer' => $garbageOfficer,
+            'strange' => $this->strange
         ]);
     }
 

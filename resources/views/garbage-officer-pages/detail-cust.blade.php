@@ -11,7 +11,7 @@
                         <div class="widget-subheading">Collection of Garbages</div>
                     </div>
                     <div class="widget-content-right">
-                        <div class="widget-numbers text-white"><span>1Kg</span></div>
+                        <div class="widget-numbers text-white"><span>{{$garbagetotal}} Kg</span></div>
                     </div>
                 </div>
             </div>

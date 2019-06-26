@@ -1,6 +1,7 @@
 @extends('admin-layouts.app')
 
-@section('content')
+@section('content-admin')
+<div class="app-main__inner">
 <div class="app-page-title">
                     <div class="page-title-wrapper">
                         <div class="page-title-heading">
@@ -9,14 +10,14 @@
                                 </i>
                             </div>
                             <div>Administrator Samkuriang Dashboard
-                                <div class="page-title-subheading">Terakhir login: Kemarin, 12-6-2019
+                                <div class="page-title-subheading">Terakhir login: Kemarin, 17-6-2019
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 col-xl-4">
+                    <div class="col-md-6 col-xl-6">
                         <div class="card mb-3 widget-content bg-grow-early">
                             <div class="widget-content-wrapper text-white">
                                 <div class="widget-content-left">
@@ -24,12 +25,12 @@
                                     <div class="widget-subheading">Total</div>
                                 </div>
                                 <div class="widget-content-right">
-                                    <div class="widget-numbers text-white"><span>1896</span></div>
+                                    <div class="widget-numbers text-white"><span>{{$petugas}}</span></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-4">
+                    <div class="col-md-6 col-xl-6">
                         <div class="card mb-3 widget-content bg-grow-early">
                             <div class="widget-content-wrapper text-white">
                                 <div class="widget-content-left">
@@ -37,20 +38,7 @@
                                     <div class="widget-subheading">Total yang belum disetujui</div>
                                 </div>
                                 <div class="widget-content-right">
-                                    <div class="widget-numbers text-white"><span>568</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-4">
-                        <div class="card mb-3 widget-content bg-grow-early">
-                            <div class="widget-content-wrapper text-white">
-                                <div class="widget-content-left">
-                                    <div class="widget-heading">Mitra bank sampah yang bergabung</div>
-                                    <div class="widget-subheading">Daftar yang sudah disetujui</div>
-                                </div>
-                                <div class="widget-content-right">
-                                    <div class="widget-numbers text-white"><span>19</span></div>
+                                    <div class="widget-numbers text-white"><span>{{$totalpetugas}}</span></div>
                                 </div>
                             </div>
                         </div>
@@ -69,4 +57,5 @@
                         </div>
                     </div> -->
                 </div>
+</div>
 @endsection

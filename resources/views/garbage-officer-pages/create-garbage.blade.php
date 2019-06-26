@@ -21,6 +21,7 @@
   <div class="form-group">
     <label for="exampleInputNumber">Price</label>
     <input type="text"  onkeypress="return isNumberKey(event)" name="price" class="form-control" id="exampleInputText" placeholder="Harga">
+    <small class="form-text text-muted">Harga sampah dalam satuan kilogram</small>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

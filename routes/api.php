@@ -64,6 +64,7 @@ Route::group([
     Route::get('histories/{id}', 'CustomerController@getHistories');
     Route::put('update-password/{id}', 'CustomerController@updatePassword');
     Route::get('data-garbage-officer', 'CustomerController@getDataGarbageOfficer');
+    Route::get('status/{id}', 'CustomerController@getStatusCustomer');
 });
 
 Route::get('contoh', function(){
