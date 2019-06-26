@@ -2,23 +2,26 @@
 
 @section('content-garbage-officer')
 
-<form class="pt-5 px-4">
-    <h2 class="pb-3">Edit Garbages</h2>
+<form class="pt-5 px-4"action="{{url('garbage_officer/')}}" method="post">
+  <h2 class="pb-3">Edit Garbages</h2>
+  {{csrf_field()}}
+  <input type="hidden" name="_method" value="PUT">
   <div class="form-group">
     <label for="exampleInputName">Name</label>
-    <input type="name" class="form-control" id="exampleInputName" placeholder="Enter name">
+    <input type="name" name="name" class="form-control" id="exampleInputName"laceholder="Masukkan Nama Sampah" value="{{$garbage->name}}">
   </div>
   <div class="form-group">
     <label for="exampleInputNumber">Type</label>
-    <select class="custom-select">
-        <option selected>Pilih Jenis Sampah</option>
-        <option value="1">Organik</option>
-        <option value="2">Anorganik</option>
-</select>
+    <select name="category" class="form-control">
+      <option>--</option>
+      @foreach($type as $data)
+      <option value="{{$data->id}}" @if($garbage->garbage_officer_id == $data->id) selected @endif>{{$data->name}}</option>
+      @endforeach
+    </select>
   </div>
   <div class="form-group">
     <label for="exampleInputNumber">Price</label>
-    <input type="text" class="form-control" id="exampleInputText" placeholder="Price">
+    <input type="text" name="price" class="form-control" id="exampleInputText" placeholder="Price"  value="{{$garbage->price}}" >
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

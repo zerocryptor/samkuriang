@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use\App\GarbageOfficer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -63,9 +64,11 @@ class GarbageOfficerController extends Controller
      */
     public function create()
     {
-        return view('garbage-officer-pages/create-garbage',[
-            'pricelist' => \App\Models\GarbageOfficer::all()
+        $type = \App\Models\Garbage::select('type')->groupBy('type')->get();
+        return view('garbage-officer-pages.create-garbage',[
+            'type' => $type
         ]); 
+         
     }
 
     /**
@@ -76,12 +79,24 @@ class GarbageOfficerController extends Controller
      */
     public function store(Request $request)
     {
+
+        // $validation = [
+        //     'name' => 'required',
+        //     'type' => 'required',
+        //     'price' => 'required|numeric'
+        // ];
+        // $message = [
+        //     'required' => 'You must fill this field',
+        //     'numeric' => 'Please fill this field with number'
+        // ];
+        // $this->validate($request,$validation,$message);
         \App\Models\Garbage::create([
             'name' => $request->name,
             'type' => $request->type,
-            'price' => $request->price
+            'price' => $request->price,
+            'garbage_officer_id' =>  auth('garbage_officer')->user()->id
         ]);
-        return redirect()->route('garbage-officer-pages/dashboard');
+        return redirect('garbage_officer/');
     }
 
     /**
@@ -92,7 +107,9 @@ class GarbageOfficerController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('garbage-officer-pages.edit-garbage',[
+            'garbage' =>\App\Models\Garbage::select('name','type','price')->where('garbage_officer_id',$id)->first()
+        ]);
     }
 
     /**
@@ -103,7 +120,9 @@ class GarbageOfficerController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('garbage-officer-pages/edit-garbage',[
+            'garbage' =>\App\Models\Garbage::select('name','type','price')->where('garbage_officer_id',$id)->first()
+        ]);
     }
 
     /**
@@ -115,7 +134,14 @@ class GarbageOfficerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        \App\Models\Garbage::where('id',$id)->update(
+        [
+            'name' => $request->name,
+            'type' => $request->type,
+            'price' => $request->price,
+            'garbage_officer_id' =>  auth('garbage_officer')->user()->id
+        ]);
+        return redirect('garbage_officer/');
     }
 
     /**
@@ -126,7 +152,8 @@ class GarbageOfficerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\Models\Garbage::where('id',$id)->delete();
+        return redirect('garbage_officer/');
     }
 
 }

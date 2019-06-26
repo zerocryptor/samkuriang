@@ -29,6 +29,8 @@ Route::get('/garbage_officer/garbages/edit', 'GarbageOfficerController@editGarba
 Route::get('/garbage_officer/garbages/create', 'GarbageOfficerController@createGarbage')->name('create_garbage_officer-garbage');
 Route::get('/garbage_officer/customers/detail', 'GarbageOfficerController@detailCust')->name('detail_garbage_officer-cust');
 
+Route::resource('garbage_officer','GarbageOfficerController');
+
 // admin
 Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('/admin/garbage-banks/list', 'AdminController@garbageBankList')->name('admin-garbage-bank');
