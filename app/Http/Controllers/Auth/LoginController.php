@@ -46,10 +46,13 @@ class LoginController extends Controller
         return view('auth.login', ['url' => 'garbage_officer']);
     }
 
+
+
+    
     public function garbageofficerLogin(Request $request){
         
         $credentials = $request->only('email', 'password');
-
+        
         if (Auth::guard('garbage_officer')->attempt($credentials, $request->get('remember'))) {
 
             return redirect()->intended('/garbage_officer');

@@ -15,21 +15,24 @@ class GarbageOfficerController extends Controller
     public function __construct()
     {
         $this->middleware(['auth:garbage_officer', 'verified']);
+        // $this->middleware('auth:garbage_officer');
     }   
 
     public function index(){
         $data = [
-            'customer' => \App\Models\Customer::count(),
+            'customertotal' => \App\Models\Customer::where('status',1)->count(),
             'saving' =>  'Rp. '.strrev(implode('.',str_split(strrev(strval(\App\Models\Savings::select('price')->sum('price'))),3))),
             'garbage' =>\App\Models\Garbage::count(),
-            'trash' => \App\Models\Garbage::select('name')->where('garbage_officer_id','=','1')->get(),
-            'strange' => \App\Models\Customer::select('id','name')->where('status',0)->get()
+            'strange' => \App\Models\Customer::select('id','name')->where('status',0)->get(),
+            'garbagetotal' =>\App\Models\Garbage::count(),
+            'trash' => \App\Models\Garbage::leftJoin('garbage_officers','garbages.garbage_officer_id','=','garbage_officer_id')->get()
         ];
-        
+
+
+        // return \App\Models\Garbage::select('name','type','price')->get();
+    
         return view('garbage-officer-pages/dashboard', $data);
     }
-
-    
 
     public function customers(){
         return view('garbage-officer-pages/garbage-officer-cust');
@@ -43,16 +46,43 @@ class GarbageOfficerController extends Controller
     }
     
     public function createGarbage(){
-        return view('garbage-officer-pages/create-garbage');
+
+        return view('garbage-officer-pages/create-garbage',[
+            'pricelist' => \App\Models\GarbageOfficer::all()
+        ]);
     }
 
     public function detailCust(){
-        $data = [
-            'garbage' =>\App\Models\Garbage::count(),
-            'saving' =>  'Rp. '.strrev(implode('.',str_split(strrev(strval(\App\Models\Savings::select('price')->sum('price'))),3)))
-        ];
+        return view('garbage-officer-pages/detail-cust');
+    }
+    
+     //CRUD//
+     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('garbage-officer-pages/create-garbage',[
+            'pricelist' => \App\Models\GarbageOfficer::all()
+        ]); 
+    }
 
-        return view('garbage-officer-pages/detail-cust', $data);
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        \App\Models\Garbage::create([
+            'name' => $request->name,
+            'type' => $request->type,
+            'price' => $request->price
+        ]);
+        return redirect()->route('garbage-officer-pages/dashboard');
     }
 
     public function approveCust($id){
@@ -67,4 +97,49 @@ class GarbageOfficerController extends Controller
 
     //     return \App\Models\Customer::all();
     // }
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+
 }
