@@ -178,7 +178,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                            @foreach($strange as $data)
+                                @foreach ($strange as $data)
                         <form action="{{ url('garbage_officer/approve/'.$data->id) }}" method="post">
                         {{ csrf_field() }}
                         {{ method_field('put') }}
