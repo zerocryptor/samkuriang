@@ -23,7 +23,7 @@ class GarbageOfficerController extends Controller
         $data = [
             'customertotal' => \App\Models\Customer::where('status',1)->count(),
             'saving' =>  'Rp. '.strrev(implode('.',str_split(strrev(strval(\App\Models\Savings::select('price')->sum('price'))),3))),
-            'garbage' =>\App\Models\Garbage::count(),
+            'garbage' =>\App\Models\Garbage::all(),
             'strange' => \App\Models\Customer::select('id','name')->where('status',0)->get(),
             'garbagetotal' =>\App\Models\Garbage::count(),
             'trash' => \App\Models\Garbage::leftJoin('garbage_officers','garbages.garbage_officer_id','=','garbage_officer_id')->get()
@@ -47,7 +47,6 @@ class GarbageOfficerController extends Controller
     }
     
     public function createGarbage(){
-
         return view('garbage-officer-pages/create-garbage',[
             'pricelist' => \App\Models\GarbageOfficer::all()
         ]);
@@ -67,7 +66,8 @@ class GarbageOfficerController extends Controller
     {
         $type = \App\Models\Garbage::select('type')->groupBy('type')->get();
         return view('garbage-officer-pages.create-garbage',[
-            'type' => $type
+            'type' => $type,
+            'strange' => \App\Models\Customer::select('id','name')->where('status',0)->get()
         ]); 
          
     }
