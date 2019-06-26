@@ -62,6 +62,7 @@
                 </div>        
             </div>
             <div class="app-header-right">
+            <button class="mb-2 mr-2 btn btn-primary" data-toggle="modal" data-target="#exampleModal">Info Bank Sampah<span class="badge badge-light">NEW</span></button>
                 <div class="header-btn-lg pr-0">
                     <div class="widget-content p-0">
                         <div class="widget-content-wrapper">
@@ -421,22 +422,22 @@
                     <ul class="vertical-nav-menu">
                         <li class="app-sidebar__heading">Dashboards</li>
                         <li>
-                            <a href="{{ url('admin') }}" class="{{ (\Request::route()->getName() == 'home_garbage_officer') ? 'mm-active' : ''}}">
+                            <a href="{{ url('home') }}" class="mm-active">
                                 <i class="metismenu-icon pe-7s-rocket"></i>
-                                Dashboard utama
+                                Main Dashboard
                             </a>
                         </li>
                         <li class="app-sidebar__heading">Main Menu</li>
                         <li>
-                            <a href="{{ url('admin/garbage-banks/list') }}">
+                            <a href="{{ url('garbage-bank/lists') }}">
                                 <i class="metismenu-icon pe-7s-rocket"></i>
-                                Mitra bank sampah
+                                Garbage Bank Lists
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('admin/customers/list') }}">
+                            <a href="{{ url('customer/lists') }}">
                                 <i class="metismenu-icon pe-7s-rocket"></i>
-                                Pengguna
+                                Customer Lists
                             </a>
                         </li>
                     </ul>
@@ -445,7 +446,74 @@
         </div>
         <div class="app-main__outer">
             <div class="app-main__inner">
-                @yield('content')
+                <div class="app-page-title">
+                    <div class="page-title-wrapper">
+                        <div class="page-title-heading">
+                            <div class="page-title-icon">
+                                <i class="pe-7s-leaf icon-gradient bg-mean-fruit">
+                                </i>
+                            </div>
+                            <div>Administrator Samkuriang Dashboard
+                                <div class="page-title-subheading">Last login: Yesterday, 12-6-2019
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xl-4">
+                        <div class="card mb-3 widget-content bg-grow-early">
+                            <div class="widget-content-wrapper text-white">
+                                <div class="widget-content-left">
+                                    <div class="widget-heading">Garbage Bank</div>
+                                    <div class="widget-subheading">Total</div>
+                                </div>
+                                <div class="widget-content-right">
+                                    <div class="widget-numbers text-white"><span>1896</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="card mb-3 widget-content bg-grow-early">
+                            <div class="widget-content-wrapper text-white">
+                                <div class="widget-content-left">
+                                    <div class="widget-heading">Customer</div>
+                                    <div class="widget-subheading">Total</div>
+                                </div>
+                                <div class="widget-content-right">
+                                    <div class="widget-numbers text-white"><span>568</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="card mb-3 widget-content bg-grow-early">
+                            <div class="widget-content-wrapper text-white">
+                                <div class="widget-content-left">
+                                    <div class="widget-heading">News</div>
+                                    <div class="widget-subheading">People Interested</div>
+                                </div>
+                                <div class="widget-content-right">
+                                    <div class="widget-numbers text-white"><span>19</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-xl-none d-lg-block col-md-6 col-xl-4">
+                        <div class="card mb-3 widget-content bg-premium-dark">
+                            <div class="widget-content-wrapper text-white">
+                                <div class="widget-content-left">
+                                    <div class="widget-heading">Products Sold</div>
+                                    <div class="widget-subheading">Revenue streams</div>
+                                </div>
+                                <div class="widget-content-right">
+                                    <div class="widget-numbers text-warning"><span>$14M</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -455,28 +523,101 @@
 </html>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Bank Sampah Baru Menunggu Aktivasi!</h5>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th>Name</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="text-center text-muted">1</td>
+                            <td>
+                                <div class="widget-content p-0">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left">
+                                            <div class="widget-content-left">
+                                                <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="widget-content-left flex2">
+                                            <div class="widget-heading">Bank Sampah Sejahtera</div>
+                                            <!-- <div class="widget-subheading opacity-7">Web Developer</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-warning">Not Now!</button>
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-primary">Approve</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center text-muted">2</td>
+                            <td>
+                                <div class="widget-content p-0">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left">
+                                            <div class="widget-content-left">
+                                                <img width="40" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="widget-content-left flex2">
+                                            <div class="widget-heading">Bank Sampah Mutiara</div>
+                                            <!-- <div class="widget-subheading opacity-7">Etiam sit amet orci eget</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-warning">Not Now!</button>
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-primary">Approve</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center text-muted">2</td>
+                            <td>
+                                <div class="widget-content p-0">
+                                    <div class="widget-content-wrapper">
+                                        <div class="widget-content-left">
+                                            <div class="widget-content-left">
+                                                <img width="40" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="widget-content-left flex2">
+                                            <div class="widget-heading">Bank Sampah Olo</div>
+                                            <!-- <div class="widget-subheading opacity-7">Etiam sit amet orci eget</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-warning">Not Now!</button>
+                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-primary">Approve</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

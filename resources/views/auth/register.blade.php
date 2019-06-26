@@ -40,7 +40,7 @@
                     @csrf
                         <div class="form-group{{ $errors->has('namatempat') ? ' has-error' : '' }}">
                             <label for="namatempat">Nama bank sampah</label>
-                            <input type="text" class="form-control" id="namatempat" name="namatempat" placeholder="Masukan nama tempat bank sampah anda" required>
+                            <input type="text" class="form-control" id="namatempat" name="namatempat" placeholder="Masukan nama tempat bank sampah anda"value="{{ old('namatempat') }}" >
                             @if ($errors->has('namatempat'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('namatempat') }}</strong>
@@ -49,16 +49,14 @@
                         </div>
                         <div class="form-group{{ $errors->has('namapetugas') ? ' has-error' : '' }}">
                             <label for="namapetugas">Nama petugas</label>
-                            <input type="text" class="form-control" id="namapetugas" name="namapetugas" placeholder="Masukan nama petugas bank sampah anda" required>
+                            <input type="text" class="form-control" id="namapetugas" name="namapetugas" placeholder="Masukan nama petugas bank sampah anda" value="{{ old('namapetugas') }}">
                             @if ($errors->has('namapetugas'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('namapetugas') }}</strong>
-                                </span>
+                            <span class="badge badge-danger">{{$errors->first('namapetugas')}}</span>
                             @endif
                         </div>
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Masukan email anda, Cth: johndoe@gmail.com" required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Masukan email anda, Cth: johndoe@gmail.com" value="{{ old('email') }}">
                             <small id="emailHelp" class="form-text text-muted">Pastikan email yang anda masukan adalah email aktif.</small>
                             @if ($errors->has('email'))
                                 <span class="help-block">
@@ -68,8 +66,8 @@
                         </div>
                         <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }}">
                             <label for="phone_number">Nomor Telepon</label>
-                            <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Masukan nomor telepon anda" required>
-                            <small id="phoneHelp" class="form-text text-muted">Pastikan email yang anda masukan adalah nomer telepon aktif.</small>
+                            <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Masukan nomor telepon anda" value="{{ old('phone_number') }}">
+                            <small id="phoneHelp" class="form-text text-muted">Pastikan nomor telepon yang anda masukan adalah nomer telepon aktif.</small>
                             @if ($errors->has('phone_number'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('phone_number') }}</strong>
@@ -78,7 +76,7 @@
                         </div>
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password">Kata sandi</label>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Masukan password anda" required>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Masukan password anda" value="{{ old('password') }}">
                             @if ($errors->has('password'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('password') }}</strong>
@@ -87,7 +85,7 @@
                         </div>
                         <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                             <label for="password_confirmation">Verifikasi Kata sandi</label>
-                            <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="Masukan password lagi" required>
+                            <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="Masukan password lagi"value="{{ old('password_confirmation') }}">
                             @if ($errors->has('password_confirmation'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('password_confirmation') }}</strong>
@@ -96,7 +94,7 @@
                         </div>
                         <div class="form-group{{ $errors->has('position') ? ' has-error' : '' }}">
                             <label for="position">Lokasi</label>
-                            <input type="text" class="form-control" name="position" id="position" placeholder="Masukan alamat lengkap anda" required>
+                            <input type="text" class="form-control" name="position" id="position" placeholder="Masukan alamat lengkap anda" value="{{ old('position') }}">
                             <small id="lokasiHelp" class="form-text text-muted">Pastikan titik kordinat berada dilokasi yang tepat.</small>
                             @if ($errors->has('position'))
                                 <span class="help-block">
@@ -256,7 +254,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/1ef022ab/dist/jquery.mask.min.js"></script>
     <script>
-         $( '#phone_number' ).mask('0000−0000−0000');
+         $( '#phone_number' ).mask('+62000−0000−0000');
     </script>
 
     <!-- script -->

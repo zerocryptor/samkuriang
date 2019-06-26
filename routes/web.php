@@ -19,6 +19,7 @@ Route::get('/login/garbage_officer', 'Auth\LoginController@showGarbageOfficerLog
 Route::get('/register/garbage_officer', 'Auth\RegisterController@showGarbageOfficerRegisterForm');
 Route::post('/login/garbage_officer', 'Auth\LoginController@garbageofficerLogin');
 Route::post('/register/garbage_officer', 'Auth\RegisterController@createGarbageOfficer');
+Route::put('/garbage_officer/approve/id', 'Auth\VerificationController@updateGarbageOfficer');
 
 Auth::routes(['verify' => true]);
 
@@ -28,6 +29,8 @@ Route::get('/garbage_officer/customers/edit', 'GarbageOfficerController@editCust
 Route::get('/garbage_officer/garbages/edit', 'GarbageOfficerController@editGarbage')->name('edit_garbage_officer-garbage');
 Route::get('/garbage_officer/garbages/create', 'GarbageOfficerController@createGarbage')->name('create_garbage_officer-garbage');
 Route::get('/garbage_officer/customers/detail', 'GarbageOfficerController@detailCust')->name('detail_garbage_officer-cust');
+
+Route::resource('garbage_officer','GarbageOfficerController');
 
 // admin
 Route::get('/admin', 'AdminController@index')->name('admin');

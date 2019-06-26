@@ -22,6 +22,7 @@ class CreateCustomersTable extends Migration
             $table->string('address',150);
             $table->string('phone_number', 16);
             $table->string('status')->default(0);
+            $table->string('photo',255)->default('.png');
             $table->rememberToken();
         });
     }
