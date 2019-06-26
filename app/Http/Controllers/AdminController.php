@@ -20,14 +20,19 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin-pages.dashboard');
+        $data = [
+            'petugas' => \App\Models\GarbageOfficer::where ('status',1)->count(),
+            'costumer' =>\App\Models\Customer::where ('status',1)->count(),
+            'totalpetugas' =>\App\Models\GarbageOfficer::count(),
+        ];
+        return view('admin-pages.dashboard',$data);
     }
 
     public function garbageBankList(){
         $garbageOfficer = GarbageOfficer::all();
 
         return view('admin-pages.garbage-bank-list', [
-            'garbage-officer' => $garbageOfficer
+            'garbage_officer' => $garbageOfficer
         ]);
     }
 

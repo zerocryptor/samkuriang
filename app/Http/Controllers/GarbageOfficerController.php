@@ -27,7 +27,6 @@ class GarbageOfficerController extends Controller
             'trash' => \App\Models\Garbage::leftJoin('garbage_officers','garbages.garbage_officer_id','=','garbage_officer_id')->get()
         ];
 
-
         // return \App\Models\Garbage::select('name','type','price')->get();
     
         return view('garbage-officer-pages/dashboard', $data);
