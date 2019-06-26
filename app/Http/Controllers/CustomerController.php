@@ -282,13 +282,11 @@ class CustomerController extends Controller
     }
 
     public function getStatusCustomer($id){
-        $getStatusCustomer = DB::table('customers')->select('customers.status', 'garbage_officers.name')
+        $getStatusCustomer = DB::table('customers')->select('customers.status', 'garbage_officers.place_name')
         ->join('garbage_officers', 'garbage_officers.id', '=', 'customers.garbage_officer_id')
         ->where('customers.id', $id)
-        ->get();
+        ->first();
 
-        return response()->json([
-            $getStatusCustomer
-        ]);
+        return response()->json($getStatusCustomer);
     }
 }
