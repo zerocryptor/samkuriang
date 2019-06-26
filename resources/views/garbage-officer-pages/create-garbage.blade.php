@@ -20,7 +20,7 @@
   </div>
   <div class="form-group">
     <label for="exampleInputNumber">Price</label>
-    <input type="text" name="price" class="form-control" id="exampleInputText" placeholder="Harga">
+    <input type="text"  onkeypress="return isNumberKey(event)" name="price" class="form-control" id="exampleInputText" placeholder="Harga">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

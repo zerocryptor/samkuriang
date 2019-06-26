@@ -10,7 +10,7 @@
                     </i>
                 </div>
                 <div>Garbage Bank Officer Depok
-                    <div class="page-title-subheading">Last login: Yesterday, 12-6-2019
+                    <div class="page-title-subheading">Last login: Yesterday, 27-06-2019
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                 <div class="card-header">Daftar Sampah
                     
                     <div class="btn-actions-pane-right mr-5 pr-3">
-                        <a href="{{ url('garbage_officer/create') }}" class="mr-4 btn-transition btn btn-outline-primary" >+ CREATE</a>
+                        <a href="{{ url('garbage_officer/create') }}" class="mr-4 btn-transition btn btn-primary" >+ CREATE</a>
                     </div>
                 </div>
                
@@ -100,10 +100,11 @@
                                 <div class="">{{$data->price}}</div>
                             </td>
                             <td class="text-center">
-                                 <a href="{{ url('garbage_officer/edit-garbage') }}"type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Edit</a>
-                                 <form style="display: inline-block;" method="post" action="{{ url('garbage_officer/{garbage}') }}">
+                                 <a href="{{ url('garbage_officer/'.$data->id.'/edit') }}"type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Edit</a>
+                                 <form style="display: inline-block;" method="post" action="{{ url('garbage_officer/'.$data->id) }}">
                                         {{csrf_field()}}
-                                <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button></form>
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit "class="mr-2 btn-icon btn-icon-only btn btn-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button></form>
                             </td>
                         </tr>
                         @endforeach

@@ -2,7 +2,7 @@
 
 @section('content-garbage-officer')
 
-<form class="pt-5 px-4"action="{{url('garbage_officer/')}}" method="post">
+<form class="pt-5 px-4"action="{{url('garbage_officer/'.$garbage->id)}}" method="post">
   <h2 class="pb-3">Edit Garbages</h2>
   {{csrf_field()}}
   <input type="hidden" name="_method" value="PUT">
@@ -12,16 +12,16 @@
   </div>
   <div class="form-group">
     <label for="exampleInputNumber">Type</label>
-    <select name="category" class="form-control">
+    <select name="type" class="form-control">
       <option>--</option>
-      @foreach($type as $data)
-      <option value="{{$data->id}}" @if($garbage->garbage_officer_id == $data->id) selected @endif>{{$data->name}}</option>
-      @endforeach
+        @foreach($type as $data)
+        <option value="{{ $data->type }}" @if($garbage->type == $data->type) selected @endif>{{$data->type}}</option>
+        @endforeach
     </select>
   </div>
   <div class="form-group">
     <label for="exampleInputNumber">Price</label>
-    <input type="text" name="price" class="form-control" id="exampleInputText" placeholder="Price"  value="{{$garbage->price}}" >
+    <input type="text" onkeypress="return isNumberKey(event)" name="price" class="form-control" id="exampleInputText" placeholder="Price"  value="{{$garbage->price}}" >
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

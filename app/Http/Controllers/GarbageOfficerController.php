@@ -24,7 +24,8 @@ class GarbageOfficerController extends Controller
             'customertotal' => \App\Models\Customer::where('status',1)->count(),
             'saving' =>  'Rp. '.strrev(implode('.',str_split(strrev(strval(\App\Models\Savings::select('price')->sum('price'))),3))),
             'garbagetotal' =>\App\Models\Garbage::count(),
-            'garbage'=> \App\Models\Garbage::select('name','type','price')->get(),
+            'garbage'=> \App\Models\Garbage::orderBy('id', 'asc')->get(),
+            'type' => \App\Models\Garbage::select('type')->groupBy('type')->get(),
             'trash' => \App\Models\Garbage::leftJoin('garbage_officers','garbages.garbage_officer_id','=','garbage_officer_id')->get()
         ];
 
@@ -108,7 +109,7 @@ class GarbageOfficerController extends Controller
     public function show($id)
     {
         return view('garbage-officer-pages.edit-garbage',[
-            'garbage' =>\App\Models\Garbage::select('name','type','price')->where('garbage_officer_id',$id)->first()
+            'garbage' =>\App\Models\Garbage::select('name','type','price')->where('id',$id)->first()
         ]);
     }
 
@@ -121,7 +122,8 @@ class GarbageOfficerController extends Controller
     public function edit($id)
     {
         return view('garbage-officer-pages/edit-garbage',[
-            'garbage' =>\App\Models\Garbage::select('name','type','price')->where('garbage_officer_id',$id)->first()
+            'garbage' =>\App\Models\Garbage::select('id', 'name','type','price')->where('id',$id)->first(),
+            'type' => \App\Models\Garbage::select('type')->groupBy('type')->get() 
         ]);
     }
 
@@ -134,6 +136,7 @@ class GarbageOfficerController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // return $id;
         \App\Models\Garbage::where('id',$id)->update(
         [
             'name' => $request->name,
@@ -141,7 +144,7 @@ class GarbageOfficerController extends Controller
             'price' => $request->price,
             'garbage_officer_id' =>  auth('garbage_officer')->user()->id
         ]);
-        return redirect('garbage_officer/');
+        return redirect('garbage_officer');
     }
 
     /**
