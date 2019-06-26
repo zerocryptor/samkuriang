@@ -27,7 +27,6 @@ class GarbagesTableSeeder extends Seeder
             'name' => 'Botol Plastik',
             'type' => 'Anorganik',
             'price' => '15000',
-            'age' => '72',
             'garbage_officer_id' => '1'
         ]);
 
@@ -35,7 +34,6 @@ class GarbagesTableSeeder extends Seeder
             'name' => 'Kulit Pisang',
             'type' => 'Organik',
             'price' => '10000',
-            'age' => '15',
             'garbage_officer_id' => '1'
         ]);
 

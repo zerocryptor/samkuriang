@@ -25,7 +25,7 @@
                         <div class="widget-subheading">Number of Customers</div>
                     </div>
                     <div class="widget-content-right">
-                        <div class="widget-numbers text-white"><span>{{$customer}}</span></div>
+                        <div class="widget-numbers text-white"><span>{{$customertotal}}</span></div>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                 <div class="card-header">Daftar Sampah
                     
                     <div class="btn-actions-pane-right mr-5 pr-3">
-                        <a href="{{ url('garbage_officer/garbages/create') }}" class="mr-4 btn-transition btn btn-outline-primary" >+ CREATE</a>
+                        <a href="{{ url('garbage_officer/create') }}" class="mr-4 btn-transition btn btn-outline-primary" >+ CREATE</a>
                     </div>
                 </div>
                
@@ -81,7 +81,7 @@
                         <tbody>
                         @foreach($garbage as $data)
                         <tr>
-                            <td class="text-center text-muted">2</td>
+                            <td class="text-center text-muted">{{++$loop->index}}</td>
                             <td>
                                 <div class="widget-content p-0">
                                     <div class="widget-content-wrapper">
@@ -100,8 +100,10 @@
                                 <div class="">{{$data->price}}</div>
                             </td>
                             <td class="text-center">
-                                <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Edit</button>
-                                <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                                 <a href="{{ url('garbage_officer/edit-garbage') }}"type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Edit</a>
+                                 <form style="display: inline-block;" method="post" action="{{ url('garbage_officer/{garbage}') }}">
+                                        {{csrf_field()}}
+                                <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button></form>
                             </td>
                         </tr>
                         @endforeach

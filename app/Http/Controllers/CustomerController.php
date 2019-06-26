@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Hash;
 use Illuminate\Support\Facades\Validator;
+use DB;
 
 class CustomerController extends Controller
 {
@@ -278,5 +279,14 @@ class CustomerController extends Controller
         return response()->json([
             'data' => $getGarbageOfficer
         ]);
+    }
+
+    public function getStatusCustomer($id){
+        $getStatusCustomer = DB::table('customers')->select('customers.status', 'garbage_officers.place_name')
+        ->join('garbage_officers', 'garbage_officers.id', '=', 'customers.garbage_officer_id')
+        ->where('customers.id', $id)
+        ->first();
+
+        return response()->json($getStatusCustomer);
     }
 }
