@@ -457,79 +457,40 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td class="text-center text-muted">1</td>
-                            <td>
-                                <div class="widget-content p-0">
-                                    <div class="widget-content-wrapper">
-                                        <div class="widget-content-left">
+                            @foreach($strange as $data)
+                        <form action="{{ url('garbage_officer/approve/'.$data->id) }}" method="post">
+                        {{ csrf_field() }}
+                        {{ method_field('put') }}
+                            <tr>
+                                <td class="text-center text-muted">{{ $data->id }}</td>
+                                <td>
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
                                             <div class="widget-content-left">
-                                                <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
+                                                <div class="widget-content-left">
+                                                    <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left flex2">
+                                                <div class="widget-heading">{{ $data->name }}</div>
+                                                <!-- <div class="widget-subheading opacity-7">Web Developer</div> -->
                                             </div>
                                         </div>
-                                        <div class="widget-content-left flex2">
-                                            <div class="widget-heading">Pamungkas</div>
-                                            <!-- <div class="widget-subheading opacity-7">Web Developer</div> -->
-                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td class="text-center">
-                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-warning">Not Now!</button>
-                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-primary">Approve</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center text-muted">2</td>
-                            <td>
-                                <div class="widget-content p-0">
-                                    <div class="widget-content-wrapper">
-                                        <div class="widget-content-left">
-                                            <div class="widget-content-left">
-                                                <img width="40" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="widget-content-left flex2">
-                                            <div class="widget-heading">Budi</div>
-                                            <!-- <div class="widget-subheading opacity-7">Etiam sit amet orci eget</div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="text-center">
-                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-warning">Not Now!</button>
-                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-primary">Approve</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center text-muted">2</td>
-                            <td>
-                                <div class="widget-content p-0">
-                                    <div class="widget-content-wrapper">
-                                        <div class="widget-content-left">
-                                            <div class="widget-content-left">
-                                                <img width="40" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="widget-content-left flex2">
-                                            <div class="widget-heading">Markus</div>
-                                            <!-- <div class="widget-subheading opacity-7">Etiam sit amet orci eget</div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="text-center">
-                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-warning">Not Now!</button>
-                                <button id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-primary">Approve</button>
-                            </td>
-                        </tr>
+                                </td>
+                                <td class="text-center">
+                                    <button type="submit" id="PopoverCustomT-2" class="border-0 btn-transition btn btn-outline-primary">Approve</button>
+                                </td>
+                            </tr>
+                        </form>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success">Save changes</button>
+                <button type="submit" class="btn btn-danger" data-dismiss="modal">Close</button>
+
             </div>
         </div>
     </div>

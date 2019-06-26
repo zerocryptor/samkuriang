@@ -22,7 +22,8 @@ class GarbageOfficerController extends Controller
             'customer' => \App\Models\Customer::count(),
             'saving' =>  'Rp. '.strrev(implode('.',str_split(strrev(strval(\App\Models\Savings::select('price')->sum('price'))),3))),
             'garbage' =>\App\Models\Garbage::count(),
-            'trash' => \App\Models\Garbage::select('name')->where('garbage_officer_id','=','1')->get()
+            'trash' => \App\Models\Garbage::select('name')->where('garbage_officer_id','=','1')->get(),
+            'strange' => \App\Models\Customer::select('id','name')->where('status',0)->get()
         ];
         
         return view('garbage-officer-pages/dashboard', $data);
@@ -53,4 +54,17 @@ class GarbageOfficerController extends Controller
 
         return view('garbage-officer-pages/detail-cust', $data);
     }
+
+    public function approveCust($id){
+        // return view('garbage-officer-pages/approve/id');
+    }
+
+    // public function notifCust(){
+    //     $data = [
+    //         'customer' => \App\Models\Customer::count(),
+
+    //     ];
+
+    //     return \App\Models\Customer::all();
+    // }
 }

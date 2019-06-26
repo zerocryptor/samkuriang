@@ -195,7 +195,7 @@
                     <div class="row">
                         <div class="col-md-2 offset-md-3"></div>
                         <div class="col-md-10 offset-md-1">
-                            <h3 class="faq-head">Frequently Asked <br> Question</h3>
+                            <h3 class="faq-head mb-3" style="font-size: 35px; font-weight : 500">Frequently Asked <br> Question</h3>
                             <div class="garis" style="margin:10px 0 0 0 auto"></div>
                             <div class="faq" id="accordion">
                                 <div class="card">
