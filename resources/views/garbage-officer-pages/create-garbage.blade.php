@@ -14,7 +14,7 @@
     <select name="type" class="form-control">
        <option>--</option>
         @foreach($type as $data)
-        <option @if(old('type')==$data->type) selected @endif value="{{$data->type}}">{{$data->type}}</option>
+        <option @if(old('type')==$data->name) selected @endif value="{{$data->name}}">{{$data->name}}</option>
         @endforeach
     </select>
   </div>
