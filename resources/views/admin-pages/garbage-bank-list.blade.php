@@ -20,10 +20,7 @@
                 <div class="col-md-12">
                     <div class="main-card mb-3 card">
                         <div class="card-header">Daftar Sampah
-                            
-                            <div class="btn-actions-pane-right mr-5 pr-3">
-                                <a href="{{ url('garbage_officer/garbages/create') }}" class="mr-4 btn-transition btn btn-outline-primary" >+ CREATE</a>
-                            </div>
+                    
                         </div>
                     
                         <div class="table-responsive">
