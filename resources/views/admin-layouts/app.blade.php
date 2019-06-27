@@ -156,9 +156,9 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('admin/customers/list') }}">
-                                <i class="metismenu-icon pe-7s-rocket"></i>
-                                Customer Lists
+                            <a href="{{ url('admin/customers/list') }}" class="{{ (\Request::route()->getName() == 'customers_garbage_officer-cust') ? 'mm-active' : ''}}">
+                                <i class="metismenu-icon pe-7s-id"></i>
+                                Customers
                             </a>
                         </li>
                     </ul>
@@ -192,7 +192,7 @@
                         </thead>
                         <tbody>
                             @foreach($strange as $data)
-                        <form action="{{ url('garbage_officer/approve/'.$data->id) }}" method="post">
+                        <form action="{{ url('admin/approve/'.$data->id) }}" method="post">
                         {{ csrf_field() }}
                         {{ method_field('put') }}
                             <tr>
