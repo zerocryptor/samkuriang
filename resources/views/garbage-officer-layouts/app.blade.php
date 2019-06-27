@@ -62,7 +62,7 @@
                 </div>        
             </div>
             <div class="app-header-right">
-                <button type="button" class="mr-4 btn btn-primary" data-toggle="modal" data-target="#exampleModal">Notifikasi Nasabah<span class="badge badge-light">NEW</span></button>
+                <button type="button" class="mr-4 btn btn-primary" data-toggle="modal" data-target="#exampleModal">Notifikasi Nasabah<span class="badge badge-light"></span></button>
                 <div class="header-btn-lg pr-0">
                     <div class="widget-content p-0">
                         <div class="widget-content-wrapper">
