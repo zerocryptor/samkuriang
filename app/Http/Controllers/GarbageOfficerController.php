@@ -29,7 +29,7 @@ class GarbageOfficerController extends Controller
             'strange' => $this->strange,
             'garbagetotal' =>\App\Models\Garbage::count(),
             'garbage'=> \App\Models\Garbage::orderBy('id', 'asc')->get(),
-            'type' => \App\Models\Garbage::select('type')->groupBy('type')->get(),
+            'type' => \App\GarbageType::all(),
             'trash' => \App\Models\Garbage::leftJoin('garbage_officers','garbages.garbage_officer_id','=','garbage_officer_id')->get()
         ];
 
@@ -82,7 +82,7 @@ class GarbageOfficerController extends Controller
      */
     public function create()
     {
-        $type = \App\Models\Garbage::select('type')->groupBy('type')->get();
+        $type = \App\GarbageType::all();
         return view('garbage-officer-pages.create-garbage',[
             'type' => $type,
             'strange' => \App\Models\Customer::select('id','name')->where('status',0)->get()
@@ -154,7 +154,7 @@ class GarbageOfficerController extends Controller
         return view('garbage-officer-pages/edit-garbage',[
             'strange' => $this->strange,
             'garbage' =>\App\Models\Garbage::select('id', 'name','type','price')->where('id',$id)->first(),
-            'type' => \App\Models\Garbage::select('type')->groupBy('type')->get() 
+            'type' => \App\GarbageType::all() 
         ]);
     }
 
