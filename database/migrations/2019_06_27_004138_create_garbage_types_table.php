@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGarbageCatalogsTable extends Migration
+class CreateGarbageTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateGarbageCatalogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('garbage_catalogs', function (Blueprint $table) {
+        Schema::create('garbage_types', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('age');
-            $table->string('type');
-            $table->string('background_images');
             $table->string('description');
             $table->timestamps();
         });
@@ -31,6 +28,6 @@ class CreateGarbageCatalogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('garbage_catalogs');
+        Schema::dropIfExists('garbage_types');
     }
 }

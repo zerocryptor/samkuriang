@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call(GarbagesTableSeeder::class);
         $this->call(CustomersTableSeeder::class);
         $this->call(SavingsTableSeeder::class);
+        $this->call(GarbageTypesTableSeeder::class);
+        $this->call(GarbageCatalogsTableSeeder::class);
         // $this->call(HistorysTableSeeder::class);
     }
 }
