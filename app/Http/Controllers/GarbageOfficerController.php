@@ -5,6 +5,8 @@ use\App\GarbageOfficer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class GarbageOfficerController extends Controller
 {
@@ -30,11 +32,12 @@ class GarbageOfficerController extends Controller
             'garbagetotal' =>\App\Models\Garbage::count(),
             'garbage'=> \App\Models\Garbage::orderBy('id', 'asc')->get(),
             'type' => \App\Models\Garbage::select('type')->groupBy('type')->get(),
-            'trash' => \App\Models\Garbage::leftJoin('garbage_officers','garbages.garbage_officer_id','=','garbage_officer_id')->get()
+            'trash' => \App\Models\Garbage::leftJoin('garbage_officers','garbages.garbage_officer_id','=','garbage_officer_id')->get(),
+            'sampah' => \App\Models\Garbage::paginate(3)
         ];
 
         // return \App\Models\Garbage::select('name','type','price')->get();
-    
+        
         return view('garbage-officer-pages/dashboard', $data);
     }
 

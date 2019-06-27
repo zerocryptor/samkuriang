@@ -173,11 +173,11 @@
             <div class="row text-center text-white mt-5 pt-5">
                 <div class="col-xl-3 col-md-3 mitra">
                     <img src="{{asset('img/bekasi.png')}}" alt="" class="" id="mitra-bank-sampah">
-                    <h5 class="pt-4">Bank Sampah Beji</h5>
+                    <h5 class="pt-4">Bank Sampah Sejahtera</h5>
                 </div>
                 <div class="col-xl-3 col-md-3 mitra">
                     <img src="{{asset('img/bekasi.png')}}" alt="" id="mitra-bank-sampah">
-                    <h5 class="pt-4">Bank Sampah Tanah Baru</h5>
+                    <h5 class="pt-4">Bank Sampah Kartini</h5>
                 </div>
                 <div class="col-xl-3 col-md-3 mitra">
                     <img src="{{asset('img/bekasi.png')}}" alt="" id="mitra-bank-sampah">
@@ -185,7 +185,7 @@
                 </div>
                 <div class="col-xl-3 col-md-3 mitra">
                     <img src="{{asset('img/bekasi.png')}}" alt="" id="mitra-bank-sampah">
-                    <h5 class="pt-4">Bank Sampah Tanah Cipayung</h5>
+                    <h5 class="pt-4">Bank Sampah Cipayung</h5>
                 </div>
             </div>
         </div>

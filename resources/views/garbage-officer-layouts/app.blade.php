@@ -16,6 +16,15 @@
     <!-- Styles -->
     <link href="{{ asset('admin_assets/css/main.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('admin_assets/css/custom-admin.css') }}">
+
+    <style type="text/css">
+		.pagination li{
+			float: left;
+			list-style-type: none;
+			margin: 5px;
+            padding: 2px;
+		}
+	</style>
 </head>
 <body>
 
