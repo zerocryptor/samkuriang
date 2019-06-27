@@ -27,7 +27,7 @@
     <!-- Responsive -->
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
 </head>
-<body>
+<body id="body-tap">
     <!-- page progress -->
     <div class="page-progress"></div>
 
@@ -36,7 +36,7 @@
         <div class="samkuriang-load"></div>
     </div>
 
-    <section id="topheader">
+    <section id="topheader" class="header_area animated">
         <nav class="navbar navbar-expand-lg py-0">
             <a class="navbar-brand pl-3 mb-3 pt-4" href="#">
                 <img src="{{asset('img/logo.png')}}" alt="" class="logo img-fluid">
@@ -53,18 +53,18 @@
             </button>
         
             <div class="collapse navbar-collapse pr-4" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto pr-3">
+                <ul class="navbar-nav ml-auto pr-3" id="nav">
                     <li class="nav-item active pr-3">
-                        <a class="nav-link" href="#"><strong>Beranda</strong><span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#body-tap"><strong>Beranda</strong><span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item pr-3">
-                        <a class="nav-link" href="#"><strong>Fitur</strong></a>
+                        <a class="nav-link" href="#fitur"><strong>Fitur</strong></a>
                     </li>
                     <li class="nav-item pr-3">
-                        <a class="nav-link" href="#"><strong>Mitra</strong></a>
+                        <a class="nav-link" href="#mitra-samkuriang"><strong>Mitra</strong></a>
                     </li>
                     <li class="nav-item pr-3">
-                        <a class="nav-link" href="#"><strong>FAQ</strong></a>
+                        <a class="nav-link" href="#faq"><strong>FAQ</strong></a>
                     </li>
                 </ul>
 
@@ -97,7 +97,7 @@
         </div>
     </section> 
 
-    <section id="fitur" class="mt-5">
+    <section id="fitur" class="mt-6 pt-6">
         <div class="container-fluid mb-5">
             <div class="row">
                 <div class="col-12 col-lg-12 text-center">
@@ -189,7 +189,8 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        
+        <div class="container-fluid" id="faq">
             <div class="row">
                 <div class="col-xl-8 mb-5">
                     <div class="row">
@@ -302,9 +303,10 @@
     </section>
 
     <!-- script -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/plugins.js') }}"></script>
     <script src="{{ asset('js/page-progress.min.js') }}"></script>
     <script src="{{ asset('js/core.js') }}"></script>
 </body>

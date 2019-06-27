@@ -17,7 +17,7 @@ class SavingsTableSeeder extends Seeder
                 'size' => '5.6',
                 'customer_id' => '1',
                 'garbage_id' => '1',
-                'garbage_bank_id' => '1'
+                'garbage_officer_id' => '1'
             ]);
 
             DB::table ('savings')->insert([
@@ -25,7 +25,7 @@ class SavingsTableSeeder extends Seeder
                 'size' => '2.2',
                 'customer_id' => '1',
                 'garbage_id' => '1',
-                'garbage_bank_id' => '1'
+                'garbage_officer_id' => '1'
             ]);
 
         // }

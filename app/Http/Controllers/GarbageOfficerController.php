@@ -24,16 +24,16 @@ class GarbageOfficerController extends Controller
 
     public function index(){
         $data = [
-            'customertotal' => \App\Models\Customer::where('status',1)->count(),
-            'saving' =>  'Rp. '.strrev(implode('.',str_split(strrev(strval(\App\Models\Savings::select('price')->sum('price'))),3))),
-            'garbage' =>\App\Models\Garbage::all(),
+            'customertotal' => \App\Models\Customer::where('status',1)->where('garbage_officer_id',auth('garbage_officer')->user()->id)->count(),
+            'saving' =>  'Rp. '.strrev(implode('.',str_split(strrev(strval(\App\Models\Savings::select('price')->where('garbage_officer_id',auth('garbage_officer')->user()->id)->sum('price'))),3))),
+            'garbage' =>\App\Models\Garbage::select('name','type','price')->where('garbage_officer_id',auth('garbage_officer')->user()->id),
             // 'strange' => \App\Models\Customer::select('id','name')->where('status',0)->get(),
             'strange' => $this->strange,
-            'garbagetotal' =>\App\Models\Garbage::count(),
-            'garbage'=> \App\Models\Garbage::orderBy('id', 'asc')->get(),
-            'type' => \App\Models\Garbage::select('type')->groupBy('type')->get(),
             'trash' => \App\Models\Garbage::leftJoin('garbage_officers','garbages.garbage_officer_id','=','garbage_officer_id')->get(),
-            'sampah' => \App\Models\Garbage::paginate(3)
+            'sampah' => \App\Models\Garbage::paginate(3),
+            'garbagetotal' =>\App\Models\Savings::select('size')->where('garbage_officer_id',auth('garbage_officer')->user()->id)->count(),
+            'garbage'=> \App\Models\Garbage::orderBy('id', 'asc')->where('garbage_officer_id',auth('garbage_officer')->user()->id)->get(),
+            'type' => \App\GarbageType::all(),
         ];
 
         // return \App\Models\Garbage::select('name','type','price')->get();
@@ -85,7 +85,7 @@ class GarbageOfficerController extends Controller
      */
     public function create()
     {
-        $type = \App\Models\Garbage::select('type')->groupBy('type')->get();
+        $type = \App\GarbageType::all();
         return view('garbage-officer-pages.create-garbage',[
             'type' => $type,
             'strange' => \App\Models\Customer::select('id','name')->where('status',0)->get()
@@ -157,7 +157,7 @@ class GarbageOfficerController extends Controller
         return view('garbage-officer-pages/edit-garbage',[
             'strange' => $this->strange,
             'garbage' =>\App\Models\Garbage::select('id', 'name','type','price')->where('id',$id)->first(),
-            'type' => \App\Models\Garbage::select('type')->groupBy('type')->get() 
+            'type' => \App\GarbageType::all() 
         ]);
     }
 

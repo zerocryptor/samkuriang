@@ -1303,3 +1303,10 @@ section#topheader form a {
     font-weight: 600;
     color: #055a3d;
 }
+
+.header_area.sticky {
+    -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+}

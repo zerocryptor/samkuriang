@@ -33,7 +33,7 @@ class GarbageOfficersTableSeeder extends Seeder
             'phone_number' => '082112078019',
             'lat' => -6.3972348,
             'lng' => 106.8393887,
-            'place_name' => 'Sejahtera'
+            'place_name' => 'Sejahtera',
         ]);
 
         DB::table('garbage_officers')->insert([
@@ -41,7 +41,7 @@ class GarbageOfficersTableSeeder extends Seeder
             'email' => 'kartini@gmail.com',
             'email_verified_at' => '2019-03-11 12:25:00',
             'password' => Hash::make('petugas-kartini'),
-            'address' => 'JJalan Kartini No.9 RT.2/RW.9, Depok Kec. Pancoran Mas Kota Depok Jawa Barat 16431',
+            'address' => 'Jalan Kartini No.9 RT.2/RW.9, Depok Kec. Pancoran Mas Kota Depok Jawa Barat 16431',
             'phone_number' => '082112078019',
             'lat' => -6.4043814,
             'lng' => 106.8168024,

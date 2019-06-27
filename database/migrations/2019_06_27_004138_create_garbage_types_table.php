@@ -15,8 +15,8 @@ class CreateGarbageTypesTable extends Migration
     {
         Schema::create('garbage_types', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('description');
+            $table->string('name',85);
+            $table->text('description');
             $table->timestamps();
         });
     }
