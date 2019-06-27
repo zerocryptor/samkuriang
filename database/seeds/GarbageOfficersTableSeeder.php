@@ -33,7 +33,7 @@ class GarbageOfficersTableSeeder extends Seeder
             'phone_number' => '082112078019',
             'lat' => -6.3972348,
             'lng' => 106.8393887,
-            'place_name' => 'Sejahtera'
+            'place_name' => 'Sejahtera',
         ]);
 
         DB::table('garbage_officers')->insert([
