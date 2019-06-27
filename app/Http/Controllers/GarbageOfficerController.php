@@ -22,15 +22,14 @@ class GarbageOfficerController extends Controller
 
     public function index(){
         $data = [
-            'customertotal' => \App\Models\Customer::where('status',1)->count(),
-            'saving' =>  'Rp. '.strrev(implode('.',str_split(strrev(strval(\App\Models\Savings::select('price')->sum('price'))),3))),
-            'garbage' =>\App\Models\Garbage::all(),
+            'customertotal' => \App\Models\Customer::where('status',1)->where('garbage_officer_id',auth('garbage_officer')->user()->id)->count(),
+            'saving' =>  'Rp. '.strrev(implode('.',str_split(strrev(strval(\App\Models\Savings::select('price')->where('garbage_officer_id',auth('garbage_officer')->user()->id)->sum('price'))),3))),
+            'garbage' =>\App\Models\Garbage::select('name','type','price')->where('garbage_officer_id',auth('garbage_officer')->user()->id),
             // 'strange' => \App\Models\Customer::select('id','name')->where('status',0)->get(),
             'strange' => $this->strange,
-            'garbagetotal' =>\App\Models\Garbage::count(),
-            'garbage'=> \App\Models\Garbage::orderBy('id', 'asc')->get(),
+            'garbagetotal' =>\App\Models\Savings::select('size')->where('garbage_officer_id',auth('garbage_officer')->user()->id)->count(),
+            'garbage'=> \App\Models\Garbage::orderBy('id', 'asc')->where('garbage_officer_id',auth('garbage_officer')->user()->id)->get(),
             'type' => \App\GarbageType::all(),
-            'trash' => \App\Models\Garbage::leftJoin('garbage_officers','garbages.garbage_officer_id','=','garbage_officer_id')->get()
         ];
 
         // return \App\Models\Garbage::select('name','type','price')->get();

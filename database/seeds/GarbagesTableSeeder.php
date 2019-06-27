@@ -25,14 +25,14 @@ class GarbagesTableSeeder extends Seeder
 
         DB::table ('garbages')->insert([
             'name' => 'Botol Plastik',
-            'type' => 'Anorganik',
+            'type' => 'Sampah Anorganik',
             'price' => '15000',
             'garbage_officer_id' => '1'
         ]);
 
         DB::table ('garbages')->insert([
             'name' => 'Kulit Pisang',
-            'type' => 'Organik',
+            'type' => 'Sampah Organik',
             'price' => '10000',
             'garbage_officer_id' => '1'
         ]);
