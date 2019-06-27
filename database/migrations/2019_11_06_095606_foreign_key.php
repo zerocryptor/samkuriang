@@ -104,16 +104,17 @@ class ForeignKey extends Migration
             /**
              * @foreign table garbage_banks
              */
-            $table->unsignedInteger('garbage_officer_id');
+            $table->unsignedInteger('garbage_officer_id')->nullable();
             $table->foreign('garbage_officer_id')->references('id')->on('garbage_officers')->onUpdate('cascade')->onDelete('cascade');
             
-            
+            $table->rememberToken();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();
             $table->softDeletes();
             
         });   
-            Schema::table('users', function (Blueprint $table) {
+        
+        Schema::table('users', function (Blueprint $table) {
             /**
              * @foreign table garbage_banks
              */
@@ -124,7 +125,19 @@ class ForeignKey extends Migration
             $table->timestamp('updated_at')->nullable();
             $table->softDeletes();
             
-        });  
+        });
+
+        Schema::table('garbage_catalogs', function (Blueprint $table) {
+            /**
+             * @foreign table garbage_banks
+             */
+            // $table->unsignedInteger('garbage_bank_id');
+            // 
+
+            $table->unsignedInteger('garbage_type_id');
+            $table->foreign('garbage_type_id')->references('id')->on('garbage_types')->onUpdate('cascade')->onDelete('cascade');
+            $table->timestamps();
+        });
     }
 
     /**

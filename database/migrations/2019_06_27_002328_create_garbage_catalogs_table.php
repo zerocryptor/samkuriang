@@ -15,12 +15,10 @@ class CreateGarbageCatalogsTable extends Migration
     {
         Schema::create('garbage_catalogs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('age');
-            $table->string('type');
             $table->string('background_images');
-            $table->string('description');
-            $table->timestamps();
+            $table->text('description');
         });
     }
 

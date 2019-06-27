@@ -11,14 +11,15 @@ class CustomersTableSeeder extends Seeder
      */
     public function run()
     {
-        // DB::table('customers')->insert([
-        //     'name' => 'User Samkuriang',
-        //     'email' => 'user@samkuriang.com',
-        //     'password' => Hash::make('user123'),
-        //     'address' => 'Jalan User No. 12',
-        //     'phone_number' => '08957271622',
-        //     'garbage_officer_id' => 1
-        // ]); 
+        DB::table('customers')->insert([
+            'name' => 'User Samkuriang',
+            'email' => 'user@samkuriang.com',
+            'password' => Hash::make('user123'),
+            'address' => 'Jalan User No. 12',
+            'phone_number' => '08957271622',
+            'garbage_officer_id' => 1,
+            'status' => '1'
+        ]); 
         
         DB::table('customers')->insert([
             'name' => 'Second User Samkuriang',
@@ -35,7 +36,8 @@ class CustomersTableSeeder extends Seeder
             'password' => Hash::make('user323'),
             'address' => 'Jalan User No. 13',
             'phone_number' => '08957271623',
-            'garbage_officer_id' => 1
+            'garbage_officer_id' => 1,
+            'status' => '0'
         ]);
 
         DB::table('customers')->insert([
@@ -44,7 +46,7 @@ class CustomersTableSeeder extends Seeder
             'password' => Hash::make('user423'),
             'address' => 'Jalan User No. 14',
             'phone_number' => '08957271623',
-            'garbage_officer_id' => 1
+            'garbage_officer_id' => null
         ]);
     }
 }
