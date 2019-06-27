@@ -77,8 +77,8 @@
                             </td>
                             <td class="text-center">20/12/2019</td>
                             <td class="text-center">
-                                <a href="{{ url('garbage_officer/customers/edit') }}" type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm ">Edit</a>
-                                <a href="{{ url('garbage_officer/customers/detail') }}" type="button" id="PopoverCustomT-1" class="btn btn-success btn-sm">Detail</a>
+                                <a href="{{ url('garbage_officer/customers/edit') }}" type="button" id="PopoverCustomT-1" class="btn btn-sm btn-primary">Edit</a>
+                                <a href="{{ url('garbage_officer/customers/detail') }}" type="button" id="PopoverCustomT-1" class="btn btn-sm btn-success">Detail</a>
                                 <button class="mr-2 btn btn-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                             </td>
                         </tr>

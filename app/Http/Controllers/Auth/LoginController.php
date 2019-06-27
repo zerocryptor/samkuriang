@@ -55,7 +55,7 @@ class LoginController extends Controller
        
         if (Auth::guard('garbage_officer')->attempt($credentials, $request->get('remember'))) {
             //last-login
-            \App\Models\GarbageOfficer::where('email',$request->email)->update(['last_login' => Carbon::now()->toDayDateTimeString()]);
+            \App\Models\GarbageOfficer::where('email',$request->email)->update(['last_login' => Carbon::now()->toDateTimeString()]);
             return redirect()->intended('/garbage_officer');
 
         }
