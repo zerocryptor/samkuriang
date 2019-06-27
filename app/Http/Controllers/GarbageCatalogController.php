@@ -4,82 +4,26 @@ namespace App\Http\Controllers;
 
 use App\GarbageCatalog;
 use Illuminate\Http\Request;
+use DB;
 
 class GarbageCatalogController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
     /**
      * Display the specified resource.
      *
      * @param  \App\GarbageCatalog  $garbageCatalog
      * @return \Illuminate\Http\Response
      */
-    public function show(GarbageCatalog $garbageCatalog)
+    public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\GarbageCatalog  $garbageCatalog
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(GarbageCatalog $garbageCatalog)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\GarbageCatalog  $garbageCatalog
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, GarbageCatalog $garbageCatalog)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\GarbageCatalog  $garbageCatalog
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(GarbageCatalog $garbageCatalog)
-    {
-        //
+        $dataGarbageWithId = DB::table('garbage_catalogs')
+        ->select('garbage_catalogs.name', 'garbage_types.name as type', 'garbage_catalogs.background_images', 'garbage_catalogs.description', 'garbage_types.description as description_type')
+        ->leftJoin('garbage_types', 'garbage_catalogs.garbage_type_id', '=', 'garbage_types.id')
+        ->where('garbage_catalogs.name',$id)
+        ->get();
+        
+        return response()->json(
+            $dataGarbageWithId[0]
+        );
     }
 }

@@ -143,14 +143,14 @@
                     <ul class="vertical-nav-menu">
                         <li class="app-sidebar__heading">Dashboards</li>
                         <li>
-                            <a href="{{ url('admin') }}" class="mm-active">
+                            <a href="{{ url('admin') }}" class="{{ (\Request::route()->getName() == 'admin') ? 'mm-active' : ''}}">
                                 <i class="metismenu-icon pe-7s-rocket"></i>
                                 Main Dashboard
                             </a>
                         </li>
                         <li class="app-sidebar__heading">Main Menu</li>
                         <li>
-                            <a href="{{ url('admin/garbage-banks/list') }}">
+                            <a href="{{ url('admin/garbage-banks/list') }} "class="{{ (\Request::route()->getName() == 'admin-garbage-bank') ? 'mm-active' : ''}}">
                                 <i class="metismenu-icon pe-7s-rocket"></i>
                                 Garbage Bank Lists
                             </a>
@@ -178,7 +178,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nasabah Baru Menunggu Aktivasi!</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Bank Sampah Menunggu Aktivasi!</h5>
             </div>
             <div class="modal-body">
                 <div class="table-responsive">

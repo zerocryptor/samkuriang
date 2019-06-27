@@ -46,7 +46,7 @@ class CustomersTableSeeder extends Seeder
             'password' => Hash::make('user423'),
             'address' => 'Jalan User No. 14',
             'phone_number' => '08957271623',
-            'garbage_officer_id' => 1
+            'garbage_officer_id' => null
         ]);
     }
 }

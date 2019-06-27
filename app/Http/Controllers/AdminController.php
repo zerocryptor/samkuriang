@@ -13,8 +13,6 @@ class AdminController extends Controller
         $this->middleware('auth');
         $this->strange = \App\Models\GarbageOfficer::select('id','name')->where('status',0)->get();
 
-
-
     }
 
     /**
