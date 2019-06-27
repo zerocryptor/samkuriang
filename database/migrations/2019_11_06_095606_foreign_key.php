@@ -71,9 +71,9 @@ class ForeignKey extends Migration
              */
             $table->unsignedInteger('garbage_id');
             $table->foreign('garbage_id')->references('id')->on('garbages')->onUpdate('cascade')->onDelete('cascade');
-
-            $table->unsignedInteger('garbage_bank_id');
-            $table->foreign('garbage_bank_id')->references('id')->on('garbage_banks')->onUpdate('cascade')->onDelete('cascade');
+           
+            $table->unsignedInteger('garbage_officer_id');
+            $table->foreign('garbage_officer_id')->references('id')->on('garbage_officers')->onUpdate('cascade')->onDelete('cascade');
 
             $table->unsignedInteger('customer_id');
             $table->foreign('customer_id')->references('id')->on('customers')->onUpdate('cascade')->onDelete('cascade');
