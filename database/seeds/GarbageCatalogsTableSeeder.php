@@ -12,20 +12,30 @@ class GarbageCatalogsTableSeeder extends Seeder
     public function run()
     {
         DB::table('garbage_catalogs')->insert([
-            'name' => "Botol Plastik",
+            'name' => "botol plastik",
             'age' => '10 tahun',
-            'type' => 1,
-            'background_images' => 'background_pisang.jpg',
-            'description' => 'ini deskripsi tentang sampah botol plastik'
+            'background_images' => 'http://samkuriang.invicit.com/img/botolplastik.jpg',
+            'description' => 'ini deskripsi tentang sampah botol plastik',
+            'garbage_type_id' => 1
         ]);
 
         DB::table('garbage_catalogs')->insert([
-            'name' => "Pisang",
+            'name' => "pisang",
             'age' => '5 Tahun',
-            'type' => 1,
-            'background_images' => 'background_pisang.jpg',
-            'description' => 'ini deskripsi tentang sampah pisang'
+            'background_images' => 'http://samkuriang.invicit.com/img/kulitpisang.jpg',
+            'description' => 'ini deskripsi tentang sampah pisang',
+            'garbage_type_id' => 2
         ]);
+
+        DB::table('garbage_catalogs')->insert([
+            'name' => "tutup botol",
+            'age' => '5 Tahun',
+            'background_images' => 'http://samkuriang.invicit.com/img/tutupbotol.jpg',
+            'description' => 'ini deskripsi tentang sampah pisang',
+            'garbage_type_id' => 1
+        ]);
+
+
 
 
     }

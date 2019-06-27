@@ -289,4 +289,27 @@ class CustomerController extends Controller
 
         return response()->json($getStatusCustomer);
     }
+
+    public function joinNasabah($id, $garbage_officer_id){
+        if(!\App\Models\Customer::where('id', $id)->update(['garbage_officer_id' => $garbage_officer_id, 'status' => 1])){
+            
+            return response()->json([
+                'error'=> true,
+                'message' => 'Bad Request',
+                'code' => 400
+            ], 200);
+
+        } else {
+
+            $newCustomer = \App\Models\Customer::where('id', $id)->get();
+
+            return response()->json([
+                'error' => false,
+                'message' => 'Selamat anda bergabung di bank sampah'.\App\Models\GarbageOfficer::select('place_name')->where('id', $garbage_officer_id)->get()[0]->place_name,
+                'code' => 201,
+                'customer' => $newCustomer[0]
+            ], 200);
+
+        }
+    }
 }
