@@ -269,7 +269,7 @@ class CustomerController extends Controller
         ->get();
 
         return response()->json([
-            'history' => $savings
+            'histories' => $savings
         ]);
     }
 
