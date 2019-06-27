@@ -10,7 +10,7 @@
                                 </i>
                             </div>
                             <div>Administrator Samkuriang Dashboard
-                                <div class="page-title-subheading">Terakhir login: Kemarin, 17-6-2019
+                                <div class="page-title-subheading">Terakhir login: Today, 28-Jun-2019
                                 </div>
                             </div>
                         </div>
