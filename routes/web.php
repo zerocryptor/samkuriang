@@ -19,7 +19,7 @@ Route::get('/login/garbage_officer', 'Auth\LoginController@showGarbageOfficerLog
 Route::get('/register/garbage_officer', 'Auth\RegisterController@showGarbageOfficerRegisterForm');
 Route::post('/login/garbage_officer', 'Auth\LoginController@garbageofficerLogin');
 Route::post('/register/garbage_officer', 'Auth\RegisterController@createGarbageOfficer');
-Route::put('/garbage_officer/approve/id', 'Auth\VerificationController@updateGarbageOfficer');
+Route::put('/garbage_officer/approve/{id}', 'Auth\VerificationController@updateGarbageOfficer');
 
 Auth::routes(['verify' => true]);
 
