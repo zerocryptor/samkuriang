@@ -34,9 +34,5 @@ class GarbageCatalogsTableSeeder extends Seeder
             'description' => 'Tutup botol plastik merupakan bagian dari sampah botol plastik yang merupakan bahan padat dari kegiatan manusia. Oleh karena itu pengelolaan sampah tidak terlepas dari gaya hidup masyarakat. Jika sampah tersebut terus dibiarkan, tentu akan menimbulkan dampak serius bagi lingkungan.',
             'garbage_type_id' => 1
         ]);
-
-
-
-
     }
 }

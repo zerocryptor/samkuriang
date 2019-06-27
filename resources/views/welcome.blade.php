@@ -61,7 +61,7 @@
                         <a class="nav-link" href="#fitur"><strong>Fitur</strong></a>
                     </li>
                     <li class="nav-item pr-3">
-                        <a class="nav-link" href="#mitra"><strong>Mitra</strong></a>
+                        <a class="nav-link" href="#mitra-samkuriang"><strong>Mitra</strong></a>
                     </li>
                     <li class="nav-item pr-3">
                         <a class="nav-link" href="#faq"><strong>FAQ</strong></a>
@@ -97,7 +97,7 @@
         </div>
     </section> 
 
-    <section id="fitur" class="mt-5">
+    <section id="fitur" class="mt-6 pt-6">
         <div class="container-fluid mb-5">
             <div class="row">
                 <div class="col-12 col-lg-12 text-center">
@@ -160,7 +160,7 @@
         </div>
     </section>
 
-    <section id="mitra" class="mt-6 pt-7">
+    <section id="mitra-samkuriang" class="mt-6 pt-7">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 mt-6 text-center">

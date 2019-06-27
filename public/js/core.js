@@ -103,7 +103,7 @@ $(window).scroll(function(){
     // :: 4.0 ScrollUp Active Code
     if ($.fn.scrollUp) {
         $.scrollUp({
-            scrollSpeed: 1500,
+            scrollSpeed: 2000,
             scrollText: '<i class="fa fa-angle-up"></i>'
         });
     }
