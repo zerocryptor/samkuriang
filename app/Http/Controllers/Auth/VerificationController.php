@@ -14,4 +14,13 @@ class VerificationController extends Controller
             return redirect('garbage_officer');
         }
     }
+
+    public function approveGarbageOfficer($id){
+        $update = DB::table('garbage_officers')->where('id',$id)->update(['status'=>1]);
+
+        if($update){
+            return redirect('admin');
+        }
+    }
 }
+

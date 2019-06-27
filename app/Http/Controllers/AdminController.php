@@ -42,6 +42,9 @@ class AdminController extends Controller
     }
 
     public function customerList(){
-        return view('admin-pages.garbage-bank-list');
+        return view('admin-pages.customer-list',[
+            'strange' => $this->strange
+        ]);
+
     }
 }
