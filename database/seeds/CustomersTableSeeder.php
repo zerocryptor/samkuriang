@@ -17,8 +17,8 @@ class CustomersTableSeeder extends Seeder
             'password' => Hash::make('user123'),
             'address' => 'Jalan User No. 12',
             'phone_number' => '08957271622',
-            'garbage_officer_id' => 1,
-            'status' => '1'
+            'status' => '1',
+            'garbage_officer_id' => 1
         ]); 
         
         DB::table('customers')->insert([
