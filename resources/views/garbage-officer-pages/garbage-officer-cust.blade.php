@@ -26,6 +26,7 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($sampah as $data)
                         <tr>
                             <td class="text-center text-muted">1</td>
                             <td>
@@ -54,6 +55,7 @@
                                 <button class="mr-2 btn btn-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                             </td>
                         </tr>
+                        @endforeach
                         <tr>
                             <td class="text-center text-muted">2</td>
                             <td>
@@ -83,6 +85,7 @@
                             </td>
                         </tr>
                         </tbody>
+                        {{ $sampah->links() }}
                     </table>
                 </div>
                 <div class="d-block text-center card-footer">

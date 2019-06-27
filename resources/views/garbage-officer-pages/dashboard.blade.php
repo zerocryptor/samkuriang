@@ -79,7 +79,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($garbage as $data)
+                        @foreach($sampah as $data)
                         <tr>
                             <td class="text-center text-muted">{{++$loop->index}}</td>
                             <td>
@@ -109,6 +109,7 @@
                         </tr>
                         @endforeach
                         </tbody>
+                        {{ $sampah->links() }}
                     </table>
                 </div>
                 <div class="d-block text-center card-footer">

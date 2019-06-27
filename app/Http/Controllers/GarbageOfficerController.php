@@ -5,6 +5,8 @@ use\App\GarbageOfficer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class GarbageOfficerController extends Controller
 {
@@ -27,13 +29,15 @@ class GarbageOfficerController extends Controller
             'garbage' =>\App\Models\Garbage::select('name','type','price')->where('garbage_officer_id',auth('garbage_officer')->user()->id),
             // 'strange' => \App\Models\Customer::select('id','name')->where('status',0)->get(),
             'strange' => $this->strange,
+            'trash' => \App\Models\Garbage::leftJoin('garbage_officers','garbages.garbage_officer_id','=','garbage_officer_id')->get(),
+            'sampah' => \App\Models\Garbage::paginate(3),
             'garbagetotal' =>\App\Models\Savings::select('size')->where('garbage_officer_id',auth('garbage_officer')->user()->id)->count(),
             'garbage'=> \App\Models\Garbage::orderBy('id', 'asc')->where('garbage_officer_id',auth('garbage_officer')->user()->id)->get(),
             'type' => \App\GarbageType::all(),
         ];
 
         // return \App\Models\Garbage::select('name','type','price')->get();
-    
+        
         return view('garbage-officer-pages/dashboard', $data);
     }
 
