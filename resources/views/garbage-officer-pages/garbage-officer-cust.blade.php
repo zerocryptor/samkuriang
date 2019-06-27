@@ -51,7 +51,7 @@
                             <td class="text-center">
                                 <a href="{{ url('garbage_officer/customers/edit') }}" type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Edit</a>
                                 <a href="{{ url('garbage_officer/customers/detail') }}" type="button" id="PopoverCustomT-1" class="btn btn-success btn-sm">Detail</a>
-                                <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                                <button class="mr-2 btn btn-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                             </td>
                         </tr>
                         <tr>
@@ -79,7 +79,7 @@
                             <td class="text-center">
                                 <a href="{{ url('garbage_officer/customers/edit') }}" type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm ">Edit</a>
                                 <a href="{{ url('garbage_officer/customers/detail') }}" type="button" id="PopoverCustomT-1" class="btn btn-success btn-sm">Detail</a>
-                                <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                                <button class="mr-2 btn btn-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                             </td>
                         </tr>
                         </tbody>

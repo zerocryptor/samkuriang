@@ -11,7 +11,7 @@
                         <div class="widget-subheading">Collection of Garbages</div>
                     </div>
                     <div class="widget-content-right">
-                        <div class="widget-numbers text-white"><span>{{$garbage}} Kg</span></div>
+                        <div class="widget-numbers text-white"><span>{{$garbagetotal}} Kg</span></div>
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                         <div class="widget-subheading">Number of Money</div>
                     </div>
                     <div class="widget-content-right">
-                        <div class="widget-numbers text-white"><span>{{$saving}}</span></div>
+                        <div class="widget-numbers text-white"><span>8000</span></div>
                     </div>
                 </div>
             </div>
