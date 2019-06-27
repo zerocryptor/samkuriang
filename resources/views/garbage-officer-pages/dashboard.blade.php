@@ -10,7 +10,7 @@
                     </i>
                 </div>
                 <div>Garbage Bank Officer Depok
-                    <div class="page-title-subheading">Last login: Today {{ Auth::user()->last_login }}
+                    <div class="page-title-subheading">Last login: {{ Auth::user()->last_login }}
                     </div>
                 </div>
             </div>
