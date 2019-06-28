@@ -26,6 +26,13 @@
 
     <!-- Responsive -->
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+
+    <style>
+        /* .mitra1{
+            width: 10px;
+            height: 20px;
+        } */
+    </style>
 </head>
 <body id="body-tap">
     <!-- page progress -->
@@ -172,19 +179,19 @@
         <div class="container-fluid">
             <div class="row text-center text-white mt-5 pt-5">
                 <div class="col-xl-3 col-md-3 mitra">
-                    <img src="{{asset('img/bekasi.png')}}" alt="" class="" id="mitra-bank-sampah">
+                    <img src="{{asset('img/mitra1.png')}}" alt="" class="mitra1" width="200px" height="auto">>
                     <h5 class="pt-4">Bank Sampah Sejahtera</h5>
                 </div>
                 <div class="col-xl-3 col-md-3 mitra">
-                    <img src="{{asset('img/bekasi.png')}}" alt="" id="mitra-bank-sampah">
+                    <img src="{{asset('img/mitra2.png')}}" alt="" width="125px" height="auto">
                     <h5 class="pt-4">Bank Sampah Kartini</h5>
                 </div>
                 <div class="col-xl-3 col-md-3 mitra">
-                    <img src="{{asset('img/bekasi.png')}}" alt="" id="mitra-bank-sampah">
-                    <h5 class="pt-4">Bank Sampah Universitas Indonesia</h5>
+                    <img src="{{asset('img/mitra3.png')}}" alt="" width="248px" height="auto">>
+                    <h5 class="pt-4">Bank Sampah Beji</h5>
                 </div>
                 <div class="col-xl-3 col-md-3 mitra">
-                    <img src="{{asset('img/bekasi.png')}}" alt="" id="mitra-bank-sampah">
+                    <img src="{{asset('img/mitra4.png')}}" alt="" width="190px" height="auto">>
                     <h5 class="pt-4">Bank Sampah Cipayung</h5>
                 </div>
             </div>
