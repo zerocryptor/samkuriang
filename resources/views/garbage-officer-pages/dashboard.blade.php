@@ -11,6 +11,7 @@
                 </div>
                 <div>Garbage Bank Officer Depok
                     <div class="page-title-subheading">Terakhir login: Today, 28-Jun-2019
+                    <!-- Terakhir login:{{ auth('garbage_officer')->user()->last_login }} -->
                     </div>
                 </div>
             </div>
